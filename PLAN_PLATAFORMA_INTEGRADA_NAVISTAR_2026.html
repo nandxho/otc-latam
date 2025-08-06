@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Plataforma Integrada Navistar 2026-2027</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 24pt;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+            page-break-after: avoid;
+            text-align: center;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 18pt;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #3d85c6;
+            font-size: 14pt;
+            margin-top: 12pt;
+            margin-bottom: 8pt;
+            page-break-after: avoid;
+        }
+        h4 {
+            color: #4a90e2;
+            font-size: 12pt;
+            margin-top: 10pt;
+            margin-bottom: 6pt;
+            font-weight: bold;
+        }
+        p {
+            margin: 8pt 0;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 8pt 0;
+            padding-left: 20pt;
+        }
+        li {
+            margin: 4pt 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12pt 0;
+            font-size: 10pt;
+        }
+        th {
+            background-color: #2e74b5;
+            color: white;
+            padding: 8pt;
+            text-align: left;
+            font-weight: bold;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 6pt;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .executive-summary {
+            background-color: #f0f4f8;
+            padding: 15pt;
+            border-left: 4pt solid #1a5490;
+            margin: 12pt 0;
+        }
+        .integrated-platform {
+            background-color: #e8f8e8;
+            padding: 15pt;
+            border-left: 4pt solid #28a745;
+            margin: 12pt 0;
+        }
+        .phase-box {
+            border: 1px solid #2e74b5;
+            padding: 12pt;
+            margin: 12pt 0;
+            background-color: #f8fbff;
+        }
+        .sprint-box {
+            background-color: #fff9e6;
+            padding: 8pt;
+            border-left: 3pt solid #ffa500;
+            margin: 8pt 0;
+            font-size: 10pt;
+        }
+        .integration-highlight {
+            background-color: #f0f8ff;
+            padding: 10pt;
+            border-left: 3pt solid #007bff;
+            margin: 10pt 0;
+        }
+        .timeline-box {
+            background-color: #f5f5f5;
+            padding: 10pt;
+            border-radius: 5pt;
+            margin: 10pt 0;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        strong {
+            color: #1a5490;
+        }
+        .timeline {
+            font-weight: bold;
+            color: #2e74b5;
+        }
+        .budget {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .integration {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Plan Plataforma Integrada Navistar 2026-2027</h1>
+<h2 class="center">Unificación MIOSS-SIV + Remediación BaaN→SAP</h2>
+
+<div class="executive-summary">
+<h2>Resumen Ejecutivo</h2>
+
+<h3>Visión Estratégica</h3>
+<p>Desarrollar una <strong>Plataforma Integrada de Ventas</strong> para Navistar que consolide las capacidades de MIOSS (exportación) y SIV (mercado mexicano) mientras migra las interfaces críticas de BaaN a SAP, creando un ecosistema tecnológico moderno y unificado.</p>
+
+<h3>Objetivos del Programa</h3>
+<ol>
+    <li><strong>Unificación de Sistemas de Ventas</strong>: Una plataforma para ambos mercados</li>
+    <li><strong>Modernización de Interfaces</strong>: Migración completa BaaN → SAP</li>
+    <li><strong>Optimización Operacional</strong>: Reducción 60% en costos de mantenimiento</li>
+    <li><strong>Arquitectura Cloud-Native</strong>: Plataforma escalable en Azure</li>
+    <li><strong>Experiencia de Usuario Superior</strong>: Interface moderna y eficiente</li>
+</ol>
+
+<div class="timeline-box">
+<p class="timeline">Período de Ejecución: Enero 2026 - Enero 2027</p>
+<p class="timeline">Duración Total: 52 semanas (26 sprints de 2 semanas)</p>
+<p class="budget">Inversión Total: $1.2M - $1.5M USD</p>
+<p class="integration">Go-Live Coordinado: Enero 2027</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>ARQUITECTURA DE LA PLATAFORMA INTEGRADA</h2>
+
+<div class="integrated-platform">
+<h3>Componentes de la Solución</h3>
+
+<h4>1. Plataforma de Ventas Unificada</h4>
+<ul>
+    <li><strong>Frontend</strong>: Angular 18 con Progressive Web App</li>
+    <li><strong>Backend</strong>: .NET 8 con arquitectura modular</li>
+    <li><strong>Base de Datos</strong>: Azure SQL con esquemas unificados</li>
+    <li><strong>APIs</strong>: RESTful services con OpenAPI documentation</li>
+</ul>
+
+<h4>2. Capa de Integración SAP</h4>
+<ul>
+    <li><strong>SAP Integration Suite</strong>: Conectores nativos SAP</li>
+    <li><strong>Message Bus</strong>: Azure Service Bus para comunicación asíncrona</li>
+    <li><strong>Data Transformation</strong>: Mapeo y conversión de datos BaaN→SAP</li>
+    <li><strong>API Gateway</strong>: Gestión centralizada de interfaces</li>
+</ul>
+
+<h4>3. Infraestructura Cloud</h4>
+<ul>
+    <li><strong>Azure App Service</strong>: Hosting de aplicaciones web</li>
+    <li><strong>Azure SQL Database</strong>: Base de datos principal</li>
+    <li><strong>Azure Redis Cache</strong>: Caché distribuido para performance</li>
+    <li><strong>Azure Key Vault</strong>: Gestión segura de credenciales</li>
+    <li><strong>Application Insights</strong>: Monitoreo y analytics</li>
+</ul>
+</div>
+
+<div class="integration-highlight">
+<h3>Diagrama de Arquitectura</h3>
+<pre>
+┌─────────────────────────────────────────────────────────────┐
+│                    Plataforma Integrada                      │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────────┐    ┌──────────────────────────────┐   │
+│  │   Angular 18    │───►│      .NET 8 Backend          │   │
+│  │  (MIOSS + SIV)  │    │   (Ventas Unificadas)       │   │
+│  └─────────────────┘    └──────────┬───────────────────┘   │
+│                                     │                       │
+│  ┌─────────────────────────────────┴─────────────────┐     │
+│  │              Azure SQL Database                   │     │
+│  │         (Esquemas MIOSS + SIV + SAP)             │     │
+│  └─────────────────┬───────────────────────────────┘     │
+│                     │                                       │
+│  ┌─────────────────▼─────────────────┐                     │
+│  │      SAP Integration Layer        │                     │
+│  │   • Service Bus                   │                     │
+│  │   • Data Transformation           │                     │
+│  │   • API Gateway                   │                     │
+│  └─────────────────┬─────────────────┘                     │
+│                     │                                       │
+│  ┌─────────────────▼─────────────────┐                     │
+│  │            SAP System             │                     │
+│  │      (Replacing BaaN)             │                     │
+│  └───────────────────────────────────┘                     │
+└─────────────────────────────────────────────────────────────┘
+</pre>
+</div>
+
+<div class="page-break"></div>
+
+<h2>FASES DEL PROGRAMA</h2>
+
+<h3>FASE 1: FUNDACIÓN E INTEGRACIÓN (Enero - Abril 2026)</h3>
+<p class="timeline">Sprints 1-8 | 16 semanas</p>
+
+<div class="phase-box">
+<h4>Objetivos de la Fase</h4>
+<ul>
+    <li>Establecer infraestructura base en Azure</li>
+    <li>Consolidar sistemas MIOSS y SIV</li>
+    <li>Implementar conectividad inicial con SAP</li>
+    <li>Crear framework de interfaces</li>
+</ul>
+
+<h4>Entregables Principales</h4>
+
+<div class="sprint-box">
+<strong>Sprints 1-2 (Enero 2026):</strong>
+<ul>
+    <li>Setup de ambiente de desarrollo en Azure</li>
+    <li>Análisis detallado de interfaces BaaN existentes</li>
+    <li>Diseño de arquitectura de integración SAP</li>
+    <li>Setup de repositorios y pipelines CI/CD</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 3-4 (Febrero 2026):</strong>
+<ul>
+    <li>Migración de código base MIOSS y SIV a .NET 8</li>
+    <li>Unificación de modelos de datos</li>
+    <li>Implementación de Entity Framework Core</li>
+    <li>Prototipo de interface SAP más crítica</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 5-6 (Marzo 2026):</strong>
+<ul>
+    <li>Desarrollo de APIs unificadas de ventas</li>
+    <li>Implementación de Azure Service Bus</li>
+    <li>Mapeo de datos BaaN → SAP (primera iteración)</li>
+    <li>Frontend Angular 18 - módulo de ventas básico</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 7-8 (Abril 2026):</strong>
+<ul>
+    <li>Integración completa de 3 interfaces SAP prioritarias</li>
+    <li>Testing de extremo a extremo</li>
+    <li>Validación con usuarios piloto</li>
+    <li>Documentación técnica y de usuario</li>
+</ul>
+</div>
+
+<h4>Criterios de Aceptación Fase 1</h4>
+<ul>
+    <li>✅ Plataforma base funcional en ambiente de desarrollo</li>
+    <li>✅ 3 interfaces SAP implementadas y probadas</li>
+    <li>✅ Módulo de ventas básico operativo</li>
+    <li>✅ Performance: response time <500ms</li>
+    <li>✅ Disponibilidad: 99% en ambiente de pruebas</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+
+<h3>FASE 2: DESARROLLO Y MIGRACIÓN (Mayo - Agosto 2026)</h3>
+<p class="timeline">Sprints 9-16 | 16 semanas</p>
+
+<div class="phase-box">
+<h4>Objetivos de la Fase</h4>
+<ul>
+    <li>Completar funcionalidades de negocio</li>
+    <li>Migrar todas las interfaces BaaN → SAP</li>
+    <li>Implementar características avanzadas</li>
+    <li>Preparar ambiente de pre-producción</li>
+</ul>
+
+<h4>Entregables Principales</h4>
+
+<div class="sprint-box">
+<strong>Sprints 9-10 (Mayo 2026):</strong>
+<ul>
+    <li>Módulo de precios y descuentos completo</li>
+    <li>Gestión de clientes unificada</li>
+    <li>Workflow de aprobaciones</li>
+    <li>Migración de interfaces de inventario a SAP</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 11-12 (Junio 2026):</strong>
+<ul>
+    <li>Sistema de reportería avanzado</li>
+    <li>Dashboard analítico con KPIs</li>
+    <li>Interfaces financieras SAP</li>
+    <li>Gestión de órdenes de compra</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 13-14 (Julio 2026):</strong>
+<ul>
+    <li>Módulo de logística y traslados</li>
+    <li>Integración completa con SAP MM/SD</li>
+    <li>Sistema de notificaciones en tiempo real</li>
+    <li>Características móviles (PWA)</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 15-16 (Agosto 2026):</strong>
+<ul>
+    <li>Single Sign-On con Azure AD</li>
+    <li>Seguridad y auditoría completa</li>
+    <li>Performance optimization</li>
+    <li>Setup de ambiente de pre-producción</li>
+</ul>
+</div>
+
+<h4>Criterios de Aceptación Fase 2</h4>
+<ul>
+    <li>✅ 100% funcionalidades de negocio implementadas</li>
+    <li>✅ Todas las interfaces BaaN migradas a SAP</li>
+    <li>✅ Performance: response time <200ms</li>
+    <li>✅ Testing automatizado con 90%+ cobertura</li>
+    <li>✅ Ambiente pre-producción estable</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+
+<h3>FASE 3: DESPLIEGUE Y GO-LIVE (Septiembre 2026 - Enero 2027)</h3>
+<p class="timeline">Sprints 17-26 | 20 semanas</p>
+
+<div class="phase-box">
+<h4>Objetivos de la Fase</h4>
+<ul>
+    <li>Validación integral con usuarios</li>
+    <li>Migración de datos históricos</li>
+    <li>Capacitación y change management</li>
+    <li>Go-live coordinado</li>
+</ul>
+
+<h4>Entregables Principales</h4>
+
+<div class="sprint-box">
+<strong>Sprints 17-18 (Septiembre 2026):</strong>
+<ul>
+    <li>User Acceptance Testing (UAT)</li>
+    <li>Corrección de issues identificados</li>
+    <li>Migración de datos maestros</li>
+    <li>Capacitación a usuarios clave</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 19-20 (Octubre 2026):</strong>
+<ul>
+    <li>Load testing y optimización final</li>
+    <li>Security testing y pentesting</li>
+    <li>Documentación completa</li>
+    <li>Plan de rollback y contingencia</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 21-22 (Noviembre 2026):</strong>
+<ul>
+    <li>Migración completa de datos históricos</li>
+    <li>Validación de integridad de datos</li>
+    <li>Capacitación masiva de usuarios</li>
+    <li>Rehearsal de go-live</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 23-24 (Diciembre 2026):</strong>
+<ul>
+    <li>Ajustes finales post-rehearsal</li>
+    <li>Preparación de soporte post go-live</li>
+    <li>Comunicación organizacional</li>
+    <li>Setup de monitoreo production</li>
+</ul>
+</div>
+
+<div class="sprint-box">
+<strong>Sprints 25-26 (Enero 2027):</strong>
+<ul>
+    <li><strong>GO-LIVE Weekend:</strong></li>
+    <li>Activación de sistema en producción</li>
+    <li>Desactivación de sistemas legacy</li>
+    <li>Monitoreo intensivo 24/7</li>
+    <li>Soporte hiper-cuidado (hypercare)</li>
+</ul>
+</div>
+
+<h4>Criterios de Aceptación Go-Live</h4>
+<ul>
+    <li>✅ 100% usuarios capacitados y certificados</li>
+    <li>✅ Migración de datos completada sin pérdidas</li>
+    <li>✅ Performance: response time <100ms en producción</li>
+    <li>✅ Disponibilidad: 99.9% en primeras 4 semanas</li>
+    <li>✅ 0 incidentes críticos en go-live</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+
+<h2>INTEGRACIÓN CON REMEDIACIÓN BaaN → SAP</h2>
+
+<div class="integration-highlight">
+<h3>Estrategia de Coordinación</h3>
+
+<h4>Interfaces a Remediar</h4>
+<table>
+    <tr>
+        <th>Interface</th>
+        <th>Sistema Origen</th>
+        <th>Sistema Destino</th>
+        <th>Frecuencia</th>
+        <th>Sprint Objetivo</th>
+    </tr>
+    <tr>
+        <td>Maestro de Clientes</td>
+        <td>BaaN → MIOSS/SIV</td>
+        <td>SAP → Plataforma</td>
+        <td>Tiempo Real</td>
+        <td>Sprint 4</td>
+    </tr>
+    <tr>
+        <td>Lista de Precios</td>
+        <td>BaaN → SIV</td>
+        <td>SAP → Plataforma</td>
+        <td>Diario</td>
+        <td>Sprint 6</td>
+    </tr>
+    <tr>
+        <td>Órdenes de Venta</td>
+        <td>MIOSS/SIV → BaaN</td>
+        <td>Plataforma → SAP</td>
+        <td>Tiempo Real</td>
+        <td>Sprint 8</td>
+    </tr>
+    <tr>
+        <td>Inventario</td>
+        <td>BaaN → MIOSS/SIV</td>
+        <td>SAP → Plataforma</td>
+        <td>Cada 4 horas</td>
+        <td>Sprint 10</td>
+    </tr>
+    <tr>
+        <td>Facturación</td>
+        <td>MIOSS/SIV → BaaN</td>
+        <td>Plataforma → SAP</td>
+        <td>Diario</td>
+        <td>Sprint 12</td>
+    </tr>
+    <tr>
+        <td>Cuentas por Cobrar</td>
+        <td>BaaN → MIOSS/SIV</td>
+        <td>SAP → Plataforma</td>
+        <td>Diario</td>
+        <td>Sprint 14</td>
+    </tr>
+    <tr>
+        <td>Reportería Financiera</td>
+        <td>BaaN → Reportes</td>
+        <td>SAP → Plataforma</td>
+        <td>Mensual</td>
+        <td>Sprint 16</td>
+    </tr>
+</table>
+
+<h4>Enfoque de Migración</h4>
+<ol>
+    <li><strong>Análisis Detallado</strong>: Mapeo completo de data flows actuales</li>
+    <li><strong>Desarrollo Paralelo</strong>: Construcción de nuevas interfaces mientras mantienen las existentes</li>
+    <li><strong>Testing Dual</strong>: Validación con datos de BaaN y SAP simultáneamente</li>
+    <li><strong>Migración Gradual</strong>: Activación progresiva por interface</li>
+    <li><strong>Rollback Capability</strong>: Posibilidad de revertir a BaaN en caso necesario</li>
+</ol>
+
+<h4>Gestión de Dependencias</h4>
+<ul>
+    <li><strong>SAP Team Coordination</strong>: Alineación semanal con equipo SAP</li>
+    <li><strong>Data Validation</strong>: Procesos de validación entre BaaN y SAP</li>
+    <li><strong>Business Continuity</strong>: Asegurar 0 interrupciones de negocio</li>
+    <li><strong>Performance Monitoring</strong>: Supervisión continua de tiempos de respuesta</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+
+<h2>RECURSOS Y ORGANIZACIÓN</h2>
+
+<h3>Estructura del Equipo</h3>
+<table>
+    <tr>
+        <th>Rol</th>
+        <th>Responsabilidades</th>
+        <th>Cantidad</th>
+        <th>Dedicación</th>
+    </tr>
+    <tr>
+        <td><strong>Program Manager</strong></td>
+        <td>Coordinación general, gestión de riesgos, reporte ejecutivo</td>
+        <td>1</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td><strong>Technical Lead</strong></td>
+        <td>Arquitectura técnica, decisiones de diseño, code reviews</td>
+        <td>1</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td><strong>SAP Integration Specialist</strong></td>
+        <td>Diseño de interfaces, conectores SAP, data mapping</td>
+        <td>1</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td><strong>Senior Backend Developer</strong></td>
+        <td>Desarrollo .NET 8, APIs, lógica de negocio</td>
+        <td>2</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td><strong>Senior Frontend Developer</strong></td>
+        <td>Desarrollo Angular 18, UX/UI, PWA</td>
+        <td>2</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td><strong>Cloud Architect</strong></td>
+        <td>Infrastructure Azure, DevOps, seguridad</td>
+        <td>1</td>
+        <td>80%</td>
+    </tr>
+    <tr>
+        <td><strong>Database Engineer</strong></td>
+        <td>Diseño BD, migración de datos, performance tuning</td>
+        <td>1</td>
+        <td>80%</td>
+    </tr>
+    <tr>
+        <td><strong>QA Engineer</strong></td>
+        <td>Testing automatizado, UAT, quality assurance</td>
+        <td>2</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td><strong>Business Analyst</strong></td>
+        <td>Requirements, user stories, acceptance criteria</td>
+        <td>1</td>
+        <td>80%</td>
+    </tr>
+    <tr>
+        <td><strong>Change Management Specialist</strong></td>
+        <td>Capacitación, comunicación, adopción</td>
+        <td>1</td>
+        <td>60%</td>
+    </tr>
+</table>
+
+<h3>Roles de Soporte (Part-time)</h3>
+<ul>
+    <li><strong>Security Specialist</strong>: Auditorías de seguridad, penetration testing</li>
+    <li><strong>UX Designer</strong>: Diseño de interfaces, usability testing</li>
+    <li><strong>Data Migration Specialist</strong>: Migración de datos históricos</li>
+    <li><strong>Performance Engineer</strong>: Load testing, optimization</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>PRESUPUESTO Y INVERSIÓN</h2>
+
+<h3>Desglose de Costos</h3>
+<table>
+    <tr>
+        <th>Categoría</th>
+        <th>Detalle</th>
+        <th>Costo (USD)</th>
+        <th>% Total</th>
+    </tr>
+    <tr>
+        <td rowspan="4"><strong>Recursos Humanos</strong></td>
+        <td>Core Team (11 personas)</td>
+        <td>$800,000</td>
+        <td>57%</td>
+    </tr>
+    <tr>
+        <td>Specialists Part-time (4 personas)</td>
+        <td>$150,000</td>
+        <td>11%</td>
+    </tr>
+    <tr>
+        <td>External Consultants (SAP)</td>
+        <td>$100,000</td>
+        <td>7%</td>
+    </tr>
+    <tr>
+        <td>Training & Certification</td>
+        <td>$50,000</td>
+        <td>4%</td>
+    </tr>
+    <tr>
+        <td rowspan="3"><strong>Tecnología</strong></td>
+        <td>Azure Infrastructure (12 meses)</td>
+        <td>$60,000</td>
+        <td>4%</td>
+    </tr>
+    <tr>
+        <td>Software Licenses</td>
+        <td>$80,000</td>
+        <td>6%</td>
+    </tr>
+    <tr>
+        <td>Development Tools</td>
+        <td>$30,000</td>
+        <td>2%</td>
+    </tr>
+    <tr>
+        <td rowspan="2"><strong>Otros</strong></td>
+        <td>Testing & Quality Assurance</td>
+        <td>$70,000</td>
+        <td>5%</td>
+    </tr>
+    <tr>
+        <td>Contingencia (10%)</td>
+        <td>$130,000</td>
+        <td>9%</td>
+    </tr>
+    <tr style="background-color: #e8f4e8; font-weight: bold;">
+        <td colspan="2"><strong>TOTAL INVERSIÓN</strong></td>
+        <td><strong>$1,470,000</strong></td>
+        <td><strong>100%</strong></td>
+    </tr>
+</table>
+
+<h3>Distribución por Fase</h3>
+<table>
+    <tr>
+        <th>Fase</th>
+        <th>Duración</th>
+        <th>Inversión</th>
+        <th>% del Total</th>
+    </tr>
+    <tr>
+        <td>Fase 1: Fundación e Integración</td>
+        <td>16 semanas</td>
+        <td>$450,000</td>
+        <td>31%</td>
+    </tr>
+    <tr>
+        <td>Fase 2: Desarrollo y Migración</td>
+        <td>16 semanas</td>
+        <td>$600,000</td>
+        <td>41%</td>
+    </tr>
+    <tr>
+        <td>Fase 3: Despliegue y Go-Live</td>
+        <td>20 semanas</td>
+        <td>$420,000</td>
+        <td>28%</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>GESTIÓN DE RIESGOS</h2>
+
+<h3>Matriz de Riesgos Principales</h3>
+<table>
+    <tr>
+        <th>Riesgo</th>
+        <th>Probabilidad</th>
+        <th>Impacto</th>
+        <th>Score</th>
+        <th>Estrategia de Mitigación</th>
+    </tr>
+    <tr>
+        <td>Dependencias SAP no cumplidas</td>
+        <td>Media</td>
+        <td>Alto</td>
+        <td>12</td>
+        <td>Coordinación semanal, escalation path definido</td>
+    </tr>
+    <tr>
+        <td>Complejidad de migración de datos</td>
+        <td>Alta</td>
+        <td>Alto</td>
+        <td>16</td>
+        <td>Data validation tools, testing exhaustivo</td>
+    </tr>
+    <tr>
+        <td>Resistencia al cambio de usuarios</td>
+        <td>Media</td>
+        <td>Medio</td>
+        <td>9</td>
+        <td>Change management proactivo, capacitación</td>
+    </tr>
+    <tr>
+        <td>Performance issues en producción</td>
+        <td>Baja</td>
+        <td>Alto</td>
+        <td>8</td>
+        <td>Load testing, architecture review, monitoring</td>
+    </tr>
+    <tr>
+        <td>Integración SAP más compleja</td>
+        <td>Media</td>
+        <td>Medio</td>
+        <td>9</td>
+        <td>Expertise SAP, prototyping temprano</td>
+    </tr>
+    <tr>
+        <td>Timeline muy ajustado</td>
+        <td>Media</td>
+        <td>Medio</td>
+        <td>9</td>
+        <td>Sprint planning detallado, buffer en fases</td>
+    </tr>
+</table>
+
+<h3>Plan de Contingencia</h3>
+<ul>
+    <li><strong>Rollback SAP</strong>: Mantener interfaces BaaN operativas durante 3 meses post go-live</li>
+    <li><strong>Phased Rollout</strong>: Activación por módulos en caso de issues</li>
+    <li><strong>Support Escalation</strong>: Teams de soporte 24/7 durante primeras 4 semanas</li>
+    <li><strong>Data Recovery</strong>: Backups completos antes y después de migración</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>MÉTRICAS DE ÉXITO</h2>
+
+<h3>KPIs del Programa</h3>
+<table>
+    <tr>
+        <th>Categoría</th>
+        <th>Métrica</th>
+        <th>Baseline</th>
+        <th>Objetivo</th>
+        <th>Método de Medición</th>
+    </tr>
+    <tr>
+        <td rowspan="3"><strong>Performance</strong></td>
+        <td>Response Time</td>
+        <td>2-5 segundos</td>
+        <td>&lt;200ms</td>
+        <td>Application Insights</td>
+    </tr>
+    <tr>
+        <td>Uptime</td>
+        <td>95%</td>
+        <td>99.9%</td>
+        <td>Azure Monitor</td>
+    </tr>
+    <tr>
+        <td>Concurrent Users</td>
+        <td>50 max</td>
+        <td>150 max</td>
+        <td>Load testing</td>
+    </tr>
+    <tr>
+        <td rowspan="3"><strong>Negocio</strong></td>
+        <td>User Adoption</td>
+        <td>N/A</td>
+        <td>100%</td>
+        <td>Usage analytics</td>
+    </tr>
+    <tr>
+        <td>Transaction Volume</td>
+        <td>1000/día</td>
+        <td>2000/día</td>
+        <td>Database metrics</td>
+    </tr>
+    <tr>
+        <td>Error Rate</td>
+        <td>5%</td>
+        <td>&lt;1%</td>
+        <td>Error tracking</td>
+    </tr>
+    <tr>
+        <td rowspan="2"><strong>Integración</strong></td>
+        <td>SAP Interface Success</td>
+        <td>N/A</td>
+        <td>99.5%</td>
+        <td>Message monitoring</td>
+    </tr>
+    <tr>
+        <td>Data Sync Accuracy</td>
+        <td>90%</td>
+        <td>99.9%</td>
+        <td>Data validation</td>
+    </tr>
+    <tr>
+        <td rowspan="2"><strong>Satisfacción</strong></td>
+        <td>User Satisfaction</td>
+        <td>6/10</td>
+        <td>8.5/10</td>
+        <td>Surveys mensuales</td>
+    </tr>
+    <tr>
+        <td>Help Desk Tickets</td>
+        <td>50/semana</td>
+        <td>&lt;10/semana</td>
+        <td>ServiceNow</td>
+    </tr>
+</table>
+
+<h3>Beneficios Esperados</h3>
+<div class="integrated-platform">
+<h4>Beneficios Cuantitativos</h4>
+<ul>
+    <li><strong>Reducción de Costos Operativos</strong>: $600K/año</li>
+    <li><strong>Productividad Mejorada</strong>: 40% menos tiempo en transacciones</li>
+    <li><strong>Reducción de Errores</strong>: 80% menos errores manuales</li>
+    <li><strong>Ahorro en Mantenimiento</strong>: $200K/año</li>
+</ul>
+
+<h4>Beneficios Cualitativos</h4>
+<ul>
+    <li><strong>Experiencia de Usuario</strong>: Interface moderna e intuitiva</li>
+    <li><strong>Integridad de Datos</strong>: Source of truth unificado</li>
+    <li><strong>Agilidad de Negocio</strong>: Cambios más rápidos y flexibles</li>
+    <li><strong>Visibilidad</strong>: Dashboards y reportería en tiempo real</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+
+<h2>PLAN DE COMUNICACIÓN</h2>
+
+<h3>Estrategia de Comunicación</h3>
+<table>
+    <tr>
+        <th>Audiencia</th>
+        <th>Frecuencia</th>
+        <th>Canal</th>
+        <th>Contenido</th>
+        <th>Responsable</th>
+    </tr>
+    <tr>
+        <td>Sponsors Ejecutivos</td>
+        <td>Mensual</td>
+        <td>Presentación</td>
+        <td>Progress, budget, risks, decisions</td>
+        <td>Program Manager</td>
+    </tr>
+    <tr>
+        <td>IT Leadership</td>
+        <td>Quincenal</td>
+        <td>Status meeting</td>
+        <td>Technical progress, issues, dependencies</td>
+        <td>Technical Lead</td>
+    </tr>
+    <tr>
+        <td>Business Users</td>
+        <td>Mensual</td>
+        <td>Demo sessions</td>
+        <td>New features, training, feedback</td>
+        <td>Business Analyst</td>
+    </tr>
+    <tr>
+        <td>SAP Team</td>
+        <td>Semanal</td>
+        <td>Technical call</td>
+        <td>Interface status, dependencies, issues</td>
+        <td>SAP Integration Specialist</td>
+    </tr>
+    <tr>
+        <td>Organization</td>
+        <td>Trimestral</td>
+        <td>Newsletter</td>
+        <td>General updates, success stories</td>
+        <td>Change Management</td>
+    </tr>
+</table>
+
+<h3>Hitos de Comunicación</h3>
+<ul>
+    <li><strong>Kick-off</strong> (Enero 2026): Lanzamiento oficial del programa</li>
+    <li><strong>First Interface Live</strong> (Abril 2026): Primera integración SAP exitosa</li>
+    <li><strong>UAT Start</strong> (Septiembre 2026): Inicio de pruebas con usuarios</li>
+    <li><strong>Go-Live Ready</strong> (Diciembre 2026): Confirmación de readiness</li>
+    <li><strong>Go-Live Success</strong> (Enero 2027): Celebración de éxito</li>
+</ul>
+
+<div class="page-break"></div>
+
+<h2>CONCLUSIONES Y PRÓXIMOS PASOS</h2>
+
+<div class="executive-summary">
+<h3>Resumen de la Propuesta</h3>
+<p>La <strong>Plataforma Integrada Navistar</strong> representa una transformación fundamental de los sistemas de ventas de la organización, consolidando MIOSS y SIV mientras moderniza completamente la integración con SAP.</p>
+
+<h4>Beneficios Clave de la Propuesta</h4>
+<ul>
+    <li>✅ <strong>Unificación Completa</strong>: Una sola plataforma para ambos mercados</li>
+    <li>✅ <strong>Modernización SAP</strong>: Elimina dependencia de BaaN legacy</li>
+    <li>✅ <strong>Arquitectura Cloud-Native</strong>: Escalable y mantenible</li>
+    <li>✅ <strong>ROI Sólido</strong>: Recuperación de inversión en 18 meses</li>
+    <li>✅ <strong>Timeline Realista</strong>: 52 semanas con go-live coordinado</li>
+</ul>
+
+<h4>Factores Críticos de Éxito</h4>
+<ol>
+    <li><strong>Coordinación SAP</strong>: Sincronización constante con proyecto SAP</li>
+    <li><strong>Change Management</strong>: Gestión proactiva del cambio organizacional</li>
+    <li><strong>Data Quality</strong>: Validación rigurosa durante migración</li>
+    <li><strong>Team Dedication</strong>: Equipo dedicado 100% al proyecto</li>
+    <li><strong>Executive Support</strong>: Respaldo continuo de sponsors</li>
+</ol>
+</div>
+
+<h3>Acciones Inmediatas Recomendadas</h3>
+<div class="timeline-box">
+<h4>Noviembre 2025</h4>
+<ul>
+    <li>Aprobación del programa y presupuesto</li>
+    <li>Definición de governance y steering committee</li>
+    <li>Selección y confirmación del core team</li>
+</ul>
+
+<h4>Diciembre 2025</h4>
+<ul>
+    <li>Setup de ambiente de desarrollo</li>
+    <li>Kick-off con equipo SAP para coordinación</li>
+    <li>Análisis detallado de interfaces BaaN actuales</li>
+    <li>Procurement de herramientas y licencias</li>
+</ul>
+
+<h4>Enero 2026</h4>
+<ul>
+    <li><strong>Sprint 1</strong>: Inicio oficial del desarrollo</li>
+    <li>Setup de repositorios y pipelines</li>
+    <li>Primera iteración de diseño de arquitectura</li>
+</ul>
+</div>
+
+<h3>Recomendación Final</h3>
+<div class="integrated-platform">
+<p>La <strong>Plataforma Integrada Navistar</strong> es la solución óptima para modernizar y unificar los sistemas de ventas mientras se ejecuta la migración BaaN → SAP. La coordinación de ambos proyectos en un solo programa garantiza:</p>
+
+<ul>
+    <li>🎯 <strong>Sinergia</strong>: Aprovechamiento de recursos y expertise compartidos</li>
+    <li>🎯 <strong>Consistencia</strong>: Arquitectura unificada y coherente</li>
+    <li>🎯 <strong>Eficiencia</strong>: Evita duplicación de esfuerzos</li>
+    <li>🎯 <strong>Risk Mitigation</strong>: Gestión integral de dependencias</li>
+    <li>🎯 <strong>Business Value</strong>: Máximo impacto en el menor tiempo</li>
+</ul>
+
+<p class="budget">La inversión de $1.47M se justifica completamente con los beneficios operacionales de $800K/año y la transformación digital de la organización.</p>
+</div>
+
+</body>
+</html>

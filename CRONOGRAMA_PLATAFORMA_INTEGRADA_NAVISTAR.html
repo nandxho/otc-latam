@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma y Datos - Plataforma Integrada Navistar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            font-size: 11pt;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 20pt;
+            text-align: center;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 16pt;
+            margin-top: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        th {
+            background-color: #1a5490;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #1a5490;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .phase-1 {
+            background-color: #e8f4e8;
+        }
+        .phase-2 {
+            background-color: #fff3cd;
+        }
+        .phase-3 {
+            background-color: #f8d7da;
+        }
+        .total-row {
+            background-color: #d4edda;
+            font-weight: bold;
+        }
+        .center {
+            text-align: center;
+        }
+        .number {
+            text-align: right;
+        }
+        .critical {
+            background-color: #ffebee;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Plataforma Integrada Navistar 2026-2027</h1>
+<h2 style="text-align: center;">Cronograma y Datos del Programa</h2>
+
+<h2>1. CRONOGRAMA MAESTRO - 26 SPRINTS</h2>
+<table>
+    <tr>
+        <th>Sprint</th>
+        <th>Fechas</th>
+        <th>Fase</th>
+        <th>Objetivos Principales</th>
+        <th>Entregables</th>
+        <th>Interfaces SAP</th>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">1</td>
+        <td>06/01 - 17/01/2026</td>
+        <td>Fundación</td>
+        <td>Setup inicial, análisis BaaN</td>
+        <td>Ambiente dev, análisis interfaces</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">2</td>
+        <td>20/01 - 31/01/2026</td>
+        <td>Fundación</td>
+        <td>Arquitectura, repos, pipelines</td>
+        <td>Diseño SAP, CI/CD setup</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">3</td>
+        <td>03/02 - 14/02/2026</td>
+        <td>Fundación</td>
+        <td>Migración código base</td>
+        <td>MIOSS+SIV en .NET 8</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">4</td>
+        <td>17/02 - 28/02/2026</td>
+        <td>Fundación</td>
+        <td>Unificación datos, prototipo SAP</td>
+        <td>EF Core, primer interface</td>
+        <td class="critical">Maestro Clientes</td>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">5</td>
+        <td>03/03 - 14/03/2026</td>
+        <td>Fundación</td>
+        <td>APIs ventas, Service Bus</td>
+        <td>APIs REST, Message Bus</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">6</td>
+        <td>17/03 - 28/03/2026</td>
+        <td>Fundación</td>
+        <td>Mapeo datos, frontend básico</td>
+        <td>Data mapping, Angular módulo</td>
+        <td class="critical">Lista Precios</td>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">7</td>
+        <td>31/03 - 11/04/2026</td>
+        <td>Fundación</td>
+        <td>3 interfaces SAP completas</td>
+        <td>Integración end-to-end</td>
+        <td>Testing interfaces</td>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">8</td>
+        <td>14/04 - 25/04/2026</td>
+        <td>Fundación</td>
+        <td>Testing, validación usuarios</td>
+        <td>UAT piloto, documentación</td>
+        <td class="critical">Órdenes Venta</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">9</td>
+        <td>28/04 - 09/05/2026</td>
+        <td>Desarrollo</td>
+        <td>Precios, clientes, workflows</td>
+        <td>Módulos completos</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">10</td>
+        <td>12/05 - 23/05/2026</td>
+        <td>Desarrollo</td>
+        <td>Inventario SAP, aprobaciones</td>
+        <td>Interface inventario</td>
+        <td class="critical">Inventario</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">11</td>
+        <td>26/05 - 06/06/2026</td>
+        <td>Desarrollo</td>
+        <td>Reportería, dashboard</td>
+        <td>Analytics, KPIs</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">12</td>
+        <td>09/06 - 20/06/2026</td>
+        <td>Desarrollo</td>
+        <td>Interfaces financieras, PO</td>
+        <td>SAP MM/SD integration</td>
+        <td class="critical">Facturación</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">13</td>
+        <td>23/06 - 04/07/2026</td>
+        <td>Desarrollo</td>
+        <td>Logística, notificaciones</td>
+        <td>Módulo traslados</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">14</td>
+        <td>07/07 - 18/07/2026</td>
+        <td>Desarrollo</td>
+        <td>SAP MM/SD completo</td>
+        <td>Integración completa</td>
+        <td class="critical">Cuentas x Cobrar</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">15</td>
+        <td>21/07 - 01/08/2026</td>
+        <td>Desarrollo</td>
+        <td>Notificaciones, PWA</td>
+        <td>Real-time notifications</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">16</td>
+        <td>04/08 - 15/08/2026</td>
+        <td>Desarrollo</td>
+        <td>SSO, seguridad, pre-prod</td>
+        <td>Azure AD, ambiente pre-prod</td>
+        <td class="critical">Reportería Financiera</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">17</td>
+        <td>18/08 - 29/08/2026</td>
+        <td>Go-Live</td>
+        <td>UAT, corrección issues</td>
+        <td>User acceptance testing</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">18</td>
+        <td>01/09 - 12/09/2026</td>
+        <td>Go-Live</td>
+        <td>Migración datos maestros</td>
+        <td>Master data migration</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">19</td>
+        <td>15/09 - 26/09/2026</td>
+        <td>Go-Live</td>
+        <td>Load testing, security</td>
+        <td>Performance validation</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">20</td>
+        <td>29/09 - 10/10/2026</td>
+        <td>Go-Live</td>
+        <td>Documentación, contingencia</td>
+        <td>Rollback plan, docs</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">21</td>
+        <td>13/10 - 24/10/2026</td>
+        <td>Go-Live</td>
+        <td>Migración datos históricos</td>
+        <td>Historical data migration</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">22</td>
+        <td>27/10 - 07/11/2026</td>
+        <td>Go-Live</td>
+        <td>Validación integridad datos</td>
+        <td>Data integrity validation</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">23</td>
+        <td>10/11 - 21/11/2026</td>
+        <td>Go-Live</td>
+        <td>Capacitación masiva</td>
+        <td>User training, rehearsal</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">24</td>
+        <td>24/11 - 05/12/2026</td>
+        <td>Go-Live</td>
+        <td>Rehearsal go-live</td>
+        <td>Go-live simulation</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">25</td>
+        <td>08/12 - 19/12/2026</td>
+        <td>Go-Live</td>
+        <td>Ajustes finales, soporte</td>
+        <td>Final adjustments</td>
+        <td>-</td>
+    </tr>
+    <tr class="phase-3 critical">
+        <td class="center">26</td>
+        <td>22/12 - 02/01/2027</td>
+        <td>Go-Live</td>
+        <td>GO-LIVE PRODUCCIÓN</td>
+        <td>Production deployment</td>
+        <td>All interfaces live</td>
+    </tr>
+</table>
+
+<h2>2. PRESUPUESTO DETALLADO POR SPRINT</h2>
+<table>
+    <tr>
+        <th>Sprint</th>
+        <th>Fase</th>
+        <th>Recursos Humanos</th>
+        <th>Infraestructura</th>
+        <th>Licencias</th>
+        <th>Otros</th>
+        <th>Total Sprint</th>
+    </tr>
+    <tr class="phase-1">
+        <td class="center">1-8</td>
+        <td>Fundación</td>
+        <td class="number">$320,000</td>
+        <td class="number">$20,000</td>
+        <td class="number">$40,000</td>
+        <td class="number">$20,000</td>
+        <td class="number">$400,000</td>
+    </tr>
+    <tr class="phase-2">
+        <td class="center">9-16</td>
+        <td>Desarrollo</td>
+        <td class="number">$400,000</td>
+        <td class="number">$25,000</td>
+        <td class="number">$30,000</td>
+        <td class="number">$25,000</td>
+        <td class="number">$480,000</td>
+    </tr>
+    <tr class="phase-3">
+        <td class="center">17-26</td>
+        <td>Go-Live</td>
+        <td class="number">$450,000</td>
+        <td class="number">$15,000</td>
+        <td class="number">$10,000</td>
+        <td class="number">$45,000</td>
+        <td class="number">$520,000</td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="2">TOTAL</td>
+        <td class="number">$1,170,000</td>
+        <td class="number">$60,000</td>
+        <td class="number">$80,000</td>
+        <td class="number">$90,000</td>
+        <td class="number">$1,400,000</td>
+    </tr>
+</table>
+
+<h2>3. ASIGNACIÓN DE RECURSOS POR SPRINT</h2>
+<table>
+    <tr>
+        <th>Rol</th>
+        <th>Costo/Sprint</th>
+        <th>Sprints 1-8</th>
+        <th>Sprints 9-16</th>
+        <th>Sprints 17-26</th>
+        <th>Total</th>
+    </tr>
+    <tr>
+        <td>Program Manager</td>
+        <td class="number">$8,000</td>
+        <td class="center">8</td>
+        <td class="center">8</td>
+        <td class="center">10</td>
+        <td class="number">$208,000</td>
+    </tr>
+    <tr>
+        <td>Technical Lead</td>
+        <td class="number">$9,000</td>
+        <td class="center">8</td>
+        <td class="center">8</td>
+        <td class="center">10</td>
+        <td class="number">$234,000</td>
+    </tr>
+    <tr>
+        <td>SAP Integration Specialist</td>
+        <td class="number">$8,500</td>
+        <td class="center">8</td>
+        <td class="center">8</td>
+        <td class="center">8</td>
+        <td class="number">$204,000</td>
+    </tr>
+    <tr>
+        <td>Senior Backend Developer (2)</td>
+        <td class="number">$14,000</td>
+        <td class="center">8</td>
+        <td class="center">8</td>
+        <td class="center">8</td>
+        <td class="number">$336,000</td>
+    </tr>
+    <tr>
+        <td>Senior Frontend Developer (2)</td>
+        <td class="number">$14,000</td>
+        <td class="center">8</td>
+        <td class="center">8</td>
+        <td class="center">6</td>
+        <td class="number">$308,000</td>
+    </tr>
+    <tr>
+        <td>Cloud Architect</td>
+        <td class="number">$6,400</td>
+        <td class="center">8</td>
+        <td class="center">6</td>
+        <td class="center">4</td>
+        <td class="number">$115,200</td>
+    </tr>
+    <tr>
+        <td>Database Engineer</td>
+        <td class="number">$6,400</td>
+        <td class="center">6</td>
+        <td class="center">6</td>
+        <td class="center">8</td>
+        <td class="number">$128,000</td>
+    </tr>
+    <tr>
+        <td>QA Engineer (2)</td>
+        <td class="number">$12,000</td>
+        <td class="center">4</td>
+        <td class="center">8</td>
+        <td class="center">10</td>
+        <td class="number">$264,000</td>
+    </tr>
+    <tr>
+        <td>Business Analyst</td>
+        <td class="number">$6,400</td>
+        <td class="center">8</td>
+        <td class="center">6</td>
+        <td class="center">8</td>
+        <td class="number">$140,800</td>
+    </tr>
+    <tr>
+        <td>Change Management</td>
+        <td class="number">$4,800</td>
+        <td class="center">2</td>
+        <td class="center">4</td>
+        <td class="center">10</td>
+        <td class="number">$76,800</td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="4">TOTAL RECURSOS HUMANOS</td>
+        <td class="number">$2,014,800</td>
+    </tr>
+</table>
+
+<h2>4. INTERFACES SAP - CRONOGRAMA DE DESARROLLO</h2>
+<table>
+    <tr>
+        <th>Interface</th>
+        <th>Tipo</th>
+        <th>Sprint Desarrollo</th>
+        <th>Sprint Testing</th>
+        <th>Sprint Go-Live</th>
+        <th>Complejidad</th>
+        <th>Esfuerzo (días)</th>
+    </tr>
+    <tr>
+        <td>Maestro de Clientes</td>
+        <td>Real-time</td>
+        <td class="center">4</td>
+        <td class="center">5</td>
+        <td class="center">26</td>
+        <td>Media</td>
+        <td class="center">15</td>
+    </tr>
+    <tr>
+        <td>Lista de Precios</td>
+        <td>Batch Daily</td>
+        <td class="center">6</td>
+        <td class="center">7</td>
+        <td class="center">26</td>
+        <td>Alta</td>
+        <td class="center">20</td>
+    </tr>
+    <tr>
+        <td>Órdenes de Venta</td>
+        <td>Real-time</td>
+        <td class="center">8</td>
+        <td class="center">9</td>
+        <td class="center">26</td>
+        <td>Alta</td>
+        <td class="center">25</td>
+    </tr>
+    <tr>
+        <td>Inventario</td>
+        <td>Every 4h</td>
+        <td class="center">10</td>
+        <td class="center">11</td>
+        <td class="center">26</td>
+        <td>Media</td>
+        <td class="center">18</td>
+    </tr>
+    <tr>
+        <td>Facturación</td>
+        <td>Batch Daily</td>
+        <td class="center">12</td>
+        <td class="center">13</td>
+        <td class="center">26</td>
+        <td>Alta</td>
+        <td class="center">22</td>
+    </tr>
+    <tr>
+        <td>Cuentas por Cobrar</td>
+        <td>Batch Daily</td>
+        <td class="center">14</td>
+        <td class="center">15</td>
+        <td class="center">26</td>
+        <td>Media</td>
+        <td class="center">16</td>
+    </tr>
+    <tr>
+        <td>Reportería Financiera</td>
+        <td>Batch Monthly</td>
+        <td class="center">16</td>
+        <td class="center">17</td>
+        <td class="center">26</td>
+        <td>Baja</td>
+        <td class="center">12</td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="6">TOTAL ESFUERZO INTERFACES</td>
+        <td class="center">128 días</td>
+    </tr>
+</table>
+
+<h2>5. MÉTRICAS DE SEGUIMIENTO POR SPRINT</h2>
+<table>
+    <tr>
+        <th>Sprint</th>
+        <th>Story Points Planeados</th>
+        <th>Story Points Completados</th>
+        <th>Velocity</th>
+        <th>Bugs Abiertos</th>
+        <th>Test Coverage %</th>
+        <th>Deployment Success</th>
+    </tr>
+    <tr>
+        <td class="center">1</td>
+        <td class="center">40</td>
+        <td class="center">35</td>
+        <td class="center">87%</td>
+        <td class="center">2</td>
+        <td class="center">60%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr>
+        <td class="center">2</td>
+        <td class="center">45</td>
+        <td class="center">42</td>
+        <td class="center">93%</td>
+        <td class="center">1</td>
+        <td class="center">65%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr>
+        <td class="center">3</td>
+        <td class="center">50</td>
+        <td class="center">48</td>
+        <td class="center">96%</td>
+        <td class="center">3</td>
+        <td class="center">70%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr>
+        <td class="center">4</td>
+        <td class="center">55</td>
+        <td class="center">52</td>
+        <td class="center">95%</td>
+        <td class="center">4</td>
+        <td class="center">75%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr>
+        <td class="center">5</td>
+        <td class="center">60</td>
+        <td class="center">58</td>
+        <td class="center">97%</td>
+        <td class="center">2</td>
+        <td class="center">78%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr>
+        <td class="center">6</td>
+        <td class="center">65</td>
+        <td class="center">61</td>
+        <td class="center">94%</td>
+        <td class="center">5</td>
+        <td class="center">80%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr>
+        <td class="center">7</td>
+        <td class="center">70</td>
+        <td class="center">67</td>
+        <td class="center">96%</td>
+        <td class="center">3</td>
+        <td class="center">82%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr>
+        <td class="center">8</td>
+        <td class="center">65</td>
+        <td class="center">63</td>
+        <td class="center">97%</td>
+        <td class="center">1</td>
+        <td class="center">85%</td>
+        <td class="center">✓</td>
+    </tr>
+    <tr class="total-row">
+        <td>Meta Global</td>
+        <td class="center">1560</td>
+        <td class="center">1482</td>
+        <td class="center">95%</td>
+        <td class="center">&lt;5</td>
+        <td class="center">90%</td>
+        <td class="center">100%</td>
+    </tr>
+</table>
+
+<h2>6. ANÁLISIS DE RIESGOS POR FASE</h2>
+<table>
+    <tr>
+        <th>Fase</th>
+        <th>Riesgo Principal</th>
+        <th>Probabilidad</th>
+        <th>Impacto</th>
+        <th>Score</th>
+        <th>Mitigación</th>
+        <th>Costo Mitigación</th>
+    </tr>
+    <tr class="phase-1">
+        <td>Fundación</td>
+        <td>Análisis BaaN incompleto</td>
+        <td>Media</td>
+        <td>Alto</td>
+        <td class="center">12</td>
+        <td>Experto BaaN dedicado</td>
+        <td class="number">$40,000</td>
+    </tr>
+    <tr class="phase-1">
+        <td>Fundación</td>
+        <td>Complejidad migración código</td>
+        <td>Alta</td>
+        <td>Medio</td>
+        <td class="center">12</td>
+        <td>Refactoring incremental</td>
+        <td class="number">$30,000</td>
+    </tr>
+    <tr class="phase-2">
+        <td>Desarrollo</td>
+        <td>Interfaces SAP más complejas</td>
+        <td>Alta</td>
+        <td>Alto</td>
+        <td class="center">16</td>
+        <td>Especialista SAP senior</td>
+        <td class="number">$60,000</td>
+    </tr>
+    <tr class="phase-2">
+        <td>Desarrollo</td>
+        <td>Performance issues</td>
+        <td>Media</td>
+        <td>Alto</td>
+        <td class="center">12</td>
+        <td>Load testing temprano</td>
+        <td class="number">$25,000</td>
+    </tr>
+    <tr class="phase-3">
+        <td>Go-Live</td>
+        <td>Migración datos falla</td>
+        <td>Baja</td>
+        <td>Crítico</td>
+        <td class="center">12</td>
+        <td>Múltiples ensayos</td>
+        <td class="number">$50,000</td>
+    </tr>
+    <tr class="phase-3">
+        <td>Go-Live</td>
+        <td>Resistencia usuario</td>
+        <td>Media</td>
+        <td>Medio</td>
+        <td class="center">9</td>
+        <td>Change management</td>
+        <td class="number">$35,000</td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="6">TOTAL CONTINGENCIA</td>
+        <td class="number">$240,000</td>
+    </tr>
+</table>
+
+<h2>7. ROI Y FLUJO DE CAJA PROYECTADO</h2>
+<table>
+    <tr>
+        <th>Concepto</th>
+        <th>2026 Q1</th>
+        <th>2026 Q2</th>
+        <th>2026 Q3</th>
+        <th>2026 Q4</th>
+        <th>2027 Q1</th>
+        <th>2027 Total</th>
+    </tr>
+    <tr>
+        <td><strong>INVERSIÓN</strong></td>
+        <td class="number">($400,000)</td>
+        <td class="number">($480,000)</td>
+        <td class="number">($300,000)</td>
+        <td class="number">($220,000)</td>
+        <td class="number">($50,000)</td>
+        <td class="number">($1,450,000)</td>
+    </tr>
+    <tr>
+        <td><strong>AHORROS</strong></td>
+        <td class="number">$0</td>
+        <td class="number">$50,000</td>
+        <td class="number">$100,000</td>
+        <td class="number">$150,000</td>
+        <td class="number">$200,000</td>
+        <td class="number">$800,000</td>
+    </tr>
+    <tr>
+        <td>Reducción mantenimiento</td>
+        <td class="number">$0</td>
+        <td class="number">$30,000</td>
+        <td class="number">$60,000</td>
+        <td class="number">$90,000</td>
+        <td class="number">$120,000</td>
+        <td class="number">$480,000</td>
+    </tr>
+    <tr>
+        <td>Productividad mejorada</td>
+        <td class="number">$0</td>
+        <td class="number">$15,000</td>
+        <td class="number">$30,000</td>
+        <td class="number">$45,000</td>
+        <td class="number">$60,000</td>
+        <td class="number">$240,000</td>
+    </tr>
+    <tr>
+        <td>Reducción errores</td>
+        <td class="number">$0</td>
+        <td class="number">$5,000</td>
+        <td class="number">$10,000</td>
+        <td class="number">$15,000</td>
+        <td class="number">$20,000</td>
+        <td class="number">$80,000</td>
+    </tr>
+    <tr class="total-row">
+        <td><strong>FLUJO NETO</strong></td>
+        <td class="number">($400,000)</td>
+        <td class="number">($430,000)</td>
+        <td class="number">($200,000)</td>
+        <td class="number">($70,000)</td>
+        <td class="number">$150,000</td>
+        <td class="number">($650,000)</td>
+    </tr>
+    <tr class="total-row">
+        <td><strong>FLUJO ACUMULADO</strong></td>
+        <td class="number">($400,000)</td>
+        <td class="number">($830,000)</td>
+        <td class="number">($1,030,000)</td>
+        <td class="number">($1,100,000)</td>
+        <td class="number">($950,000)</td>
+        <td class="number">-</td>
+    </tr>
+</table>
+
+<h2>8. DEPENDENCIAS CRÍTICAS</h2>
+<table>
+    <tr>
+        <th>Dependencia</th>
+        <th>Proveedor</th>
+        <th>Sprint Requerido</th>
+        <th>Estado</th>
+        <th>Riesgo</th>
+        <th>Plan B</th>
+    </tr>
+    <tr>
+        <td>Conectividad SAP Production</td>
+        <td>IT Infrastructure</td>
+        <td class="center">4</td>
+        <td>Pending</td>
+        <td>Alto</td>
+        <td>VPN temporal</td>
+    </tr>
+    <tr>
+        <td>Credenciales SAP Integration</td>
+        <td>SAP Team</td>
+        <td class="center">4</td>
+        <td>In Progress</td>
+        <td>Medio</td>
+        <td>Service account</td>
+    </tr>
+    <tr>
+        <td>Mapping datos BaaN→SAP</td>
+        <td>Business Users</td>
+        <td class="center">6</td>
+        <td>Not Started</td>
+        <td>Alto</td>
+        <td>Best guess + validation</td>
+    </tr>
+    <tr>
+        <td>Azure Environment Production</td>
+        <td>Cloud Team</td>
+        <td class="center">16</td>
+        <td>Pending</td>
+        <td>Medio</td>
+        <td>Dedicated subscription</td>
+    </tr>
+    <tr>
+        <td>User Training Schedule</td>
+        <td>HR Department</td>
+        <td class="center">20</td>
+        <td>Not Started</td>
+        <td>Medio</td>
+        <td>Weekend intensive training</td>
+    </tr>
+    <tr>
+        <td>Go-Live Window Approval</td>
+        <td>Business Sponsors</td>
+        <td class="center">24</td>
+        <td>Pending</td>
+        <td>Bajo</td>
+        <td>Phased rollout</td>
+    </tr>
+</table>
+
+<h2>9. ENTREGABLES POR SPRINT</h2>
+<table>
+    <tr>
+        <th>Sprint</th>
+        <th>Entregable</th>
+        <th>Criterio Aceptación</th>
+        <th>Responsable</th>
+        <th>Dependencias</th>
+    </tr>
+    <tr>
+        <td class="center">1</td>
+        <td>Ambiente desarrollo configurado</td>
+        <td>Todos los developers pueden commitear</td>
+        <td>Cloud Architect</td>
+        <td>Azure subscription</td>
+    </tr>
+    <tr>
+        <td class="center">2</td>
+        <td>Pipelines CI/CD funcionando</td>
+        <td>Deployment automático a dev</td>
+        <td>Cloud Architect</td>
+        <td>Azure DevOps</td>
+    </tr>
+    <tr>
+        <td class="center">3</td>
+        <td>Código base unificado</td>
+        <td>MIOSS+SIV compilan en .NET 8</td>
+        <td>Technical Lead</td>
+        <td>Análisis código existente</td>
+    </tr>
+    <tr>
+        <td class="center">4</td>
+        <td>Primera interface SAP</td>
+        <td>Maestro clientes sincroniza</td>
+        <td>SAP Specialist</td>
+        <td>Conectividad SAP</td>
+    </tr>
+    <tr>
+        <td class="center">5</td>
+        <td>APIs ventas básicas</td>
+        <td>CRUD operaciones funcionan</td>
+        <td>Backend Team</td>
+        <td>Database schema</td>
+    </tr>
+    <tr>
+        <td class="center">6</td>
+        <td>Frontend Angular básico</td>
+        <td>Login + módulo ventas</td>
+        <td>Frontend Team</td>
+        <td>APIs ventas</td>
+    </tr>
+    <tr>
+        <td class="center">7</td>
+        <td>3 interfaces SAP completas</td>
+        <td>End-to-end testing passed</td>
+        <td>SAP Specialist</td>
+        <td>Business validation</td>
+    </tr>
+    <tr>
+        <td class="center">8</td>
+        <td>UAT piloto completado</td>
+        <td>10 usuarios aprueban funcionalidad</td>
+        <td>Business Analyst</td>
+        <td>User availability</td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="5">... [Continúa para los 26 sprints]</td>
+    </tr>
+</table>
+
+<h2>10. MÉTRICAS DE CALIDAD</h2>
+<table>
+    <tr>
+        <th>Métrica</th>
+        <th>Target</th>
+        <th>Fase 1</th>
+        <th>Fase 2</th>
+        <th>Fase 3</th>
+        <th>Método Medición</th>
+    </tr>
+    <tr>
+        <td>Code Coverage</td>
+        <td>>90%</td>
+        <td>75%</td>
+        <td>85%</td>
+        <td>90%</td>
+        <td>SonarQube</td>
+    </tr>
+    <tr>
+        <td>Bugs per Sprint</td>
+        <td>&lt;3</td>
+        <td>5</td>
+        <td>3</td>
+        <td>2</td>
+        <td>Azure DevOps</td>
+    </tr>
+    <tr>
+        <td>API Response Time</td>
+        <td>&lt;200ms</td>
+        <td>500ms</td>
+        <td>300ms</td>
+        <td>150ms</td>
+        <td>Application Insights</td>
+    </tr>
+    <tr>
+        <td>Interface Success Rate</td>
+        <td>>99.5%</td>
+        <td>95%</td>
+        <td>98%</td>
+        <td>99.8%</td>
+        <td>SAP Monitoring</td>
+    </tr>
+    <tr>
+        <td>User Satisfaction</td>
+        <td>>8.5/10</td>
+        <td>N/A</td>
+        <td>7.0</td>
+        <td>8.5</td>
+        <td>Monthly surveys</td>
+    </tr>
+    <tr>
+        <td>Deployment Success</td>
+        <td>100%</td>
+        <td>95%</td>
+        <td>98%</td>
+        <td>100%</td>
+        <td>Pipeline metrics</td>
+    </tr>
+</table>
+
+</body>
+</html>

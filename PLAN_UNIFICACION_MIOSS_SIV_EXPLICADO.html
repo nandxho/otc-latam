@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Unificación MIOSS-SIV - Guía Conceptual Detallada</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 24pt;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+            page-break-after: avoid;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 18pt;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #3d85c6;
+            font-size: 14pt;
+            margin-top: 12pt;
+            margin-bottom: 8pt;
+            page-break-after: avoid;
+        }
+        h4 {
+            color: #4a90e2;
+            font-size: 12pt;
+            margin-top: 10pt;
+            margin-bottom: 6pt;
+            font-weight: bold;
+        }
+        p {
+            margin: 8pt 0;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 8pt 0;
+            padding-left: 20pt;
+        }
+        li {
+            margin: 4pt 0;
+        }
+        .concept-box {
+            background-color: #f8fbff;
+            border-left: 4pt solid #2e74b5;
+            padding: 12pt;
+            margin: 12pt 0;
+        }
+        .definition {
+            background-color: #e8f4e8;
+            padding: 10pt;
+            border-radius: 5pt;
+            margin: 10pt 0;
+            font-style: italic;
+        }
+        .example {
+            background-color: #fff9e6;
+            padding: 10pt;
+            border-left: 3pt solid #ffa500;
+            margin: 10pt 0;
+        }
+        .technical-note {
+            background-color: #f0f0f0;
+            padding: 8pt;
+            border-radius: 3pt;
+            font-size: 10pt;
+            margin: 8pt 0;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        strong {
+            color: #1a5490;
+        }
+        .warning {
+            background-color: #ffe8e8;
+            padding: 10pt;
+            border-left: 3pt solid #ff6b6b;
+            margin: 10pt 0;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2pt 4pt;
+            border-radius: 2pt;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Plan de Unificación MIOSS-SIV: Guía Conceptual Detallada</h1>
+
+<div class="definition">
+<p><strong>Propósito de este Documento:</strong> Este documento explica en detalle cada concepto técnico, metodología y actividad mencionada en el Plan de Unificación, proporcionando el contexto necesario para comprender completamente la estrategia propuesta.</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCEPTOS FUNDAMENTALES</h2>
+
+<div class="concept-box">
+<h3>¿Qué significa "Unificación de Sistemas"?</h3>
+<div class="definition">
+<p><strong>Definición:</strong> La unificación de sistemas es el proceso de consolidar múltiples aplicaciones separadas en una sola plataforma coherente, eliminando redundancias y mejorando la eficiencia operativa.</p>
+</div>
+
+<p>En el contexto de MIOSS y SIV, esto significa:</p>
+<ul>
+    <li><strong>Una sola interfaz de usuario</strong> para acceder a funcionalidades de ambos sistemas</li>
+    <li><strong>Base de datos consolidada</strong> eliminando duplicación de información</li>
+    <li><strong>Lógica de negocio unificada</strong> con reglas consistentes</li>
+    <li><strong>Mantenimiento simplificado</strong> al tener un solo sistema que mantener</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo Práctico:</strong> Actualmente, un usuario que maneja tanto ventas de exportación (MIOSS) como ventas nacionales (SIV) debe abrir dos aplicaciones diferentes, cada una con su propia interfaz, base de datos y flujos de trabajo. Después de la unificación, podrá hacer todo desde una sola aplicación.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>FASE 1: CONCEPTOS TÉCNICOS EXPLICADOS</h2>
+
+<h3>Migración de VB.NET a C#</h3>
+
+<div class="concept-box">
+<h4>¿Qué es VB.NET y por qué migrar a C#?</h4>
+
+<div class="definition">
+<p><strong>VB.NET (Visual Basic .NET):</strong> Lenguaje de programación de Microsoft derivado del Visual Basic clásico, diseñado para ser más accesible pero con limitaciones en programación moderna.</p>
+</div>
+
+<p><strong>Problemas del VB.NET actual:</strong></p>
+<ul>
+    <li><strong>Sintaxis verbosa:</strong> Requiere más líneas de código para la misma funcionalidad</li>
+    <li><strong>Menor adopción:</strong> Menos desarrolladores disponibles en el mercado</li>
+    <li><strong>Recursos limitados:</strong> Menos librerías y herramientas disponibles</li>
+    <li><strong>Performance:</strong> Compilación y ejecución menos optimizada</li>
+</ul>
+
+<p><strong>Ventajas de migrar a C#:</strong></p>
+<ul>
+    <li><strong>Sintaxis moderna:</strong> Más concisa y expresiva</li>
+    <li><strong>Mejor performance:</strong> Optimizaciones del compilador más avanzadas</li>
+    <li><strong>Ecosistema rico:</strong> Más librerías y herramientas disponibles</li>
+    <li><strong>Talento disponible:</strong> Mayor pool de desarrolladores C#</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo de Migración:</strong></p>
+<p><strong>VB.NET:</strong></p>
+<code>
+Public Function CalcularDescuento(ByVal precio As Decimal, ByVal porcentaje As Integer) As Decimal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Return precio * (porcentaje / 100)<br>
+End Function
+</code>
+
+<p><strong>C#:</strong></p>
+<code>
+public decimal CalcularDescuento(decimal precio, int porcentaje) => precio * (porcentaje / 100m);
+</code>
+</div>
+</div>
+
+<h3>Actualización de Angular</h3>
+
+<div class="concept-box">
+<h4>¿Por qué actualizar de Angular 6/8 a Angular 18?</h4>
+
+<div class="definition">
+<p><strong>Angular:</strong> Framework de desarrollo web de Google para crear aplicaciones de una sola página (SPA) dinámicas y responsivas.</p>
+</div>
+
+<p><strong>Problemas de las versiones antiguas (6/8):</strong></p>
+<ul>
+    <li><strong>Seguridad:</strong> Vulnerabilidades conocidas sin soporte</li>
+    <li><strong>Performance:</strong> Algoritmos de change detection menos eficientes</li>
+    <li><strong>Bundle size:</strong> Aplicaciones más pesadas</li>
+    <li><strong>Developer experience:</strong> Herramientas de desarrollo limitadas</li>
+</ul>
+
+<p><strong>Beneficios de Angular 18:</strong></p>
+<ul>
+    <li><strong>Standalone Components:</strong> Componentes independientes sin módulos</li>
+    <li><strong>Signals:</strong> Sistema de reactividad más eficiente</li>
+    <li><strong>Server-Side Rendering (SSR):</strong> Mejor SEO y performance inicial</li>
+    <li><strong>Control Flow:</strong> Sintaxis más limpia para @if, @for, @switch</li>
+    <li><strong>Bundle optimization:</strong> Aplicaciones hasta 50% más pequeñas</li>
+</ul>
+
+<div class="technical-note">
+<p><strong>Nota Técnica:</strong> La migración incluye también actualización de dependencias como PrimeNG, Angular Material, y herramientas de build (Webpack → Vite) para mejor performance.</p>
+</div>
+</div>
+
+<h3>Consolidación de Entity Framework</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Entity Framework y el Repository Pattern?</h4>
+
+<div class="definition">
+<p><strong>Entity Framework (EF):</strong> ORM (Object-Relational Mapping) de Microsoft que permite trabajar con bases de datos usando objetos .NET en lugar de SQL directo.</p>
+</div>
+
+<p><strong>Problema actual:</strong></p>
+<ul>
+    <li><strong>Múltiples contextos:</strong> Cada aplicación tiene su propio DbContext</li>
+    <li><strong>Código duplicado:</strong> Lógica de acceso a datos repetida</li>
+    <li><strong>Inconsistencias:</strong> Diferentes patrones en cada proyecto</li>
+    <li><strong>Testing difícil:</strong> Sin abstracción para mocking</li>
+</ul>
+
+<div class="definition">
+<p><strong>Repository Pattern:</strong> Patrón de diseño que encapsula la lógica necesaria para acceder a fuentes de datos, proporcionando una interfaz más orientada a objetos.</p>
+</div>
+
+<p><strong>Beneficios del patrón unificado:</strong></p>
+<ul>
+    <li><strong>Centralización:</strong> Una sola forma de acceder a datos</li>
+    <li><strong>Testing:</strong> Fácil creación de mocks para pruebas</li>
+    <li><strong>Consistency:</strong> Misma interfaz en todo el sistema</li>
+    <li><strong>Mantenimiento:</strong> Cambios centralizados</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo de Repository:</strong></p>
+<code>
+public interface IGenericRepository&lt;T&gt; where T : class<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Task&lt;T&gt; GetByIdAsync(int id);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Task&lt;IEnumerable&lt;T&gt;&gt; GetAllAsync();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Task AddAsync(T entity);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Task UpdateAsync(T entity);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Task DeleteAsync(int id);<br>
+}
+</code>
+</div>
+
+<div class="definition">
+<p><strong>Unit of Work Pattern:</strong> Patrón que mantiene una lista de objetos afectados por una transacción de negocio y coordina escribir los cambios y resolver problemas de concurrencia.</p>
+</div>
+</div>
+
+<h3>Estandarización de Logging</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Serilog y por qué es importante el logging unificado?</h4>
+
+<div class="definition">
+<p><strong>Logging:</strong> Proceso de registrar eventos que ocurren durante la ejecución de un programa para debugging, auditoría y monitoreo.</p>
+</div>
+
+<p><strong>Problemas del logging actual:</strong></p>
+<ul>
+    <li><strong>Formatos inconsistentes:</strong> Cada aplicación registra de forma diferente</li>
+    <li><strong>Múltiples destinos:</strong> Logs dispersos en diferentes ubicaciones</li>
+    <li><strong>Nivel de detalle variable:</strong> Sin estándares de qué registrar</li>
+    <li><strong>Difícil correlación:</strong> No se pueden seguir transacciones entre sistemas</li>
+</ul>
+
+<div class="definition">
+<p><strong>Serilog:</strong> Librería de logging estructurado para .NET que permite escribir logs en formato JSON con metadatos ricos.</p>
+</div>
+
+<p><strong>Beneficios de Serilog:</strong></p>
+<ul>
+    <li><strong>Structured logging:</strong> Logs en formato JSON searcheable</li>
+    <li><strong>Multiple sinks:</strong> Escribir a archivos, base de datos, Elasticsearch</li>
+    <li><strong>Enrichers:</strong> Agregar contexto automático (usuario, IP, timestamp)</li>
+    <li><strong>Filtering:</strong> Control granular de qué logs escribir</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo de log estructurado:</strong></p>
+<code>
+_logger.Information("Usuario {UserId} creó pedido {PedidoId} por {Monto:C}", <br>
+&nbsp;&nbsp;&nbsp;&nbsp;userId, pedidoId, monto);
+</code>
+<p>Produce:</p>
+<code>
+{<br>
+&nbsp;&nbsp;"@timestamp": "2024-01-15T10:30:00Z",<br>
+&nbsp;&nbsp;"@level": "Information",<br>
+&nbsp;&nbsp;"@message": "Usuario 123 creó pedido PED-001 por $50,000.00",<br>
+&nbsp;&nbsp;"UserId": 123,<br>
+&nbsp;&nbsp;"PedidoId": "PED-001",<br>
+&nbsp;&nbsp;"Monto": 50000.00<br>
+}
+</code>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>FASE 2: ARQUITECTURA DE MICROSERVICIOS</h2>
+
+<h3>Domain-Driven Design (DDD) y Bounded Contexts</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Domain-Driven Design?</h4>
+
+<div class="definition">
+<p><strong>Domain-Driven Design (DDD):</strong> Metodología de diseño de software que se enfoca en modelar el software basado en el dominio del negocio y su lógica.</p>
+</div>
+
+<p><strong>Conceptos clave de DDD:</strong></p>
+<ul>
+    <li><strong>Domain:</strong> La esfera de conocimiento y actividad en torno a la cual la lógica de la aplicación se centra (ej: Ventas, Inventario, Facturación)</li>
+    <li><strong>Ubiquitous Language:</strong> Vocabulario común compartido entre developers y expertos del negocio</li>
+    <li><strong>Bounded Context:</strong> Límite explícito dentro del cual un modelo de dominio particular es definido y aplicable</li>
+    <li><strong>Aggregate:</strong> Cluster de objetos de dominio que pueden ser tratados como una sola unidad</li>
+</ul>
+
+<div class="definition">
+<p><strong>Bounded Context:</strong> Un límite conceptual dentro del cual un modelo particular del dominio es definido y aplicable. Es donde ciertos términos, definiciones y reglas aplican de manera consistente.</p>
+</div>
+
+<p><strong>Bounded Contexts para MIOSS-SIV:</strong></p>
+<ul>
+    <li><strong>Sales Context:</strong> Todo lo relacionado con proceso de ventas, cotizaciones, pedidos</li>
+    <li><strong>Pricing Context:</strong> Gestión de precios, descuentos, matrices de precios</li>
+    <li><strong>Customer Context:</strong> Información de clientes, distribuidores, contactos</li>
+    <li><strong>Order Context:</strong> Procesamiento de órdenes, estado, tracking</li>
+    <li><strong>Authorization Context:</strong> Aprobaciones, workflows, autorizaciones</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo de Bounded Context:</strong> En el Sales Context, "Customer" significa el comprador final. En el Pricing Context, "Customer" podría significar el distribuidor que recibe precios especiales. Cada contexto tiene su propia definición válida.</p>
+</div>
+</div>
+
+<h3>Microservicios Architecture</h3>
+
+<div class="concept-box">
+<h4>¿Qué son los Microservicios?</h4>
+
+<div class="definition">
+<p><strong>Microservicios:</strong> Estilo arquitectónico que estructura una aplicación como una colección de servicios pequeños, independientes y débilmente acoplados.</p>
+</div>
+
+<p><strong>Características de los microservicios:</strong></p>
+<ul>
+    <li><strong>Single Responsibility:</strong> Cada servicio hace una cosa bien</li>
+    <li><strong>Independently Deployable:</strong> Se pueden desplegar sin afectar otros servicios</li>
+    <li><strong>Decentralized:</strong> Cada servicio maneja sus propios datos</li>
+    <li><strong>Technology Agnostic:</strong> Diferentes servicios pueden usar diferentes tecnologías</li>
+    <li><strong>Fault Tolerant:</strong> Falla de un servicio no tumba todo el sistema</li>
+</ul>
+
+<p><strong>Ventajas para MIOSS-SIV:</strong></p>
+<ul>
+    <li><strong>Escalabilidad independiente:</strong> Escalar solo los servicios que necesitan más capacidad</li>
+    <li><strong>Teams autónomos:</strong> Diferentes equipos pueden trabajar en diferentes servicios</li>
+    <li><strong>Technology diversity:</strong> Usar la mejor tecnología para cada problema</li>
+    <li><strong>Resilience:</strong> Fallos aislados no afectan todo el sistema</li>
+</ul>
+
+<div class="warning">
+<p><strong>Desafíos de los Microservicios:</strong> Mayor complejidad de red, necesidad de distributed tracing, eventual consistency, testing más complejo.</p>
+</div>
+</div>
+
+<h3>API Gateway</h3>
+
+<div class="concept-box">
+<h4>¿Qué es un API Gateway?</h4>
+
+<div class="definition">
+<p><strong>API Gateway:</strong> Punto de entrada único para todas las requests de clientes hacia los microservicios backend. Actúa como reverse proxy que enruta requests a los servicios apropiados.</p>
+</div>
+
+<p><strong>Funciones del API Gateway:</strong></p>
+<ul>
+    <li><strong>Request Routing:</strong> Dirige las peticiones al microservicio correcto</li>
+    <li><strong>Authentication:</strong> Verifica identidad antes de permitir acceso</li>
+    <li><strong>Rate Limiting:</strong> Controla el número de requests por cliente</li>
+    <li><strong>Request/Response Transformation:</strong> Modifica datos según necesidad del cliente</li>
+    <li><strong>Monitoring:</strong> Recolecta métricas y logs de todas las requests</li>
+    <li><strong>Caching:</strong> Almacena responses frecuentes para mejor performance</li>
+</ul>
+
+<div class="example">
+<p><strong>Flujo con API Gateway:</strong></p>
+<p>Cliente → API Gateway → [Authentication] → [Rate Limiting] → Microservicio → Response → [Transform] → Cliente</p>
+</div>
+
+<p><strong>Tecnologías para implementar:</strong></p>
+<ul>
+    <li><strong>Azure API Management:</strong> Solución cloud nativa de Microsoft</li>
+    <li><strong>Kong:</strong> Open source con features empresariales</li>
+    <li><strong>Ocelot:</strong> API Gateway ligero para .NET</li>
+</ul>
+</div>
+
+<h3>CQRS Pattern</h3>
+
+<div class="concept-box">
+<h4>¿Qué es CQRS?</h4>
+
+<div class="definition">
+<p><strong>CQRS (Command Query Responsibility Segregation):</strong> Patrón que separa las operaciones de lectura (Queries) de las operaciones de escritura (Commands) en diferentes modelos.</p>
+</div>
+
+<p><strong>Conceptos básicos:</strong></p>
+<ul>
+    <li><strong>Commands:</strong> Operaciones que cambian estado (Create, Update, Delete)</li>
+    <li><strong>Queries:</strong> Operaciones que solo leen datos (Select, Get, List)</li>
+    <li><strong>Write Model:</strong> Optimizado para operaciones de escritura</li>
+    <li><strong>Read Model:</strong> Optimizado para operaciones de lectura</li>
+</ul>
+
+<p><strong>Beneficios para sistemas complejos:</strong></p>
+<ul>
+    <li><strong>Performance:</strong> Optimización independiente de lectura/escritura</li>
+    <li><strong>Scalability:</strong> Escalar reads y writes por separado</li>
+    <li><strong>Security:</strong> Diferentes niveles de acceso para reads/writes</li>
+    <li><strong>Flexibility:</strong> Diferentes tecnologías para diferentes necesidades</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo en MIOSS-SIV:</strong></p>
+<ul>
+    <li><strong>Command:</strong> CrearPedidoCommand → Valida reglas de negocio → Guarda en BD transaccional</li>
+    <li><strong>Query:</strong> ObtenerPedidosQuery → Lee de BD optimizada para reportes → Retorna vista materializada</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Implementación:</strong> Usando MediatR library para .NET, se pueden implementar handlers separados para Commands y Queries, manteniendo separación clara de responsabilidades.</p>
+</div>
+</div>
+
+<h3>Event-Driven Architecture</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Event-Driven Architecture?</h4>
+
+<div class="definition">
+<p><strong>Event-Driven Architecture (EDA):</strong> Patrón arquitectónico donde los servicios se comunican a través de eventos asincrónicos en lugar de calls síncronos directos.</p>
+</div>
+
+<p><strong>Componentes clave:</strong></p>
+<ul>
+    <li><strong>Event:</strong> Notificación de que algo importante ocurrió</li>
+    <li><strong>Event Producer:</strong> Servicio que publica eventos</li>
+    <li><strong>Event Consumer:</strong> Servicio que reacciona a eventos</li>
+    <li><strong>Message Bus:</strong> Infraestructura que transporta eventos</li>
+</ul>
+
+<div class="definition">
+<p><strong>Message Bus:</strong> Sistema de comunicación que permite a diferentes componentes enviar y recibir mensajes de manera asincrónica.</p>
+</div>
+
+<p><strong>Opciones de Message Bus:</strong></p>
+<ul>
+    <li><strong>RabbitMQ:</strong> Message broker open source confiable</li>
+    <li><strong>Azure Service Bus:</strong> Solución cloud de Microsoft</li>
+    <li><strong>Apache Kafka:</strong> Platform de streaming para high-throughput</li>
+</ul>
+
+<div class="example">
+<p><strong>Flujo de eventos en MIOSS-SIV:</strong></p>
+<ol>
+    <li><strong>Sales Service</strong> crea un pedido → Publica "PedidoCreado" event</li>
+    <li><strong>Inventory Service</strong> escucha evento → Reserva inventario</li>
+    <li><strong>Pricing Service</strong> escucha evento → Calcula precio final</li>
+    <li><strong>Notification Service</strong> escucha evento → Envía email de confirmación</li>
+</ol>
+</div>
+
+<div class="definition">
+<p><strong>Event Sourcing:</strong> Patrón donde el estado se determina por secuencia de eventos. En lugar de guardar el estado actual, se guardan todos los eventos que llevaron a ese estado.</p>
+</div>
+
+<p><strong>Beneficios del Event Sourcing:</strong></p>
+<ul>
+    <li><strong>Auditoría completa:</strong> Historial completo de todos los cambios</li>
+    <li><strong>Debugging:</strong> Replay de eventos para reproducir bugs</li>
+    <li><strong>Temporal queries:</strong> Ver estado del sistema en cualquier momento</li>
+    <li><strong>Business intelligence:</strong> Análisis rico de patrones de negocio</li>
+</ul>
+</div>
+
+<h3>Saga Pattern</h3>
+
+<div class="concept-box">
+<h4>¿Qué es el Saga Pattern?</h4>
+
+<div class="definition">
+<p><strong>Saga Pattern:</strong> Patrón para manejar transacciones distribuidas dividiendo la transacción en una serie de transacciones locales coordinadas.</p>
+</div>
+
+<p><strong>Problema que resuelve:</strong> En microservicios no se pueden usar transacciones ACID tradicionales porque cada servicio tiene su propia base de datos.</p>
+
+<p><strong>Tipos de Saga:</strong></p>
+<ul>
+    <li><strong>Choreography:</strong> Cada servicio conoce qué eventos escuchar y producir</li>
+    <li><strong>Orchestration:</strong> Un orchestrator central coordina la saga completa</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo de Saga - Procesar Pedido:</strong></p>
+<ol>
+    <li><strong>Sales Service:</strong> Crea pedido → Publica "PedidoCreado"</li>
+    <li><strong>Payment Service:</strong> Procesa pago → Publica "PagoAprobado" o "PagoRechazado"</li>
+    <li><strong>Inventory Service:</strong> Reserva inventario → Publica "InventarioReservado" o "InventarioInsuficiente"</li>
+    <li><strong>Shipping Service:</strong> Crea envío → Publica "EnvioCreado"</li>
+</ol>
+
+<p><strong>Si falla en paso 3:</strong></p>
+<ol>
+    <li>Inventory Service publica "InventarioInsuficiente"</li>
+    <li>Payment Service escucha y ejecuta compensación → Reversa pago</li>
+    <li>Sales Service escucha y ejecuta compensación → Cancela pedido</li>
+</ol>
+</div>
+
+<div class="technical-note">
+<p><strong>Implementación:</strong> Se puede usar MassTransit library para .NET que proporciona state machines para implementar sagas de manera robusta.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>FASE 3: FRONTEND MODERNO</h2>
+
+<h3>Micro-frontends Architecture</h3>
+
+<div class="concept-box">
+<h4>¿Qué son los Micro-frontends?</h4>
+
+<div class="definition">
+<p><strong>Micro-frontends:</strong> Extensión del concepto de microservicios al frontend, donde la interfaz de usuario se descompone en características individuales trabajadas por equipos independientes.</p>
+</div>
+
+<p><strong>Características principales:</strong></p>
+<ul>
+    <li><strong>Technology Agnostic:</strong> Diferentes micro-frontends pueden usar diferentes frameworks</li>
+    <li><strong>Team Autonomy:</strong> Equipos independientes propietarios de features completas</li>
+    <li><strong>Independent Deployment:</strong> Despliegue de features sin afectar otras</li>
+    <li><strong>Isolated Development:</strong> Desarrollo y testing independiente</li>
+</ul>
+
+<p><strong>Enfoques de implementación:</strong></p>
+<ul>
+    <li><strong>Build-time integration:</strong> Composición durante el build process</li>
+    <li><strong>Run-time integration:</strong> Composición en el browser</li>
+    <li><strong>Server-side integration:</strong> Composición en el servidor</li>
+</ul>
+
+<div class="definition">
+<p><strong>Module Federation:</strong> Tecnología de Webpack 5 que permite a aplicaciones JavaScript compartir código dinámicamente en runtime.</p>
+</div>
+
+<div class="example">
+<p><strong>Estructura Micro-frontend para MIOSS-SIV:</strong></p>
+<ul>
+    <li><strong>Shell App:</strong> Contenedor principal con navegación y routing</li>
+    <li><strong>Sales MFE:</strong> Funcionalidades de ventas y pedidos</li>
+    <li><strong>Pricing MFE:</strong> Gestión de precios y descuentos</li>
+    <li><strong>Reports MFE:</strong> Dashboards y reportería</li>
+    <li><strong>Admin MFE:</strong> Configuración y administración</li>
+</ul>
+</div>
+</div>
+
+<h3>Shell Application</h3>
+
+<div class="concept-box">
+<h4>¿Qué es una Shell Application?</h4>
+
+<div class="definition">
+<p><strong>Shell Application:</strong> Aplicación contenedora que proporciona la estructura base, navegación común y orquesta la carga de micro-frontends.</p>
+</div>
+
+<p><strong>Responsabilidades del Shell:</strong></p>
+<ul>
+    <li><strong>Routing:</strong> Determina qué micro-frontend mostrar según la URL</li>
+    <li><strong>Navigation:</strong> Menú principal y breadcrumbs</li>
+    <li><strong>Authentication:</strong> Login y manejo de sesión</li>
+    <li><strong>Layout:</strong> Header, footer, sidebar comunes</li>
+    <li><strong>Error Boundaries:</strong> Manejo de errores de micro-frontends</li>
+    <li><strong>Loading States:</strong> Indicadores mientras cargan micro-frontends</li>
+</ul>
+
+<div class="technical-note">
+<p><strong>Implementación con Angular:</strong> Se usa Angular Router con lazy loading para cargar micro-frontends bajo demanda. Cada micro-frontend es un proyecto Angular independiente que se puede desarrollar y desplegar por separado.</p>
+</div>
+
+<div class="example">
+<p><strong>Estructura del Shell:</strong></p>
+<code>
+app-shell/<br>
+├── src/<br>
+│&nbsp;&nbsp;&nbsp;├── app/<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── core/ (auth, layout, guards)<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── shared/ (common components)<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── shell-routing.module.ts<br>
+│&nbsp;&nbsp;&nbsp;└── assets/<br>
+└── projects/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── sales-mfe/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── pricing-mfe/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;└── reports-mfe/
+</code>
+</div>
+</div>
+
+<h3>Design System</h3>
+
+<div class="concept-box">
+<h4>¿Qué es un Design System?</h4>
+
+<div class="definition">
+<p><strong>Design System:</strong> Colección de componentes reutilizables, guiados por estándares claros, que se pueden ensamblar para construir aplicaciones.</p>
+</div>
+
+<p><strong>Componentes del Design System:</strong></p>
+<ul>
+    <li><strong>Style Guide:</strong> Colores, tipografía, espaciado, iconografía</li>
+    <li><strong>Component Library:</strong> Buttons, forms, cards, modals reutilizables</li>
+    <li><strong>Pattern Library:</strong> Layouts, navigation patterns, data visualization</li>
+    <li><strong>Design Tokens:</strong> Variables que almacenan valores de diseño</li>
+    <li><strong>Documentation:</strong> Guías de uso y ejemplos</li>
+</ul>
+
+<div class="definition">
+<p><strong>Design Tokens:</strong> Variables que almacenan valores de diseño como colores, espaciado, tipografía. Permiten consistency y facilitan cambios globales.</p>
+</div>
+
+<div class="example">
+<p><strong>Ejemplo de Design Tokens:</strong></p>
+<code>
+// colors.scss<br>
+$primary-color: #1a5490;<br>
+$secondary-color: #2e74b5;<br>
+$success-color: #28a745;<br>
+$warning-color: #ffc107;<br>
+$error-color: #dc3545;<br>
+<br>
+// spacing.scss<br>
+$spacing-xs: 4px;<br>
+$spacing-sm: 8px;<br>
+$spacing-md: 16px;<br>
+$spacing-lg: 24px;<br>
+$spacing-xl: 32px;
+</code>
+</div>
+
+<p><strong>Beneficios para MIOSS-SIV:</strong></p>
+<ul>
+    <li><strong>Consistency:</strong> Misma apariencia en todos los micro-frontends</li>
+    <li><strong>Efficiency:</strong> Desarrollo más rápido reutilizando componentes</li>
+    <li><strong>Maintainability:</strong> Cambios centralizados</li>
+    <li><strong>Quality:</strong> Componentes tested y accessible</li>
+</ul>
+</div>
+
+<h3>Progressive Web App (PWA)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es una PWA?</h4>
+
+<div class="definition">
+<p><strong>Progressive Web App (PWA):</strong> Aplicación web que usa capacidades modernas del browser para proporcionar experiencia similar a app nativa.</p>
+</div>
+
+<p><strong>Características de una PWA:</strong></p>
+<ul>
+    <li><strong>Responsive:</strong> Funciona en cualquier dispositivo</li>
+    <li><strong>Offline-first:</strong> Funciona sin conexión internet</li>
+    <li><strong>App-like:</strong> Navegación y interacciones como app nativa</li>
+    <li><strong>Installable:</strong> Se puede instalar desde el browser</li>
+    <li><strong>Secure:</strong> Servida sobre HTTPS</li>
+    <li><strong>Push notifications:</strong> Notificaciones como app nativa</li>
+</ul>
+
+<p><strong>Tecnologías clave:</strong></p>
+<ul>
+    <li><strong>Service Worker:</strong> Script que corre en background y permite caching</li>
+    <li><strong>Web App Manifest:</strong> JSON que define metadata de la app</li>
+    <li><strong>Cache API:</strong> Permite almacenar resources para uso offline</li>
+</ul>
+
+<div class="example">
+<p><strong>Beneficios para usuarios de MIOSS-SIV:</strong></p>
+<ul>
+    <li>Trabajar offline durante viajes o conexión limitada</li>
+    <li>Instalar en desktop/mobile sin ir a app store</li>
+    <li>Recibir notificaciones de pedidos pendientes</li>
+    <li>Carga instantánea después de primera visita</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Implementación:</strong> Angular tiene soporte nativo para PWA con @angular/pwa schematic que configura Service Worker, manifest, y optimizaciones automáticamente.</p>
+</div>
+</div>
+
+<h3>State Management con NgRx</h3>
+
+<div class="concept-box">
+<h4>¿Qué es NgRx?</h4>
+
+<div class="definition">
+<p><strong>NgRx:</strong> Librería de state management para Angular basada en Redux pattern que usa RxJS para manejo de side effects.</p>
+</div>
+
+<p><strong>Conceptos clave:</strong></p>
+<ul>
+    <li><strong>Store:</strong> Single source of truth para state de la aplicación</li>
+    <li><strong>Actions:</strong> Describen eventos únicos que ocurren en la aplicación</li>
+    <li><strong>Reducers:</strong> Funciones puras que definen cómo cambia el state</li>
+    <li><strong>Selectors:</strong> Funciones puras para obtener slices del state</li>
+    <li><strong>Effects:</strong> Manejan side effects como llamadas a API</li>
+</ul>
+
+<div class="example">
+<p><strong>Flujo NgRx:</strong></p>
+<ol>
+    <li>Usuario hace click en "Crear Pedido"</li>
+    <li>Component dispatch CreatePedidoAction</li>
+    <li>Effect escucha la action, llama API</li>
+    <li>API response trigger CreatePedidoSuccessAction</li>
+    <li>Reducer actualiza state con nuevo pedido</li>
+    <li>Selector notifica components del cambio</li>
+    <li>UI se actualiza automáticamente</li>
+</ol>
+</div>
+
+<p><strong>Beneficios para aplicación compleja:</strong></p>
+<ul>
+    <li><strong>Predictable state:</strong> Cambios solo a través de actions</li>
+    <li><strong>Debugging:</strong> Time-travel debugging con Redux DevTools</li>
+    <li><strong>Testing:</strong> Fácil testing de reducers y effects</li>
+    <li><strong>Performance:</strong> OnPush change detection con immutable state</li>
+</ul>
+
+<div class="technical-note">
+<p><strong>Cuándo usar NgRx:</strong> Para aplicaciones complejas con estado compartido entre múltiples componentes, interacciones usuario complejas, y muchas sources de datos.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>FASE 4: INTEGRACIÓN Y OPTIMIZACIÓN</h2>
+
+<h3>Single Sign-On (SSO)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Single Sign-On?</h4>
+
+<div class="definition">
+<p><strong>Single Sign-On (SSO):</strong> Método de autenticación que permite al usuario acceder a múltiples aplicaciones con una sola set de credenciales.</p>
+</div>
+
+<p><strong>Beneficios del SSO:</strong></p>
+<ul>
+    <li><strong>User Experience:</strong> Un solo login para todas las aplicaciones</li>
+    <li><strong>Security:</strong> Menos passwords que recordar = menos riesgo</li>
+    <li><strong>IT Management:</strong> Administración centralizada de usuarios</li>
+    <li><strong>Compliance:</strong> Mejor control de acceso y auditoría</li>
+</ul>
+
+<div class="definition">
+<p><strong>OAuth 2.0:</strong> Framework de autorización que permite a aplicaciones third-party obtener acceso limitado a un servicio web.</p>
+</div>
+
+<div class="definition">
+<p><strong>OpenID Connect (OIDC):</strong> Capa de identidad sobre OAuth 2.0 que permite verificar identidad del usuario y obtener información básica de perfil.</p>
+</div>
+
+<p><strong>Flujo OAuth 2.0/OIDC:</strong></p>
+<ol>
+    <li>Usuario accede a aplicación MIOSS-SIV</li>
+    <li>App redirige a Identity Provider (ej: Azure AD)</li>
+    <li>Usuario se autentica con Identity Provider</li>
+    <li>Identity Provider redirige back con authorization code</li>
+    <li>App intercambia code por access token</li>
+    <li>App usa token para acceder a APIs</li>
+</ol>
+
+<div class="example">
+<p><strong>Integración con Active Directory:</strong></p>
+<p>Los usuarios pueden usar sus credenciales corporativas existentes para acceder a la plataforma unificada MIOSS-SIV sin necesidad de crear nuevas cuentas.</p>
+</div>
+
+<div class="definition">
+<p><strong>Multi-Factor Authentication (MFA):</strong> Método de autenticación que requiere múltiples formas de verificación para acceder a una cuenta.</p>
+</div>
+</div>
+
+<h3>Infrastructure as Code (IaC)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Infrastructure as Code?</h4>
+
+<div class="definition">
+<p><strong>Infrastructure as Code (IaC):</strong> Práctica de provisionar y manejar infrastructure usando código en lugar de procesos manuales.</p>
+</div>
+
+<p><strong>Beneficios del IaC:</strong></p>
+<ul>
+    <li><strong>Repeatability:</strong> Misma infrastructure en diferentes ambientes</li>
+    <li><strong>Version Control:</strong> Infrastructure changes tracked como código</li>
+    <li><strong>Documentation:</strong> Infrastructure autodocumentada</li>
+    <li><strong>Disaster Recovery:</strong> Rápida recreación de infrastructure</li>
+</ul>
+
+<div class="definition">
+<p><strong>Terraform:</strong> Herramienta de IaC que permite definir infrastructure usando declarative configuration language.</p>
+</div>
+
+<div class="example">
+<p><strong>Ejemplo Terraform para Azure:</strong></p>
+<code>
+resource "azurerm_app_service_plan" "mioss_siv" {<br>
+&nbsp;&nbsp;name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= "mioss-siv-plan"<br>
+&nbsp;&nbsp;location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= azurerm_resource_group.main.location<br>
+&nbsp;&nbsp;resource_group_name = azurerm_resource_group.main.name<br>
+&nbsp;&nbsp;sku {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tier = "Standard"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;size = "S2"<br>
+&nbsp;&nbsp;}<br>
+}
+</code>
+</div>
+
+<p><strong>Componentes IaC para MIOSS-SIV:</strong></p>
+<ul>
+    <li><strong>App Services:</strong> Hosting de las aplicaciones web</li>
+    <li><strong>SQL Databases:</strong> Bases de datos y backups</li>
+    <li><strong>API Management:</strong> API Gateway configuration</li>
+    <li><strong>Key Vault:</strong> Manejo seguro de secrets</li>
+    <li><strong>Application Insights:</strong> Monitoring y logging</li>
+</ul>
+</div>
+
+<h3>Blue-Green Deployment</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Blue-Green Deployment?</h4>
+
+<div class="definition">
+<p><strong>Blue-Green Deployment:</strong> Técnica de deployment que reduce downtime y riesgo ejecutando dos ambientes de producción idénticos llamados Blue y Green.</p>
+</div>
+
+<p><strong>Cómo funciona:</strong></p>
+<ol>
+    <li><strong>Blue Environment:</strong> Ambiente activo serving production traffic</li>
+    <li><strong>Green Environment:</strong> Ambiente idle preparado para nueva versión</li>
+    <li><strong>Deploy:</strong> Nueva versión se despliega en Green environment</li>
+    <li><strong>Testing:</strong> Green environment se prueba completamente</li>
+    <li><strong>Switch:</strong> Traffic se redirige de Blue a Green</li>
+    <li><strong>Rollback:</strong> Si hay problemas, switch back a Blue inmediatamente</li>
+</ol>
+
+<p><strong>Ventajas:</strong></p>
+<ul>
+    <li><strong>Zero Downtime:</strong> No interrupción de servicio</li>
+    <li><strong>Quick Rollback:</strong> Reversión instantánea si hay problemas</li>
+    <li><strong>Testing:</strong> Pruebas completas en ambiente idéntico a producción</li>
+    <li><strong>Reduced Risk:</strong> Deployment más seguro</li>
+</ul>
+
+<div class="technical-note">
+<p><strong>Implementación:</strong> Se puede implementar usando Azure Traffic Manager o Application Gateway para controlar el routing entre ambientes Blue y Green.</p>
+</div>
+
+<div class="example">
+<p><strong>Para MIOSS-SIV:</strong> Durante deployment de nueva versión, usuarios siguen trabajando en versión actual (Blue) mientras nueva versión se despliega y prueba en Green. Una vez validado, traffic se redirige a Green sin interrupción.</p>
+</div>
+</div>
+
+<h3>Monitoring y Observability</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Observability?</h4>
+
+<div class="definition">
+<p><strong>Observability:</strong> Medida de qué tan bien se puede entender el estado interno de un sistema basado en outputs externos (logs, métricas, traces).</p>
+</div>
+
+<p><strong>Tres pilares de Observability:</strong></p>
+<ul>
+    <li><strong>Logs:</strong> Records de eventos que ocurrieron</li>
+    <li><strong>Metrics:</strong> Mediciones numéricas over time</li>
+    <li><strong>Traces:</strong> Seguimiento de requests através de sistemas distribuidos</li>
+</ul>
+
+<div class="definition">
+<p><strong>Distributed Tracing:</strong> Método de tracking de requests mientras viajan através de múltiples servicios en sistema distribuido.</p>
+</div>
+
+<p><strong>Herramientas para .NET:</strong></p>
+<ul>
+    <li><strong>Application Insights:</strong> APM de Microsoft para Azure</li>
+    <li><strong>Elasticsearch + Kibana:</strong> Para search y visualización de logs</li>
+    <li><strong>Prometheus + Grafana:</strong> Para metrics y dashboards</li>
+    <li><strong>Jaeger:</strong> Para distributed tracing</li>
+</ul>
+
+<div class="example">
+<p><strong>Escenario de Troubleshooting:</strong></p>
+<p>Usuario reporta que "crear pedido es lento". Con observability:</p>
+<ol>
+    <li><strong>Metrics:</strong> Muestran que response time aumentó en Sales API</li>
+    <li><strong>Traces:</strong> Muestran que demora está en call a Pricing Service</li>
+    <li><strong>Logs:</strong> Muestran que database query en Pricing está tardando</li>
+    <li><strong>Resolution:</strong> Se identifica missing index en pricing table</li>
+</ol>
+</div>
+
+<div class="technical-note">
+<p><strong>Implementación:</strong> Se configura OpenTelemetry en todas las aplicaciones .NET para recolectar métricas y traces automáticamente, enviando datos a Application Insights y Jaeger.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCEPTOS DE CALIDAD Y TESTING</h2>
+
+<h3>Test-Driven Development (TDD)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es TDD?</h4>
+
+<div class="definition">
+<p><strong>Test-Driven Development (TDD):</strong> Disciplina de desarrollo donde se escriben las pruebas antes que el código de producción.</p>
+</div>
+
+<p><strong>Ciclo Red-Green-Refactor:</strong></p>
+<ol>
+    <li><strong>Red:</strong> Escribir test que falle</li>
+    <li><strong>Green:</strong> Escribir mínimo código para pasar test</li>
+    <li><strong>Refactor:</strong> Mejorar código manteniendo tests verdes</li>
+</ol>
+
+<p><strong>Beneficios:</strong></p>
+<ul>
+    <li><strong>Design:</strong> Mejor diseño porque se piensa en usage primero</li>
+    <li><strong>Coverage:</strong> 100% test coverage por definición</li>
+    <li><strong>Documentation:</strong> Tests sirven como especificación viva</li>
+    <li><strong>Refactoring:</strong> Confianza para cambiar código</li>
+</ul>
+</div>
+
+<h3>Testing Pyramid</h3>
+
+<div class="concept-box">
+<h4>¿Qué es la Testing Pyramid?</h4>
+
+<div class="definition">
+<p><strong>Testing Pyramid:</strong> Estrategia de testing que sugiere tener muchos tests unitarios, algunos de integración, y pocos end-to-end.</p>
+</div>
+
+<p><strong>Niveles de la pirámide:</strong></p>
+<ul>
+    <li><strong>Unit Tests (Base):</strong> Prueban funciones/métodos individuales</li>
+    <li><strong>Integration Tests (Medio):</strong> Prueban interacción entre componentes</li>
+    <li><strong>E2E Tests (Top):</strong> Prueban flujos completos de usuario</li>
+</ul>
+
+<p><strong>Razón de la forma piramidal:</strong></p>
+<ul>
+    <li><strong>Unit tests:</strong> Rápidos, baratos, fáciles de mantener</li>
+    <li><strong>Integration tests:</strong> Más lentos, más complejos</li>
+    <li><strong>E2E tests:</strong> Lentos, costosos, frágiles</li>
+</ul>
+
+<div class="example">
+<p><strong>Para MIOSS-SIV:</strong></p>
+<ul>
+    <li><strong>70% Unit Tests:</strong> Business logic, services, utilities</li>
+    <li><strong>20% Integration Tests:</strong> API endpoints, database interactions</li>
+    <li><strong>10% E2E Tests:</strong> Critical user journeys (login, crear pedido, generar reporte)</li>
+</ul>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>GLOSARIO DE TÉRMINOS TÉCNICOS</h2>
+
+<div class="technical-note">
+<p><strong>API (Application Programming Interface):</strong> Conjunto de definiciones y protocolos para construir e integrar software de aplicaciones.</p>
+
+<p><strong>Bounded Context:</strong> Límite explícito dentro del cual un modelo de dominio particular es definido y aplicable.</p>
+
+<p><strong>CI/CD (Continuous Integration/Continuous Deployment):</strong> Práctica de automatizar la integración y deployment de código.</p>
+
+<p><strong>Domain-Driven Design (DDD):</strong> Enfoque de desarrollo de software que se centra en el modelado del dominio del negocio.</p>
+
+<p><strong>Entity Framework (EF):</strong> Object-Relational Mapping (ORM) framework para .NET.</p>
+
+<p><strong>Lazy Loading:</strong> Patrón de diseño que pospone la inicialización de un objeto hasta el momento en que se necesita.</p>
+
+<p><strong>Microservices:</strong> Estilo arquitectónico que estructura una aplicación como servicios pequeños e independientes.</p>
+
+<p><strong>OAuth 2.0:</strong> Framework de autorización que permite acceso limitado a cuentas de usuario.</p>
+
+<p><strong>Progressive Web App (PWA):</strong> Aplicación web que usa tecnologías modernas para proporcionar experiencia app-like.</p>
+
+<p><strong>Repository Pattern:</strong> Patrón que encapsula la lógica necesaria para acceder a fuentes de datos.</p>
+
+<p><strong>Service Worker:</strong> Script que el browser ejecuta en background, separado de la web page.</p>
+
+<p><strong>Single Sign-On (SSO):</strong> Método de autenticación que permite acceder a múltiples aplicaciones con un solo login.</p>
+
+<p><strong>Unit of Work:</strong> Patrón que mantiene lista de objetos afectados por transacción de negocio.</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCLUSIÓN</h2>
+
+<p>Este documento proporciona el contexto técnico necesario para comprender completamente el Plan de Unificación MIOSS-SIV. Cada concepto explicado aquí es fundamental para el éxito del proyecto y debe ser entendido por todos los stakeholders técnicos.</p>
+
+<p>La complejidad del proyecto requiere un entendimiento profundo de estos conceptos, ya que la implementación exitosa depende de la correcta aplicación de estas metodologías y tecnologías modernas.</p>
+
+<div class="warning">
+<p><strong>Recomendación:</strong> Se recomienda que el equipo técnico reciba capacitación formal en estos conceptos antes del inicio de cada fase para asegurar implementación correcta y consistente.</p>
+</div>
+
+</body>
+</html>

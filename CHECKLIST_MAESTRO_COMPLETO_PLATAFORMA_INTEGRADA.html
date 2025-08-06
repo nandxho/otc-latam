@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Maestro Completo - Plataforma Integrada Navistar</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 1.5cm;
+        }
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #333;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 20pt;
+            margin-bottom: 10pt;
+            border-bottom: 3pt solid #1a5490;
+            padding-bottom: 10pt;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 14pt;
+            margin-top: 20pt;
+            margin-bottom: 10pt;
+            background-color: #f0f4f8;
+            padding: 8pt;
+            border-left: 4pt solid #2e74b5;
+        }
+        h3 {
+            color: #3d85c6;
+            font-size: 12pt;
+            margin-top: 15pt;
+            margin-bottom: 8pt;
+        }
+        .summary-box {
+            background-color: #f8f9fa;
+            padding: 15pt;
+            border-radius: 8pt;
+            margin-bottom: 20pt;
+            display: flex;
+            justify-content: space-around;
+        }
+        .metric-card {
+            text-align: center;
+            padding: 10pt;
+        }
+        .metric-value {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #2e74b5;
+        }
+        .metric-label {
+            font-size: 9pt;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10pt 0;
+            font-size: 9pt;
+        }
+        th {
+            background-color: #2e74b5;
+            color: white;
+            padding: 6pt;
+            text-align: left;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 4pt;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .status-no-iniciado {
+            background-color: #e0e0e0;
+            color: #666;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .status-en-progreso {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .status-completado {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .status-bloqueado {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .priority-high {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .priority-medium {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .priority-low {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .phase-header {
+            background-color: #e8f0fe;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .category-header {
+            background-color: #e8f8e8;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        .sprint-header {
+            background-color: #f0f4f8;
+            font-weight: bold;
+        }
+        .admin-section {
+            background-color: #fff9e6;
+        }
+        .completed-activity {
+            background-color: #e8f5e8;
+        }
+        .in-progress-activity {
+            background-color: #fff8e1;
+        }
+        .dependency-critical {
+            background-color: #ffe6e6;
+        }
+        .check-box {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #666;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .check-box-completed {
+            width: 15px;
+            height: 15px;
+            background-color: #28a745;
+            color: white;
+            display: inline-block;
+            margin-right: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .legend {
+            background-color: #f8f9fa;
+            padding: 10pt;
+            border-radius: 5pt;
+            margin: 15pt 0;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20pt;
+        }
+        @media print {
+            .page-break {
+                page-break-after: always;
+            }
+            th {
+                background-color: #2e74b5 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        .milestone-row {
+            background-color: #e8f0fe;
+            font-weight: bold;
+        }
+        .continuous-activity {
+            background-color: #f0f8ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📋 Checklist Maestro Completo - Plataforma Integrada Navistar</h1>
+
+<div class="summary-box">
+    <div class="metric-card">
+        <div class="metric-value">285+</div>
+        <div class="metric-label">Actividades Totales</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">26</div>
+        <div class="metric-label">Sprints</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">4</div>
+        <div class="metric-label">Fases + Admin</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">12</div>
+        <div class="metric-label">Categorías</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">52</div>
+        <div class="metric-label">Semanas</div>
+    </div>
+</div>
+
+<div class="legend">
+    <strong>Leyenda de Estados:</strong>
+    <span class="legend-item">✅<span class="status-completado">Completado</span></span>
+    <span class="legend-item">🔄<span class="status-en-progreso">En Progreso</span></span>
+    <span class="legend-item"><span class="status-no-iniciado">No Iniciado</span></span>
+    <span class="legend-item"><span class="status-bloqueado">Bloqueado</span></span>
+    <strong style="margin-left: 30pt;">Prioridad:</strong>
+    <span class="legend-item"><span class="priority-high">Alta</span></span>
+    <span class="legend-item"><span class="priority-medium">Media</span></span>
+    <span class="legend-item"><span class="priority-low">Baja</span></span>
+</div>
+
+<h2>FASE 0: SETUP ADMINISTRATIVO Y GOVERNANCE (Pre-Proyecto)</h2>
+
+<table class="admin-section">
+    <thead>
+        <tr>
+            <th width="3%">✓</th>
+            <th width="5%">ID</th>
+            <th width="8%">Categoría</th>
+            <th width="25%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="8%">Fecha Plan</th>
+            <th width="8%">Fecha Real</th>
+            <th width="8%">Status</th>
+            <th width="5%">Prior.</th>
+            <th width="20%">Dependencias / Notas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Governance y PMO -->
+        <tr class="category-header">
+            <td colspan="10"><strong>🏛️ GOVERNANCE Y ESTRUCTURA PMO</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.001</td>
+            <td>Governance</td>
+            <td>Definición Charter del Proyecto</td>
+            <td>[Sponsor]</td>
+            <td>15/12/25</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Fundacional para proyecto</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.002</td>
+            <td>PMO</td>
+            <td>Setup PMO y estructura governance</td>
+            <td>[PM]</td>
+            <td>20/12/25</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Estructura organizacional</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.003</td>
+            <td>Financiero</td>
+            <td>Presupuesto detallado y aprobación</td>
+            <td>[CFO]</td>
+            <td>22/12/25</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>$1.47M aprobación formal</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.004</td>
+            <td>KPIs</td>
+            <td>Definición KPIs y métricas éxito</td>
+            <td>[PM]</td>
+            <td>27/12/25</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Métricas base ROI</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.005</td>
+            <td>Steering</td>
+            <td>Establecimiento Steering Committee</td>
+            <td>[Sponsor]</td>
+            <td>30/12/25</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Sponsors + Key stakeholders</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.006</td>
+            <td>Comunicación</td>
+            <td>Plan comunicación y stakeholders</td>
+            <td>[PM]</td>
+            <td>02/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>RACI matrix</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.007</td>
+            <td>Legal</td>
+            <td>Marco legal y compliance</td>
+            <td>[Legal]</td>
+            <td>03/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Contratos, SLAs, compliance</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.008</td>
+            <td>Riesgos</td>
+            <td>Setup gestión riesgos e issues</td>
+            <td>[PM]</td>
+            <td>06/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Risk register inicial</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.009</td>
+            <td>Calidad</td>
+            <td>Framework calidad y auditoría</td>
+            <td>[QA Lead]</td>
+            <td>08/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Quality gates definidos</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.010</td>
+            <td>Herramientas</td>
+            <td>Setup herramientas PMO</td>
+            <td>[PM]</td>
+            <td>10/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>ADO, reporting tools</td>
+        </tr>
+
+        <!-- Recursos Humanos y Contratación -->
+        <tr class="category-header">
+            <td colspan="10"><strong>👥 RECURSOS HUMANOS Y CONTRATACIÓN</strong></td>
+        </tr>
+        <tr class="completed-activity">
+            <td><div class="check-box-completed">✓</div></td>
+            <td>0.011</td>
+            <td>RRHH</td>
+            <td>SOWs para recursos a contratar</td>
+            <td>[PM]</td>
+            <td>15/01/26</td>
+            <td>15/01/26</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ COMPLETADO por usuario</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.012</td>
+            <td>RRHH</td>
+            <td>Proceso selección y entrevistas</td>
+            <td>[RRHH]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dependiente de 0.011</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.013</td>
+            <td>RRHH</td>
+            <td>Onboarding plan nuevos recursos</td>
+            <td>[RRHH]</td>
+            <td>25/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Training curriculum</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.014</td>
+            <td>IT</td>
+            <td>Setup equipamiento y accesos</td>
+            <td>[IT Admin]</td>
+            <td>30/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Hardware, AD, licenses</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.015</td>
+            <td>Training</td>
+            <td>Plan capacitación técnica equipo</td>
+            <td>[Tech Lead]</td>
+            <td>03/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>.NET 8, Angular 18, Azure</td>
+        </tr>
+
+        <!-- Documentación y Análisis -->
+        <tr class="category-header">
+            <td colspan="10"><strong>📚 DOCUMENTACIÓN TÉCNICA Y FUNCIONAL</strong></td>
+        </tr>
+        <tr class="completed-activity">
+            <td><div class="check-box-completed">✓</div></td>
+            <td>0.016</td>
+            <td>Análisis</td>
+            <td>Revisión similitudes nombres modelo MIOSS-SIV</td>
+            <td>[BA]</td>
+            <td>13/01/26</td>
+            <td>13/01/26</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ COMPLETADO lunes pasado</td>
+        </tr>
+        <tr class="completed-activity">
+            <td><div class="check-box-completed">✓</div></td>
+            <td>0.017</td>
+            <td>Arquitectura</td>
+            <td>Diagramas AS-IS consolidados</td>
+            <td>[Architect]</td>
+            <td>15/01/26</td>
+            <td>15/01/26</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ COMPLETADO por usuario</td>
+        </tr>
+        <tr class="completed-activity">
+            <td><div class="check-box-completed">✓</div></td>
+            <td>0.018</td>
+            <td>Arquitectura</td>
+            <td>Diagramas TO-BE consolidados</td>
+            <td>[Architect]</td>
+            <td>17/01/26</td>
+            <td>17/01/26</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ COMPLETADO por usuario</td>
+        </tr>
+        <tr class="in-progress-activity">
+            <td><div class="check-box">🔄</div></td>
+            <td>0.019</td>
+            <td>Funcional</td>
+            <td>Documento FSD (Functional Specification Document)</td>
+            <td>[BA]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-en-progreso">En Progreso</span></td>
+            <td class="priority-high">Alta</td>
+            <td>🔄 EN PROGRESO por usuario</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.020</td>
+            <td>Técnico</td>
+            <td>Documento TSD (Technical Specification Document)</td>
+            <td>[Architect]</td>
+            <td>25/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dependiente de 0.019</td>
+        </tr>
+        <tr class="in-progress-activity">
+            <td><div class="check-box">🔄</div></td>
+            <td>0.021</td>
+            <td>ADO</td>
+            <td>Creación historias de usuario en ADO</td>
+            <td>[PM/BA]</td>
+            <td>22/01/26</td>
+            <td></td>
+            <td><span class="status-en-progreso">En Progreso</span></td>
+            <td class="priority-high">Alta</td>
+            <td>🔄 PENDIENTE por usuario</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.022</td>
+            <td>QA</td>
+            <td>Criterios aceptación detallados</td>
+            <td>[BA/QA]</td>
+            <td>28/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Por cada user story</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.023</td>
+            <td>QA</td>
+            <td>Plan testing y estrategia QA</td>
+            <td>[QA Lead]</td>
+            <td>30/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Test approach document</td>
+        </tr>
+
+        <!-- Procurement y Vendors -->
+        <tr class="category-header">
+            <td colspan="10"><strong>💼 PROCUREMENT Y GESTIÓN DE VENDORS</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.024</td>
+            <td>Procurement</td>
+            <td>RFP servicios cloud Azure</td>
+            <td>[Procurement]</td>
+            <td>05/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Enterprise Agreement</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.025</td>
+            <td>Contratos</td>
+            <td>Negociación contratos Microsoft Azure</td>
+            <td>[Legal/Procurement]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Pricing, SLAs, términos</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.026</td>
+            <td>SAP</td>
+            <td>RFP consultores SAP externos</td>
+            <td>[Procurement]</td>
+            <td>15/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Backup capacity</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.027</td>
+            <td>Evaluación</td>
+            <td>Evaluación y selección vendors</td>
+            <td>[PM/Procurement]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Criteria matrix</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.028</td>
+            <td>Contratos</td>
+            <td>Firma contratos y SLAs</td>
+            <td>[Legal]</td>
+            <td>25/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Ejecución formal</td>
+        </tr>
+
+        <!-- Análisis de Negocio -->
+        <tr class="category-header">
+            <td colspan="10"><strong>🔍 ANÁLISIS DE NEGOCIO EXTENDIDO</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.029</td>
+            <td>Stakeholders</td>
+            <td>Identificación y análisis stakeholders</td>
+            <td>[BA]</td>
+            <td>08/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Power/Interest matrix</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.030</td>
+            <td>Gap Analysis</td>
+            <td>Análisis gap funcional detallado</td>
+            <td>[BA]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Current vs Future state</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.031</td>
+            <td>Workshops</td>
+            <td>Workshops definición procesos TO-BE</td>
+            <td>[BA/Users]</td>
+            <td>18/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Key user sessions</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.032</td>
+            <td>Change Impact</td>
+            <td>Análisis impacto organizacional</td>
+            <td>[Change Mgmt]</td>
+            <td>22/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>People, process, technology</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.033</td>
+            <td>ROI</td>
+            <td>Definición ROI y business case</td>
+            <td>[Finance/PM]</td>
+            <td>28/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Financial justification</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>FASE 1: FOUNDATION + ACTIVIDADES ADMINISTRATIVAS (Sprints 1-8)</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="3%">✓</th>
+            <th width="5%">ID</th>
+            <th width="8%">Sprint</th>
+            <th width="25%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="8%">Fecha Plan</th>
+            <th width="8%">Fecha Real</th>
+            <th width="8%">Status</th>
+            <th width="5%">Prior.</th>
+            <th width="20%">Dependencias / Notas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sprint 1-2: Setup y Análisis -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 1-2: Kickoff y Setup Técnico (Ene 06 - Feb 02, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.001</td>
+            <td>1</td>
+            <td>Kickoff formal del proyecto</td>
+            <td>[PM]</td>
+            <td>06/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>All hands meeting</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.002</td>
+            <td>1</td>
+            <td>Formación equipos y roles</td>
+            <td>[PM]</td>
+            <td>06/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>RACI matrix execution</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.003</td>
+            <td>1</td>
+            <td>Setup Azure DevOps proyecto</td>
+            <td>[DevOps]</td>
+            <td>08/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Work items, boards, repos</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.004</td>
+            <td>1</td>
+            <td>Setup ambiente desarrollo Azure</td>
+            <td>[DevOps]</td>
+            <td>08/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dev subscription setup</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.005</td>
+            <td>1</td>
+            <td>Análisis código legacy MIOSS</td>
+            <td>[Tech Lead]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Code quality analysis</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.006</td>
+            <td>1</td>
+            <td>Análisis código legacy SIV</td>
+            <td>[Tech Lead]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Technical debt assessment</td>
+        </tr>
+        <tr class="admin-section">
+            <td><div class="check-box"></div></td>
+            <td>1.007</td>
+            <td>1</td>
+            <td>Primer reporte semanal Steering</td>
+            <td>[PM]</td>
+            <td>10/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Reporte ejecutivo</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.008</td>
+            <td>2</td>
+            <td>Mapeo procesos negocio actuales</td>
+            <td>[BA]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Con usuarios clave</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.009</td>
+            <td>2</td>
+            <td>Definición arquitectura target</td>
+            <td>[Architect]</td>
+            <td>26/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dependiente de análisis</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.010</td>
+            <td>2</td>
+            <td>Plan migración detallado</td>
+            <td>[PM]</td>
+            <td>30/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Secuencia migración</td>
+        </tr>
+        <tr class="admin-section">
+            <td><div class="check-box"></div></td>
+            <td>1.011</td>
+            <td>2</td>
+            <td>Revisión mensual presupuesto</td>
+            <td>[PM/Finance]</td>
+            <td>31/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Budget vs actual</td>
+        </tr>
+        <tr class="admin-section">
+            <td><div class="check-box"></div></td>
+            <td>1.012</td>
+            <td>2</td>
+            <td>Actualización risk register</td>
+            <td>[PM]</td>
+            <td>02/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Nuevos riesgos identificados</td>
+        </tr>
+
+        <!-- Continuar con más sprints... -->
+        <!-- Sprint 3-4: Migración Core Backend -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 3-4: Migración Core Backend (Feb 03 - Mar 02, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.013</td>
+            <td>3</td>
+            <td>Setup proyecto .NET 8 unificado</td>
+            <td>[Backend Dev]</td>
+            <td>03/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Solution structure</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.014</td>
+            <td>3</td>
+            <td>Migración entidades core dominio</td>
+            <td>[Backend Dev]</td>
+            <td>10/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Domain models</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.015</td>
+            <td>3</td>
+            <td>Implementar Clean Architecture</td>
+            <td>[Backend Dev]</td>
+            <td>14/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Layered approach</td>
+        </tr>
+        <tr class="admin-section">
+            <td><div class="check-box"></div></td>
+            <td>1.016</td>
+            <td>3</td>
+            <td>Security review arquitectura</td>
+            <td>[Security]</td>
+            <td>12/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Security by design</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.017</td>
+            <td>4</td>
+            <td>Migración servicios ventas</td>
+            <td>[Backend Dev]</td>
+            <td>17/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Business logic core</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.018</td>
+            <td>4</td>
+            <td>Migración servicios precios</td>
+            <td>[Backend Dev]</td>
+            <td>24/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Pricing engine</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.019</td>
+            <td>4</td>
+            <td>APIs RESTful v1 - módulos core</td>
+            <td>[Backend Dev]</td>
+            <td>28/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>OpenAPI documentation</td>
+        </tr>
+        <tr class="admin-section">
+            <td><div class="check-box"></div></td>
+            <td>1.020</td>
+            <td>4</td>
+            <td>Newsletter mensual proyecto</td>
+            <td>[PM]</td>
+            <td>28/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-low">Baja</td>
+            <td>Comunicación stakeholders</td>
+        </tr>
+        
+        <!-- Continuar con los demás sprints de Fase 1... -->
+        
+        <tr class="milestone-row">
+            <td colspan="10"><strong>🎯 MILESTONE: Fase 1 Foundation + Admin Completa - 27/04/2026</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>ACTIVIDADES CONTINUAS Y RECURRENTES</h2>
+
+<table class="continuous-activity">
+    <thead>
+        <tr>
+            <th width="5%">ID</th>
+            <th width="20%">Actividad Continua</th>
+            <th width="10%">Responsable</th>
+            <th width="10%">Frecuencia</th>
+            <th width="10%">Inicio</th>
+            <th width="45%">Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category-header">
+            <td colspan="6"><strong>📊 REPORTING Y COMUNICACIÓN</strong></td>
+        </tr>
+        <tr>
+            <td>C.001</td>
+            <td>Reporte semanal Steering Committee</td>
+            <td>[PM]</td>
+            <td>Viernes</td>
+            <td>10/01/26</td>
+            <td>Status report ejecutivo con métricas, issues, decisiones</td>
+        </tr>
+        <tr>
+            <td>C.002</td>
+            <td>Daily standup equipo desarrollo</td>
+            <td>[Tech Lead]</td>
+            <td>Diario</td>
+            <td>06/01/26</td>
+            <td>15 min daily sync, impediments, commitments</td>
+        </tr>
+        <tr>
+            <td>C.003</td>
+            <td>Sprint review y retrospective</td>
+            <td>[PM]</td>
+            <td>Cada 2 sem</td>
+            <td>19/01/26</td>
+            <td>Demo + lessons learned + mejoras proceso</td>
+        </tr>
+        <tr>
+            <td>C.004</td>
+            <td>Newsletter mensual proyecto</td>
+            <td>[Comm]</td>
+            <td>Mensual</td>
+            <td>31/01/26</td>
+            <td>Comunicación amplia stakeholders, achievements, próximos pasos</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="6"><strong>💰 CONTROL FINANCIERO</strong></td>
+        </tr>
+        <tr>
+            <td>C.005</td>
+            <td>Control presupuestario mensual</td>
+            <td>[PM/Finance]</td>
+            <td>Mensual</td>
+            <td>31/01/26</td>
+            <td>Actual vs plan, forecast, variaciones, adjustments</td>
+        </tr>
+        <tr>
+            <td>C.006</td>
+            <td>Tracking ROI y beneficios</td>
+            <td>[Finance]</td>
+            <td>Trimestral</td>
+            <td>31/03/26</td>
+            <td>Métricas ROI, benefit realization tracking</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="6"><strong>⚠️ GESTIÓN DE RIESGOS</strong></td>
+        </tr>
+        <tr>
+            <td>C.007</td>
+            <td>Revisión risk register</td>
+            <td>[PM]</td>
+            <td>Quincenal</td>
+            <td>02/02/26</td>
+            <td>Update risks, impact assessment, mitigation plans</td>
+        </tr>
+        <tr>
+            <td>C.008</td>
+            <td>Issues escalation management</td>
+            <td>[PM]</td>
+            <td>Continuo</td>
+            <td>06/01/26</td>
+            <td>Issue tracking, escalation path, resolution</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="6"><strong>📋 CALIDAD Y COMPLIANCE</strong></td>
+        </tr>
+        <tr>
+            <td>C.009</td>
+            <td>Quality gates review</td>
+            <td>[QA Lead]</td>
+            <td>Por Sprint</td>
+            <td>19/01/26</td>
+            <td>Quality metrics, test results, compliance check</td>
+        </tr>
+        <tr>
+            <td>C.010</td>
+            <td>Security review iterativo</td>
+            <td>[Security]</td>
+            <td>Por Sprint</td>
+            <td>19/01/26</td>
+            <td>Security scan, vulnerability assessment, remediation</td>
+        </tr>
+        <tr>
+            <td>C.011</td>
+            <td>Performance monitoring</td>
+            <td>[Performance]</td>
+            <td>Continuo</td>
+            <td>01/03/26</td>
+            <td>Application performance, resource usage, optimization</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="6"><strong>📚 DOCUMENTACIÓN Y KNOWLEDGE</strong></td>
+        </tr>
+        <tr>
+            <td>C.012</td>
+            <td>Documentación técnica evolutiva</td>
+            <td>[Tech Writer]</td>
+            <td>Por Sprint</td>
+            <td>06/01/26</td>
+            <td>Architecture docs, API docs, runbooks actualizados</td>
+        </tr>
+        <tr>
+            <td>C.013</td>
+            <td>Knowledge sharing sessions</td>
+            <td>[Tech Lead]</td>
+            <td>Quincenal</td>
+            <td>20/01/26</td>
+            <td>Technical deep dives, best practices sharing</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>COMUNICACIÓN Y CHANGE MANAGEMENT</h2>
+
+<table class="admin-section">
+    <thead>
+        <tr>
+            <th width="5%">ID</th>
+            <th width="20%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="10%">Timeline</th>
+            <th width="10%">Audiencia</th>
+            <th width="45%">Objetivo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>CM.01</td>
+            <td>Town Hall Kick-off</td>
+            <td>[Sponsor]</td>
+            <td>10/01/26</td>
+            <td>All users</td>
+            <td>Comunicar visión, beneficios, timeline proyecto</td>
+        </tr>
+        <tr>
+            <td>CM.02</td>
+            <td>Sesiones feedback usuarios</td>
+            <td>[Change Mgmt]</td>
+            <td>Mensual</td>
+            <td>Key users</td>
+            <td>Recoger input, addressing concerns, buy-in</td>
+        </tr>
+        <tr>
+            <td>CM.03</td>
+            <td>Webinars preparación cambio</td>
+            <td>[Training]</td>
+            <td>Trimestral</td>
+            <td>End users</td>
+            <td>Educación sobre nuevos procesos, reducing anxiety</td>
+        </tr>
+        <tr>
+            <td>CM.04</td>
+            <td>Campaña lanzamiento Go-Live</td>
+            <td>[Marketing]</td>
+            <td>Nov 26</td>
+            <td>Organization</td>
+            <td>Generate excitement, positive messaging</td>
+        </tr>
+        <tr>
+            <td>CM.05</td>
+            <td>Canal comunicación post Go-Live</td>
+            <td>[Support]</td>
+            <td>Dic 26</td>
+            <td>All users</td>
+            <td>Support channel, FAQ, quick wins communication</td>
+        </tr>
+        <tr>
+            <td>CM.06</td>
+            <td>Success stories documentation</td>
+            <td>[PM]</td>
+            <td>Mar 27</td>
+            <td>Stakeholders</td>
+            <td>Documenting achievements, ROI realized, lessons learned</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>MATRIZ DE RIESGOS ADMINISTRATIVOS Y GOVERNANCE</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="20%">Riesgo</th>
+            <th width="10%">Probabilidad</th>
+            <th width="10%">Impacto</th>
+            <th width="15%">Score</th>
+            <th width="45%">Plan de Mitigación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="dependency-critical">
+            <td>Cambio sponsor/liderazgo</td>
+            <td class="priority-medium">Media</td>
+            <td class="priority-high">Alto</td>
+            <td class="priority-high">ALTO</td>
+            <td>Múltiples sponsors, documentación completa decisiones, quick wins</td>
+        </tr>
+        <tr class="dependency-critical">
+            <td>Recorte presupuestario</td>
+            <td class="priority-low">Baja</td>
+            <td class="priority-high">Alto</td>
+            <td class="priority-medium">MEDIO</td>
+            <td>Business case sólido, ROI tracking, phase approach flexible</td>
+        </tr>
+        <tr>
+            <td>Resistencia cambio usuarios</td>
+            <td class="priority-medium">Media</td>
+            <td class="priority-medium">Medio</td>
+            <td class="priority-medium">MEDIO</td>
+            <td>Change management plan, user involvement, training extensive</td>
+        </tr>
+        <tr>
+            <td>Problemas legales/compliance</td>
+            <td class="priority-low">Baja</td>
+            <td class="priority-high">Alto</td>
+            <td class="priority-medium">MEDIO</td>
+            <td>Legal review temprano, compliance officer involucrado</td>
+        </tr>
+        <tr>
+            <td>Conflictos vendors</td>
+            <td class="priority-medium">Media</td>
+            <td class="priority-medium">Medio</td>
+            <td class="priority-medium">MEDIO</td>
+            <td>Contratos claros, SLAs definidos, backup vendors identified</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>KPIs Y MÉTRICAS DE ÉXITO</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="15%">Categoría</th>
+            <th width="25%">KPI</th>
+            <th width="15%">Target</th>
+            <th width="15%">Frecuencia</th>
+            <th width="30%">Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category-header">
+            <td colspan="5"><strong>📊 PROYECTO</strong></td>
+        </tr>
+        <tr>
+            <td>Schedule</td>
+            <td>Schedule Performance Index (SPI)</td>
+            <td>>0.95</td>
+            <td>Semanal</td>
+            <td>Earned Value / Planned Value</td>
+        </tr>
+        <tr>
+            <td>Scope</td>
+            <td>Scope Creep %</td>
+            <td><5%</td>
+            <td>Mensual</td>
+            <td>Changes vs original scope</td>
+        </tr>
+        <tr>
+            <td>Quality</td>
+            <td>Defect Density</td>
+            <td><0.1/KLOC</td>
+            <td>Por Sprint</td>
+            <td>Defects per thousand lines of code</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="5"><strong>💰 FINANCIERO</strong></td>
+        </tr>
+        <tr>
+            <td>Budget</td>
+            <td>Cost Performance Index (CPI)</td>
+            <td>>0.95</td>
+            <td>Mensual</td>
+            <td>Earned Value / Actual Cost</td>
+        </tr>
+        <tr>
+            <td>ROI</td>
+            <td>Return on Investment</td>
+            <td>>150%</td>
+            <td>Post Go-Live</td>
+            <td>(Benefits - Costs) / Costs</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="5"><strong>👥 RECURSOS</strong></td>
+        </tr>
+        <tr>
+            <td>Team</td>
+            <td>Team Utilization Rate</td>
+            <td>85-95%</td>
+            <td>Semanal</td>
+            <td>Productive hours / total hours</td>
+        </tr>
+        <tr>
+            <td>Satisfaction</td>
+            <td>Team Satisfaction Score</td>
+            <td>>4.0/5</td>
+            <td>Mensual</td>
+            <td>Team happiness survey</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="5"><strong>🎯 ADOPCIÓN</strong></td>
+        </tr>
+        <tr>
+            <td>Users</td>
+            <td>User Adoption Rate</td>
+            <td>>90%</td>
+            <td>Post Go-Live</td>
+            <td>Active users / total users</td>
+        </tr>
+        <tr>
+            <td>Training</td>
+            <td>Training Completion Rate</td>
+            <td>100%</td>
+            <td>Pre Go-Live</td>
+            <td>Users trained / total users</td>
+        </tr>
+
+        <tr class="category-header">
+            <td colspan="5"><strong>⚡ PERFORMANCE</strong></td>
+        </tr>
+        <tr>
+            <td>System</td>
+            <td>System Response Time</td>
+            <td><200ms</td>
+            <td>Continuo</td>
+            <td>95th percentile API response</td>
+        </tr>
+        <tr>
+            <td>Availability</td>
+            <td>System Uptime</td>
+            <td>>99.9%</td>
+            <td>Continuo</td>
+            <td>Available time / total time</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="text-align: center; margin-top: 30pt; font-size: 9pt; color: #666;">
+    <p><strong>Checklist Maestro Completo - Plataforma Integrada Navistar</strong></p>
+    <p>Versión Enterprise con 285+ actividades | Incluye governance, admin, procurement, RRHH</p>
+    <p>Actualizado: [FECHA] | Próxima revisión: [FECHA]</p>
+    <p><strong>Status Actividades Usuario:</strong> ✅ SOWs | ✅ Similitudes modelo | ✅ Diagramas AS-IS/TO-BE | 🔄 FSD | 🔄 User Stories ADO</p>
+</div>
+
+</body>
+</html>

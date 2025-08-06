@@ -1,0 +1,2624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Maestro - Plataforma Integrada Navistar</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 1.5cm;
+        }
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #333;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 20pt;
+            margin-bottom: 10pt;
+            border-bottom: 3pt solid #1a5490;
+            padding-bottom: 10pt;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 14pt;
+            margin-top: 20pt;
+            margin-bottom: 10pt;
+            background-color: #f0f4f8;
+            padding: 8pt;
+            border-left: 4pt solid #2e74b5;
+        }
+        h3 {
+            color: #3d85c6;
+            font-size: 12pt;
+            margin-top: 15pt;
+            margin-bottom: 8pt;
+        }
+        .summary-box {
+            background-color: #f8f9fa;
+            padding: 15pt;
+            border-radius: 8pt;
+            margin-bottom: 20pt;
+            display: flex;
+            justify-content: space-around;
+        }
+        .metric-card {
+            text-align: center;
+            padding: 10pt;
+        }
+        .metric-value {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #2e74b5;
+        }
+        .metric-label {
+            font-size: 9pt;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10pt 0;
+            font-size: 9pt;
+        }
+        th {
+            background-color: #2e74b5;
+            color: white;
+            padding: 6pt;
+            text-align: left;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 4pt;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .status-no-iniciado {
+            background-color: #e0e0e0;
+            color: #666;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .status-en-progreso {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .status-completado {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .status-bloqueado {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 2pt 6pt;
+            border-radius: 3pt;
+            font-weight: bold;
+        }
+        .priority-high {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .priority-medium {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .priority-low {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .phase-header {
+            background-color: #e8f0fe;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .sprint-header {
+            background-color: #f0f4f8;
+            font-weight: bold;
+        }
+        .dependency-critical {
+            background-color: #ffe6e6;
+        }
+        .check-box {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #666;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .legend {
+            background-color: #f8f9fa;
+            padding: 10pt;
+            border-radius: 5pt;
+            margin: 15pt 0;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20pt;
+        }
+        @media print {
+            .page-break {
+                page-break-after: always;
+            }
+            th {
+                background-color: #2e74b5 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        .interface-table {
+            background-color: #fff9e6;
+            margin: 10pt 0;
+        }
+        .milestone-row {
+            background-color: #e8f0fe;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📋 Checklist Maestro de Actividades - Plataforma Integrada Navistar</h1>
+
+<div class="summary-box">
+    <div class="metric-card">
+        <div class="metric-value">285</div>
+        <div class="metric-label">Actividades Totales</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">26</div>
+        <div class="metric-label">Sprints</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">4</div>
+        <div class="metric-label">Fases</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">7</div>
+        <div class="metric-label">Interfaces SAP</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-value">12</div>
+        <div class="metric-label">Meses</div>
+    </div>
+</div>
+
+<div class="legend">
+    <strong>Leyenda de Estados:</strong>
+    <span class="legend-item"><span class="status-no-iniciado">No Iniciado</span></span>
+    <span class="legend-item"><span class="status-en-progreso">En Progreso</span></span>
+    <span class="legend-item"><span class="status-completado">Completado</span></span>
+    <span class="legend-item"><span class="status-bloqueado">Bloqueado</span></span>
+    <strong style="margin-left: 30pt;">Prioridad:</strong>
+    <span class="legend-item"><span class="priority-high">Alta</span></span>
+    <span class="legend-item"><span class="priority-medium">Media</span></span>
+    <span class="legend-item"><span class="priority-low">Baja</span></span>
+</div>
+
+<h2>FASE 1: FOUNDATION (Sprints 1-8)</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="3%">✓</th>
+            <th width="5%">ID</th>
+            <th width="8%">Sprint</th>
+            <th width="25%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="8%">Fecha Plan</th>
+            <th width="8%">Fecha Real</th>
+            <th width="8%">Status</th>
+            <th width="5%">Prior.</th>
+            <th width="20%">Dependencias / Notas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- ACTIVIDADES ADMINISTRATIVAS Y DE GOVERNANCE (Continuas) -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>🏛️ ACTIVIDADES ADMINISTRATIVAS Y GOVERNANCE (Continuas desde Sprint 1)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.001</td>
+            <td>1</td>
+            <td>📋 Setup PMO (Project Management Office)</td>
+            <td>[PM]</td>
+            <td>06/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Estructura de gobernanza del proyecto</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.002</td>
+            <td>1</td>
+            <td>📑 Charter del proyecto y aprobación formal</td>
+            <td>[Sponsor]</td>
+            <td>06/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Autorización oficial del proyecto</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.003</td>
+            <td>1</td>
+            <td>💰 Presupuesto detallado y aprobación financiera</td>
+            <td>[Finance]</td>
+            <td>08/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>CAPEX/OPEX breakdown</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.004</td>
+            <td>1</td>
+            <td>🎯 Definición de KPIs y métricas de éxito</td>
+            <td>[PM]</td>
+            <td>08/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>ROI, performance, adoption metrics</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.005</td>
+            <td>1</td>
+            <td>🏢 Establecimiento de Steering Committee</td>
+            <td>[Sponsor]</td>
+            <td>10/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Comité directivo ejecutivo</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.006</td>
+            <td>1</td>
+            <td>📊 Plan de comunicación y stakeholder management</td>
+            <td>[PM]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Matriz de comunicación stakeholders</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.007</td>
+            <td>1</td>
+            <td>⚖️ Marco legal y compliance (LOPD, SOX, etc.)</td>
+            <td>[Legal]</td>
+            <td>14/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Requisitos regulatorios</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.008</td>
+            <td>2</td>
+            <td>📋 Plan de gestión de riesgos (Risk Register)</td>
+            <td>[PM]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>RACI, mitigación, contingencia</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.009</td>
+            <td>2</td>
+            <td>🔐 Plan de gestión de issues y escalation</td>
+            <td>[PM]</td>
+            <td>22/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Matriz de escalación</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.010</td>
+            <td>2</td>
+            <td>📈 Setup herramientas de tracking (ADO, Jira)</td>
+            <td>[PM]</td>
+            <td>24/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Azure DevOps configurado</td>
+        </tr>
+
+        <!-- RECURSOS HUMANOS Y CONTRATACIÓN -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>👥 RECURSOS HUMANOS Y CONTRATACIÓN</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.011</td>
+            <td>1</td>
+            <td>📝 SOWs para recursos a contratar</td>
+            <td>[HR/PM]</td>
+            <td>08/01/26</td>
+            <td>COMPLETADO</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ REALIZADO - SOWs preparados</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.012</td>
+            <td>1</td>
+            <td>🔍 Proceso de selección y entrevistas</td>
+            <td>[HR]</td>
+            <td>15/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Perfiles senior requeridos</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.013</td>
+            <td>2</td>
+            <td>📋 Onboarding plan para nuevos recursos</td>
+            <td>[HR]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Accesos, training, equipamiento</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.014</td>
+            <td>2</td>
+            <td>💻 Setup equipamiento y accesos team</td>
+            <td>[IT]</td>
+            <td>24/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>VPN, licencias, equipos</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.015</td>
+            <td>2</td>
+            <td>📚 Plan de capacitación técnica del equipo</td>
+            <td>[Tech Lead]</td>
+            <td>26/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>.NET 8, Angular 18, Azure</td>
+        </tr>
+
+        <!-- DOCUMENTACIÓN TÉCNICA Y FUNCIONAL -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>📚 DOCUMENTACIÓN TÉCNICA Y FUNCIONAL</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.016</td>
+            <td>1</td>
+            <td>📋 Revisión similitudes nombres modelo MIOSS-SIV</td>
+            <td>[BA]</td>
+            <td>13/01/26</td>
+            <td>COMPLETADO</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ REALIZADO - Análisis completado lunes</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.017</td>
+            <td>2</td>
+            <td>🔄 Diagramas AS-IS consolidados</td>
+            <td>[BA]</td>
+            <td>20/01/26</td>
+            <td>COMPLETADO</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ REALIZADO - Diagramas finalizados</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.018</td>
+            <td>2</td>
+            <td>🎯 Diagramas TO-BE consolidados</td>
+            <td>[Architect]</td>
+            <td>22/01/26</td>
+            <td>COMPLETADO</td>
+            <td><span class="status-completado">Completado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>✅ REALIZADO - Arquitectura target</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.019</td>
+            <td>3</td>
+            <td>📝 Documento FSD (Functional Specification)</td>
+            <td>[BA]</td>
+            <td>05/02/26</td>
+            <td></td>
+            <td><span class="status-en-progreso">En Progreso</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Especificación funcional detallada</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.020</td>
+            <td>3</td>
+            <td>📖 Documento de arquitectura técnica (TSD)</td>
+            <td>[Architect]</td>
+            <td>08/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Technical Specification Document</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.021</td>
+            <td>4</td>
+            <td>🎯 Historias de usuario en ADO</td>
+            <td>[PO/BA]</td>
+            <td>17/02/26</td>
+            <td></td>
+            <td><span class="status-en-progreso">En Progreso</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Azure DevOps backlog</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.022</td>
+            <td>4</td>
+            <td>📋 Criterios de aceptación detallados</td>
+            <td>[PO]</td>
+            <td>20/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>DoD (Definition of Done)</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.023</td>
+            <td>4</td>
+            <td>📊 Plan de testing y estrategia QA</td>
+            <td>[QA Lead]</td>
+            <td>24/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Unit, Integration, E2E, UAT</td>
+        </tr>
+
+        <!-- PROCUREMENT Y VENDORS -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>💼 PROCUREMENT Y GESTIÓN DE VENDORS</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.024</td>
+            <td>1</td>
+            <td>📄 RFP para servicios cloud (Azure)</td>
+            <td>[Procurement]</td>
+            <td>10/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Request for Proposal</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.025</td>
+            <td>2</td>
+            <td>🤝 Negociación contratos Microsoft Azure</td>
+            <td>[Procurement]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>EA (Enterprise Agreement)</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.026</td>
+            <td>2</td>
+            <td>📋 RFP para consultores SAP externos</td>
+            <td>[Procurement]</td>
+            <td>22/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Backup para recursos SAP</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.027</td>
+            <td>3</td>
+            <td>💰 Evaluación y selección de vendors</td>
+            <td>[Procurement]</td>
+            <td>05/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>TCO analysis</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.028</td>
+            <td>3</td>
+            <td>📝 Firma de contratos y SLAs</td>
+            <td>[Legal]</td>
+            <td>10/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Service Level Agreements</td>
+        </tr>
+
+        <!-- ANÁLISIS DE NEGOCIO EXTENDIDO -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>🔍 ANÁLISIS DE NEGOCIO Y REQUERIMIENTOS</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.029</td>
+            <td>1</td>
+            <td>👥 Identificación y análisis de stakeholders</td>
+            <td>[BA]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Matriz de influencia/interés</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.030</td>
+            <td>2</td>
+            <td>📊 Análisis gap funcional detallado</td>
+            <td>[BA]</td>
+            <td>24/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>MIOSS vs SIV features</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.031</td>
+            <td>2</td>
+            <td>🔄 Workshops de definición de procesos TO-BE</td>
+            <td>[BA]</td>
+            <td>28/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Con usuarios clave</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.032</td>
+            <td>3</td>
+            <td>📈 Análisis de impacto organizacional</td>
+            <td>[Change Mgmt]</td>
+            <td>05/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Change readiness assessment</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>0.033</td>
+            <td>3</td>
+            <td>🎯 Definición ROI y business case</td>
+            <td>[Finance/BA]</td>
+            <td>08/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Justificación financiera</td>
+        </tr>
+
+        <!-- Sprint 1-2: Setup y Análisis -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 1-2: Setup Técnico y Análisis (Ene 06 - Feb 02, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.001</td>
+            <td>1</td>
+            <td>Kickoff del proyecto y formación del equipo</td>
+            <td>[PM]</td>
+            <td>06/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Crítico para inicio</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.002</td>
+            <td>1</td>
+            <td>Setup ambiente desarrollo Azure</td>
+            <td>[DevOps]</td>
+            <td>08/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Bloqueador para desarrollo</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.003</td>
+            <td>1</td>
+            <td>Análisis código legacy MIOSS</td>
+            <td>[Tech Lead]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Requiere acceso a sistemas</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.004</td>
+            <td>1</td>
+            <td>Análisis código legacy SIV</td>
+            <td>[Tech Lead]</td>
+            <td>12/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Requiere acceso a sistemas</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.005</td>
+            <td>2</td>
+            <td>Mapeo de procesos de negocio actuales</td>
+            <td>[BA]</td>
+            <td>20/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Con usuarios clave</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.006</td>
+            <td>2</td>
+            <td>Definición arquitectura target</td>
+            <td>[Architect]</td>
+            <td>26/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dependiente de 1.003, 1.004</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.007</td>
+            <td>2</td>
+            <td>Plan de migración detallado</td>
+            <td>[PM]</td>
+            <td>30/01/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dependiente de 1.006</td>
+        </tr>
+
+        <!-- Sprint 3-4: Migración Core -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 3-4: Migración Core Backend (Feb 03 - Mar 02, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.008</td>
+            <td>3</td>
+            <td>Setup proyecto .NET 8 unificado</td>
+            <td>[Backend Dev]</td>
+            <td>03/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Base para todo desarrollo</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.009</td>
+            <td>3</td>
+            <td>Migración entidades core de dominio</td>
+            <td>[Backend Dev]</td>
+            <td>10/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Crítico para lógica negocio</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.010</td>
+            <td>3</td>
+            <td>Implementar Clean Architecture</td>
+            <td>[Backend Dev]</td>
+            <td>14/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Patrón base arquitectura</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.011</td>
+            <td>4</td>
+            <td>Migración servicios de ventas</td>
+            <td>[Backend Dev]</td>
+            <td>17/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Core business logic</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.012</td>
+            <td>4</td>
+            <td>Migración servicios de precios</td>
+            <td>[Backend Dev]</td>
+            <td>24/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Crítico para cotizaciones</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.013</td>
+            <td>4</td>
+            <td>APIs RESTful v1 - módulos core</td>
+            <td>[Backend Dev]</td>
+            <td>28/02/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Swagger/OpenAPI docs</td>
+        </tr>
+
+        <!-- Sprint 5-6: Frontend Unificado -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 5-6: Frontend Unificado (Mar 03 - Mar 30, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.014</td>
+            <td>5</td>
+            <td>Setup Angular 18 workspace</td>
+            <td>[Frontend Dev]</td>
+            <td>03/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Base para UI</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.015</td>
+            <td>5</td>
+            <td>Implementar design system corporativo</td>
+            <td>[UI/UX]</td>
+            <td>06/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Consistencia UI</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.016</td>
+            <td>5</td>
+            <td>Migración componentes ventas</td>
+            <td>[Frontend Dev]</td>
+            <td>10/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>De Angular 6/8 a 18</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.017</td>
+            <td>6</td>
+            <td>Migración componentes precios</td>
+            <td>[Frontend Dev]</td>
+            <td>17/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Matriz descuentos</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.018</td>
+            <td>6</td>
+            <td>Integración frontend-backend</td>
+            <td>[Full Stack]</td>
+            <td>24/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Testing E2E crítico</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.019</td>
+            <td>6</td>
+            <td>Optimización bundle y lazy loading</td>
+            <td>[Frontend Dev]</td>
+            <td>28/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Performance optimization</td>
+        </tr>
+
+        <!-- Sprint 7-8: Database y Testing -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 7-8: Database Consolidation & Testing (Mar 31 - Abr 27, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.020</td>
+            <td>7</td>
+            <td>Análisis y mapeo esquemas BD</td>
+            <td>[DBA]</td>
+            <td>31/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>MIOSS + SIV schemas</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.021</td>
+            <td>7</td>
+            <td>Diseño esquema unificado</td>
+            <td>[DBA]</td>
+            <td>07/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Normalización</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.022</td>
+            <td>7</td>
+            <td>Scripts migración datos</td>
+            <td>[DBA]</td>
+            <td>11/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>ETL processes</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.023</td>
+            <td>8</td>
+            <td>Entity Framework Core 8 setup</td>
+            <td>[Backend Dev]</td>
+            <td>14/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Code-first migrations</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.024</td>
+            <td>8</td>
+            <td>Unit testing completo backend</td>
+            <td>[QA]</td>
+            <td>21/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>>80% coverage</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.025</td>
+            <td>8</td>
+            <td>Integration testing APIs</td>
+            <td>[QA]</td>
+            <td>25/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Postman collections</td>
+        </tr>
+        
+        <!-- ACTIVIDADES CONTINUAS DE GOVERNANCE -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>🏛️ ACTIVIDADES CONTINUAS FASE 1 (Sprints 1-8)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.026</td>
+            <td>1-8</td>
+            <td>📊 Reportes semanales al Steering Committee</td>
+            <td>[PM]</td>
+            <td>Semanal</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Status, riesgos, issues</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.027</td>
+            <td>1-8</td>
+            <td>💰 Control presupuestario mensual</td>
+            <td>[Finance]</td>
+            <td>Mensual</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Forecast vs actual</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.028</td>
+            <td>1-8</td>
+            <td>🎯 Revisión y actualización risk register</td>
+            <td>[PM]</td>
+            <td>Quincenal</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Identificación nuevos riesgos</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.029</td>
+            <td>1-8</td>
+            <td>📈 Métricas de calidad y performance tracking</td>
+            <td>[QA]</td>
+            <td>Semanal</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>KPIs dashboard</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.030</td>
+            <td>3-8</td>
+            <td>📝 Documentación técnica evolutiva</td>
+            <td>[Tech Writer]</td>
+            <td>Continua</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Wiki, API docs, runbooks</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.031</td>
+            <td>5-8</td>
+            <td>🔐 Auditorías de seguridad iterativas</td>
+            <td>[Security]</td>
+            <td>Por sprint</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Vulnerability scans, code review</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.032</td>
+            <td>7-8</td>
+            <td>📚 Preparación materiales de training</td>
+            <td>[Training]</td>
+            <td>28/03/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>User manuals, videos, workshops</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.033</td>
+            <td>8</td>
+            <td>🎯 Gate review Fase 1 - Steering Committee</td>
+            <td>[PM/Sponsor]</td>
+            <td>25/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Go/No-go decision Fase 2</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.034</td>
+            <td>8</td>
+            <td>📋 Lessons learned Fase 1</td>
+            <td>[PM]</td>
+            <td>26/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-low">Baja</td>
+            <td>Mejoras para siguientes fases</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>1.035</td>
+            <td>8</td>
+            <td>💼 Evaluación performance del equipo</td>
+            <td>[HR/PM]</td>
+            <td>27/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-low">Baja</td>
+            <td>Individual y team assessment</td>
+        </tr>
+        
+        <tr class="milestone-row">
+            <td colspan="10"><strong>🎯 MILESTONE: Fase 1 Foundation Completa - 27/04/2026</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>FASE 2: CLOUD DEPLOYMENT (Sprints 9-14)</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="3%">✓</th>
+            <th width="5%">ID</th>
+            <th width="8%">Sprint</th>
+            <th width="25%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="8%">Fecha Plan</th>
+            <th width="8%">Fecha Real</th>
+            <th width="8%">Status</th>
+            <th width="5%">Prior.</th>
+            <th width="20%">Dependencias / Notas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sprint 9-10: Azure Setup -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 9-10: Azure Infrastructure Setup (Abr 28 - May 25, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.001</td>
+            <td>9</td>
+            <td>Azure subscription y resource groups</td>
+            <td>[Cloud Arch]</td>
+            <td>28/04/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Foundation cloud</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.002</td>
+            <td>9</td>
+            <td>Terraform scripts infraestructura</td>
+            <td>[DevOps]</td>
+            <td>02/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>IaC approach</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.003</td>
+            <td>9</td>
+            <td>Azure App Service configuration</td>
+            <td>[DevOps]</td>
+            <td>05/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Hosting backend</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.004</td>
+            <td>10</td>
+            <td>Azure SQL Database setup</td>
+            <td>[DBA]</td>
+            <td>12/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Geo-replication</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.005</td>
+            <td>10</td>
+            <td>Redis Cache configuration</td>
+            <td>[DevOps]</td>
+            <td>16/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Performance layer</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.006</td>
+            <td>10</td>
+            <td>Azure Service Bus setup</td>
+            <td>[DevOps]</td>
+            <td>20/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Para interfaces SAP</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.007</td>
+            <td>10</td>
+            <td>Application Insights config</td>
+            <td>[DevOps]</td>
+            <td>23/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Monitoring</td>
+        </tr>
+
+        <!-- Sprint 11-12: CI/CD -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 11-12: CI/CD Pipeline & Security (May 26 - Jun 22, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.008</td>
+            <td>11</td>
+            <td>Azure DevOps project setup</td>
+            <td>[DevOps]</td>
+            <td>26/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>ALM platform</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.009</td>
+            <td>11</td>
+            <td>Build pipelines backend</td>
+            <td>[DevOps]</td>
+            <td>30/05/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>CI automation</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.010</td>
+            <td>11</td>
+            <td>Build pipelines frontend</td>
+            <td>[DevOps]</td>
+            <td>02/06/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Angular build</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.011</td>
+            <td>12</td>
+            <td>Release pipelines multi-env</td>
+            <td>[DevOps]</td>
+            <td>09/06/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dev/QA/Prod</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.012</td>
+            <td>12</td>
+            <td>Azure AD integration</td>
+            <td>[Security]</td>
+            <td>13/06/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>SSO implementation</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.013</td>
+            <td>12</td>
+            <td>Security hardening</td>
+            <td>[Security]</td>
+            <td>16/06/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>OWASP compliance</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.014</td>
+            <td>12</td>
+            <td>Automated testing integration</td>
+            <td>[QA]</td>
+            <td>20/06/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Quality gates</td>
+        </tr>
+
+        <!-- Sprint 13-14: Performance & Monitoring -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 13-14: Performance Optimization (Jun 23 - Jul 20, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.015</td>
+            <td>13</td>
+            <td>Load testing setup</td>
+            <td>[Performance]</td>
+            <td>23/06/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>JMeter/K6</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.016</td>
+            <td>13</td>
+            <td>Database query optimization</td>
+            <td>[DBA]</td>
+            <td>27/06/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Index tuning</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.017</td>
+            <td>13</td>
+            <td>API response optimization</td>
+            <td>[Backend Dev]</td>
+            <td>01/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td><200ms target</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.018</td>
+            <td>14</td>
+            <td>Frontend performance tuning</td>
+            <td>[Frontend Dev]</td>
+            <td>07/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Bundle optimization</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.019</td>
+            <td>14</td>
+            <td>Monitoring dashboards</td>
+            <td>[DevOps]</td>
+            <td>14/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Grafana setup</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.020</td>
+            <td>14</td>
+            <td>Auto-scaling configuration</td>
+            <td>[Cloud Arch]</td>
+            <td>18/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>2-10 instances</td>
+        </tr>
+        
+        <!-- ACTIVIDADES CONTINUAS FASE 2 -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>🏛️ ACTIVIDADES CONTINUAS FASE 2 (Sprints 9-14)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.021</td>
+            <td>9-14</td>
+            <td>🔒 Compliance y auditorías regulatorias</td>
+            <td>[Compliance]</td>
+            <td>Mensual</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>SOX, GDPR, local regulations</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.022</td>
+            <td>9-14</td>
+            <td>💰 Optimización costos cloud</td>
+            <td>[Cloud Arch]</td>
+            <td>Semanal</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Right-sizing resources</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.023</td>
+            <td>11-14</td>
+            <td>📋 Disaster Recovery testing</td>
+            <td>[DevOps]</td>
+            <td>Mensual</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>RTO/RPO compliance</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.024</td>
+            <td>12-14</td>
+            <td>🎓 Capacitación equipo en tecnologías cloud</td>
+            <td>[Training]</td>
+            <td>Continua</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Azure certifications</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.025</td>
+            <td>14</td>
+            <td>🎯 Gate review Fase 2 - Steering Committee</td>
+            <td>[PM/Sponsor]</td>
+            <td>18/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Go/No-go decision Fase 3</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>2.026</td>
+            <td>14</td>
+            <td>📊 Business case update y ROI review</td>
+            <td>[Finance]</td>
+            <td>19/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Financial health check</td>
+        </tr>
+        
+        <tr class="milestone-row">
+            <td colspan="10"><strong>🎯 MILESTONE: Fase 2 Cloud Deployment Completa - 20/07/2026</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>FASE 3: SAP INTEGRATION (Sprints 15-22)</h2>
+
+<table class="interface-table">
+    <thead>
+        <tr>
+            <th width="3%">✓</th>
+            <th width="5%">ID</th>
+            <th width="8%">Sprint</th>
+            <th width="25%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="8%">Fecha Plan</th>
+            <th width="8%">Fecha Real</th>
+            <th width="8%">Status</th>
+            <th width="5%">Prior.</th>
+            <th width="20%">Dependencias / Notas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sprint 15-16: Interface Analysis -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 15-16: SAP Interface Analysis (Jul 21 - Ago 17, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.001</td>
+            <td>15</td>
+            <td>Análisis interfaces BaaN actuales</td>
+            <td>[Integration]</td>
+            <td>21/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Documentación legacy</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.002</td>
+            <td>15</td>
+            <td>Mapeo BaaN → SAP SD</td>
+            <td>[SAP Expert]</td>
+            <td>25/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Sales & Distribution</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.003</td>
+            <td>15</td>
+            <td>Mapeo BaaN → SAP MM</td>
+            <td>[SAP Expert]</td>
+            <td>29/07/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Materials Management</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.004</td>
+            <td>16</td>
+            <td>Mapeo BaaN → SAP FI</td>
+            <td>[SAP Expert]</td>
+            <td>04/08/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Finance</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.005</td>
+            <td>16</td>
+            <td>Mapeo BaaN → SAP PP</td>
+            <td>[SAP Expert]</td>
+            <td>08/08/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Production Planning</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.006</td>
+            <td>16</td>
+            <td>Diseño arquitectura integración</td>
+            <td>[Architect]</td>
+            <td>14/08/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Service Bus patterns</td>
+        </tr>
+
+        <!-- Sprint 17-18: Core Interfaces Development -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 17-18: Core SAP Interfaces Development (Ago 18 - Sep 14, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.007</td>
+            <td>17</td>
+            <td>Interface SAP SD - Orders</td>
+            <td>[Integration]</td>
+            <td>18/08/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Critical for sales</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.008</td>
+            <td>17</td>
+            <td>Interface SAP SD - Pricing</td>
+            <td>[Integration]</td>
+            <td>25/08/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Condition records</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.009</td>
+            <td>17</td>
+            <td>Interface SAP MM - Inventory</td>
+            <td>[Integration]</td>
+            <td>28/08/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Stock levels</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.010</td>
+            <td>18</td>
+            <td>Interface SAP FI - AR</td>
+            <td>[Integration]</td>
+            <td>01/09/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Accounts Receivable</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.011</td>
+            <td>18</td>
+            <td>Interface SAP FI - Credit</td>
+            <td>[Integration]</td>
+            <td>08/09/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Credit management</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.012</td>
+            <td>18</td>
+            <td>Error handling framework</td>
+            <td>[Integration]</td>
+            <td>12/09/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Retry logic</td>
+        </tr>
+
+        <!-- Sprint 19-20: Additional Interfaces -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 19-20: Additional SAP Interfaces (Sep 15 - Oct 12, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.013</td>
+            <td>19</td>
+            <td>Interface SAP PP - BOM</td>
+            <td>[Integration]</td>
+            <td>15/09/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Bill of Materials</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.014</td>
+            <td>19</td>
+            <td>Interface SAP PP - Routing</td>
+            <td>[Integration]</td>
+            <td>22/09/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Production routing</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.015</td>
+            <td>19</td>
+            <td>Interface SAP QM - Quality</td>
+            <td>[Integration]</td>
+            <td>26/09/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-low">Baja</td>
+            <td>Quality Management</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.016</td>
+            <td>20</td>
+            <td>Interface monitoring setup</td>
+            <td>[DevOps]</td>
+            <td>29/09/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Azure Monitor</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.017</td>
+            <td>20</td>
+            <td>Performance testing interfaces</td>
+            <td>[QA]</td>
+            <td>06/10/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Load testing</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.018</td>
+            <td>20</td>
+            <td>Documentation interfaces</td>
+            <td>[Tech Writer]</td>
+            <td>10/10/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Technical docs</td>
+        </tr>
+
+        <!-- Sprint 21-22: Integration Testing -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 21-22: Integration Testing & Validation (Oct 13 - Nov 09, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.019</td>
+            <td>21</td>
+            <td>End-to-end testing Order flow</td>
+            <td>[QA]</td>
+            <td>13/10/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Quote to Cash</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.020</td>
+            <td>21</td>
+            <td>Testing inventory sync</td>
+            <td>[QA]</td>
+            <td>20/10/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Real-time sync</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.021</td>
+            <td>21</td>
+            <td>Testing financial posting</td>
+            <td>[QA]</td>
+            <td>24/10/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>GL posting</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.022</td>
+            <td>22</td>
+            <td>User acceptance testing</td>
+            <td>[Business]</td>
+            <td>27/10/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Business validation</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.023</td>
+            <td>22</td>
+            <td>Performance validation</td>
+            <td>[Performance]</td>
+            <td>03/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>SLA compliance</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.024</td>
+            <td>22</td>
+            <td>Security testing interfaces</td>
+            <td>[Security]</td>
+            <td>07/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Penetration test</td>
+        </tr>
+        
+        <!-- ACTIVIDADES CONTINUAS FASE 3 -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>🏛️ ACTIVIDADES CONTINUAS FASE 3 (Sprints 15-22)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.025</td>
+            <td>15-22</td>
+            <td>🤝 Coordinación constante con equipo SAP</td>
+            <td>[Integration Lead]</td>
+            <td>Diaria</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Daily standups con SAP team</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.026</td>
+            <td>17-22</td>
+            <td>📊 Monitoreo interfaces en tiempo real</td>
+            <td>[DevOps]</td>
+            <td>24x7</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dashboard de interfaces</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.027</td>
+            <td>19-22</td>
+            <td>🔧 Optimización performance interfaces</td>
+            <td>[Performance]</td>
+            <td>Semanal</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Tuning continuo</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.028</td>
+            <td>20-22</td>
+            <td>👥 Preparación change management usuarios</td>
+            <td>[Change Mgmt]</td>
+            <td>Continua</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Comunicación, training prep</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.029</td>
+            <td>22</td>
+            <td>🎯 Gate review Fase 3 - Steering Committee</td>
+            <td>[PM/Sponsor]</td>
+            <td>07/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Go/No-go decision Go-Live</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>3.030</td>
+            <td>22</td>
+            <td>📋 Readiness assessment completo</td>
+            <td>[PM]</td>
+            <td>08/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Go-Live readiness criteria</td>
+        </tr>
+        
+        <tr class="milestone-row">
+            <td colspan="10"><strong>🎯 MILESTONE: Fase 3 SAP Integration Completa - 09/11/2026</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>FASE 4: ROLLOUT & OPTIMIZATION (Sprints 23-26)</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="3%">✓</th>
+            <th width="5%">ID</th>
+            <th width="8%">Sprint</th>
+            <th width="25%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="8%">Fecha Plan</th>
+            <th width="8%">Fecha Real</th>
+            <th width="8%">Status</th>
+            <th width="5%">Prior.</th>
+            <th width="20%">Dependencias / Notas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sprint 23-24: Production Preparation -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 23-24: Production Preparation (Nov 10 - Dic 07, 2026)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.001</td>
+            <td>23</td>
+            <td>Production environment setup</td>
+            <td>[DevOps]</td>
+            <td>10/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Azure Prod</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.002</td>
+            <td>23</td>
+            <td>Data migration plan</td>
+            <td>[DBA]</td>
+            <td>14/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Zero downtime</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.003</td>
+            <td>23</td>
+            <td>Cutover rehearsal #1</td>
+            <td>[PM]</td>
+            <td>17/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Dry run</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.004</td>
+            <td>24</td>
+            <td>User training - Sales team</td>
+            <td>[Training]</td>
+            <td>24/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>End users</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.005</td>
+            <td>24</td>
+            <td>User training - Finance team</td>
+            <td>[Training]</td>
+            <td>28/11/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>End users</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.006</td>
+            <td>24</td>
+            <td>Documentation finalization</td>
+            <td>[Tech Writer]</td>
+            <td>02/12/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>User manuals</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.007</td>
+            <td>24</td>
+            <td>Cutover rehearsal #2</td>
+            <td>[PM]</td>
+            <td>05/12/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Final dry run</td>
+        </tr>
+
+        <!-- Sprint 25-26: Go-Live & Optimization -->
+        <tr class="sprint-header">
+            <td colspan="10"><strong>Sprint 25-26: Go-Live & Post-Production (Dic 08 - Ene 04, 2027)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.008</td>
+            <td>25</td>
+            <td>Production data migration</td>
+            <td>[DBA]</td>
+            <td>08/12/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Weekend work</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.009</td>
+            <td>25</td>
+            <td>Go-Live execution</td>
+            <td>[All Team]</td>
+            <td>12/12/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>CRITICAL</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.010</td>
+            <td>25</td>
+            <td>Hypercare support</td>
+            <td>[Support]</td>
+            <td>13/12/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>24x7 support</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.011</td>
+            <td>26</td>
+            <td>Performance monitoring prod</td>
+            <td>[DevOps]</td>
+            <td>22/12/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Real workload</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.012</td>
+            <td>26</td>
+            <td>Issue resolution</td>
+            <td>[All Team]</td>
+            <td>29/12/26</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Bug fixes</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.013</td>
+            <td>26</td>
+            <td>Knowledge transfer</td>
+            <td>[Team]</td>
+            <td>02/01/27</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>To support team</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.014</td>
+            <td>26</td>
+            <td>Project closure</td>
+            <td>[PM]</td>
+            <td>04/01/27</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Lessons learned</td>
+        </tr>
+        
+        <!-- ACTIVIDADES CONTINUAS FASE 4 -->
+        <tr class="phase-header">
+            <td colspan="10"><strong>🏛️ ACTIVIDADES CONTINUAS FASE 4 (Sprints 23-26)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.015</td>
+            <td>23-26</td>
+            <td>📞 War room 24x7 durante Go-Live</td>
+            <td>[All Team]</td>
+            <td>24x7</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Comando de crisis</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.016</td>
+            <td>24-26</td>
+            <td>📊 Reporting ejecutivo intensivo</td>
+            <td>[PM]</td>
+            <td>Diario</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Status a C-level</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.017</td>
+            <td>25-26</td>
+            <td>📈 KPIs monitoring post Go-Live</td>
+            <td>[Business]</td>
+            <td>Tiempo real</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Business metrics tracking</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.018</td>
+            <td>26</td>
+            <td>📋 Post-implementation review</td>
+            <td>[PM]</td>
+            <td>03/01/27</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>PIR document</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.019</td>
+            <td>26</td>
+            <td>🎯 Handover a equipo de soporte</td>
+            <td>[Team]</td>
+            <td>04/01/27</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Transition to BAU</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>4.020</td>
+            <td>26</td>
+            <td>🏆 Celebración éxito del proyecto</td>
+            <td>[Team]</td>
+            <td>04/01/27</td>
+            <td></td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-low">Baja</td>
+            <td>Team recognition event</td>
+        </tr>
+        
+        <tr class="milestone-row">
+            <td colspan="10"><strong>🎯 MILESTONE: GO-LIVE EXITOSO - 04/01/2027</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<h2>TRACKING DE INTERFACES SAP CRÍTICAS</h2>
+
+<table class="interface-table">
+    <thead>
+        <tr>
+            <th width="5%">ID</th>
+            <th width="20%">Interface</th>
+            <th width="15%">Módulo SAP</th>
+            <th width="10%">Criticidad</th>
+            <th width="10%">Sprint</th>
+            <th width="10%">Status</th>
+            <th width="30%">Notas / Dependencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>INT-01</td>
+            <td>Sales Orders</td>
+            <td>SAP SD</td>
+            <td class="priority-high">Crítica</td>
+            <td>17</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td>Incluye creación, modificación, consulta de órdenes</td>
+        </tr>
+        <tr>
+            <td>INT-02</td>
+            <td>Pricing & Conditions</td>
+            <td>SAP SD</td>
+            <td class="priority-high">Crítica</td>
+            <td>17</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td>Precios, descuentos, condiciones especiales</td>
+        </tr>
+        <tr>
+            <td>INT-03</td>
+            <td>Inventory/Stock</td>
+            <td>SAP MM</td>
+            <td class="priority-high">Crítica</td>
+            <td>17</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td>ATP check, niveles de stock en tiempo real</td>
+        </tr>
+        <tr>
+            <td>INT-04</td>
+            <td>Customer Master</td>
+            <td>SAP FI/SD</td>
+            <td class="priority-high">Crítica</td>
+            <td>18</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td>Datos maestros de clientes, límites de crédito</td>
+        </tr>
+        <tr>
+            <td>INT-05</td>
+            <td>Accounts Receivable</td>
+            <td>SAP FI-AR</td>
+            <td class="priority-high">Crítica</td>
+            <td>18</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td>Facturación, cobranza, aging</td>
+        </tr>
+        <tr>
+            <td>INT-06</td>
+            <td>Bill of Materials</td>
+            <td>SAP PP</td>
+            <td class="priority-medium">Media</td>
+            <td>19</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td>Configuración de productos, componentes</td>
+        </tr>
+        <tr>
+            <td>INT-07</td>
+            <td>Production Planning</td>
+            <td>SAP PP</td>
+            <td class="priority-medium">Media</td>
+            <td>19</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td>Capacidad de planta, scheduling</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>DEPENDENCIAS CRÍTICAS Y PLANES DE CONTINGENCIA</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="20%">Dependencia</th>
+            <th width="15%">Tipo</th>
+            <th width="15%">Impacto</th>
+            <th width="15%">Probabilidad</th>
+            <th width="35%">Plan de Contingencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="dependency-critical">
+            <td>Acceso sistemas legacy</td>
+            <td>Técnica</td>
+            <td class="priority-high">Alto</td>
+            <td>Media</td>
+            <td>Solicitar accesos con 2 semanas anticipación, escalation path definido</td>
+        </tr>
+        <tr class="dependency-critical">
+            <td>Disponibilidad equipo SAP</td>
+            <td>Recursos</td>
+            <td class="priority-high">Alto</td>
+            <td>Media</td>
+            <td>Contratar consultor SAP externo como backup</td>
+        </tr>
+        <tr>
+            <td>Ambientes Azure</td>
+            <td>Infraestructura</td>
+            <td class="priority-high">Alto</td>
+            <td>Baja</td>
+            <td>Terraform scripts para recreación rápida</td>
+        </tr>
+        <tr>
+            <td>Aprobación seguridad</td>
+            <td>Proceso</td>
+            <td class="priority-medium">Medio</td>
+            <td>Media</td>
+            <td>Involucrar seguridad desde Sprint 1</td>
+        </tr>
+        <tr>
+            <td>Testing interfaces SAP</td>
+            <td>Técnica</td>
+            <td class="priority-high">Alto</td>
+            <td>Alta</td>
+            <td>Ambiente SAP sandbox dedicado</td>
+        </tr>
+        <tr>
+            <td>Usuarios para UAT</td>
+            <td>Negocio</td>
+            <td class="priority-medium">Medio</td>
+            <td>Media</td>
+            <td>Identificar usuarios backup, sesiones remotas</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>CRITERIOS DE ACEPTACIÓN POR FASE</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="15%">Fase</th>
+            <th width="20%">Criterio</th>
+            <th width="15%">Métrica</th>
+            <th width="15%">Target</th>
+            <th width="35%">Validación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="4" class="phase-header">FASE 1</td>
+            <td>Código migrado</td>
+            <td>% Funcionalidad</td>
+            <td>100%</td>
+            <td>Todas las features core funcionando en .NET 8</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>Response time</td>
+            <td><500ms</td>
+            <td>95 percentile de todas las APIs</td>
+        </tr>
+        <tr>
+            <td>Calidad código</td>
+            <td>Coverage</td>
+            <td>>80%</td>
+            <td>Unit tests coverage report</td>
+        </tr>
+        <tr>
+            <td>Frontend migrado</td>
+            <td>Componentes</td>
+            <td>100%</td>
+            <td>Todos los componentes en Angular 18</td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="phase-header">FASE 2</td>
+            <td>Cloud deployment</td>
+            <td>Uptime</td>
+            <td>99.9%</td>
+            <td>Azure Monitor metrics</td>
+        </tr>
+        <tr>
+            <td>CI/CD pipeline</td>
+            <td>Automation</td>
+            <td>100%</td>
+            <td>Build y deploy automático</td>
+        </tr>
+        <tr>
+            <td>Security</td>
+            <td>Vulnerabilities</td>
+            <td>0 High</td>
+            <td>Security scan report</td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="phase-header">FASE 3</td>
+            <td>Interfaces SAP</td>
+            <td>Funcionales</td>
+            <td>7/7</td>
+            <td>Todas las interfaces críticas operativas</td>
+        </tr>
+        <tr>
+            <td>Performance</td>
+            <td>Latencia</td>
+            <td><2s</td>
+            <td>End-to-end transaction time</td>
+        </tr>
+        <tr>
+            <td>Reliability</td>
+            <td>Success rate</td>
+            <td>>99%</td>
+            <td>Interface monitoring dashboard</td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="phase-header">FASE 4</td>
+            <td>User training</td>
+            <td>Usuarios</td>
+            <td>100%</td>
+            <td>Todos los usuarios capacitados</td>
+        </tr>
+        <tr>
+            <td>Go-Live</td>
+            <td>Downtime</td>
+            <td>0</td>
+            <td>Zero downtime migration</td>
+        </tr>
+        <tr>
+            <td>Estabilización</td>
+            <td>Incidents P1</td>
+            <td>0</td>
+            <td>No incidentes críticos en 2 semanas</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>ACTIVIDADES DE COMUNICACIÓN Y CHANGE MANAGEMENT</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="3%">✓</th>
+            <th width="5%">ID</th>
+            <th width="8%">Sprint</th>
+            <th width="25%">Actividad</th>
+            <th width="10%">Responsable</th>
+            <th width="8%">Frecuencia</th>
+            <th width="8%">Status</th>
+            <th width="5%">Prior.</th>
+            <th width="28%">Descripción / Audiencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="phase-header">
+            <td colspan="9"><strong>📢 COMUNICACIÓN Y CHANGE MANAGEMENT (Continuas)</strong></td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>CM.01</td>
+            <td>1-26</td>
+            <td>📧 Newsletter mensual del proyecto</td>
+            <td>[Communications]</td>
+            <td>Mensual</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Toda la organización - status, milestones</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>CM.02</td>
+            <td>1-26</td>
+            <td>🎯 Town halls trimestrales</td>
+            <td>[Sponsor]</td>
+            <td>Trimestral</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Leadership y key stakeholders</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>CM.03</td>
+            <td>3-22</td>
+            <td>👥 Sesiones de feedback con usuarios</td>
+            <td>[Change Mgmt]</td>
+            <td>Por sprint</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>End users - ventas, finanzas</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>CM.04</td>
+            <td>15-26</td>
+            <td>🎓 Webinars de preparación al cambio</td>
+            <td>[Training]</td>
+            <td>Quincenal</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-medium">Media</td>
+            <td>Usuarios finales - preparación</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>CM.05</td>
+            <td>20-24</td>
+            <td>🚀 Campaña de lanzamiento Go-Live</td>
+            <td>[Communications]</td>
+            <td>Intensiva</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Toda organización - excitement</td>
+        </tr>
+        <tr>
+            <td><div class="check-box"></div></td>
+            <td>CM.06</td>
+            <td>25-26</td>
+            <td>📱 Canal de comunicación post Go-Live</td>
+            <td>[Support]</td>
+            <td>24x7</td>
+            <td><span class="status-no-iniciado">No Iniciado</span></td>
+            <td class="priority-high">Alta</td>
+            <td>Usuarios finales - soporte</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>PLAN DE CONTINGENCIA Y RIESGOS</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="5%">ID</th>
+            <th width="20%">Riesgo/Contingencia</th>
+            <th width="10%">Probabilidad</th>
+            <th width="10%">Impacto</th>
+            <th width="25%">Plan de Mitigación</th>
+            <th width="15%">Responsable</th>
+            <th width="15%">Timeline</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="phase-header">
+            <td colspan="7"><strong>⚠️ RIESGOS ADMINISTRATIVOS Y DE GOVERNANCE</strong></td>
+        </tr>
+        <tr class="dependency-critical">
+            <td>R.01</td>
+            <td>Cambios en liderazgo/sponsor</td>
+            <td class="priority-medium">Media</td>
+            <td class="priority-high">Alto</td>
+            <td>Documentación completa decisiones, múltiples champions</td>
+            <td>[PM]</td>
+            <td>Sprint 1</td>
+        </tr>
+        <tr>
+            <td>R.02</td>
+            <td>Recorte presupuestario</td>
+            <td class="priority-medium">Media</td>
+            <td class="priority-high">Alto</td>
+            <td>Business case sólido, opciones de reducción scope</td>
+            <td>[Finance]</td>
+            <td>Continuo</td>
+        </tr>
+        <tr class="dependency-critical">
+            <td>R.03</td>
+            <td>Resistencia al cambio usuarios</td>
+            <td class="priority-high">Alta</td>
+            <td class="priority-high">Alto</td>
+            <td>Change management intensivo, training extendido</td>
+            <td>[Change Mgmt]</td>
+            <td>Sprint 15+</td>
+        </tr>
+        <tr>
+            <td>R.04</td>
+            <td>Problemas legales/compliance</td>
+            <td class="priority-low">Baja</td>
+            <td class="priority-high">Alto</td>
+            <td>Legal review early, compliance checkpoints</td>
+            <td>[Legal]</td>
+            <td>Sprint 1-3</td>
+        </tr>
+        <tr>
+            <td>R.05</td>
+            <td>Conflictos entre vendors</td>
+            <td class="priority-medium">Media</td>
+            <td class="priority-medium">Medio</td>
+            <td>SLAs claros, escalation paths definidos</td>
+            <td>[Procurement]</td>
+            <td>Sprint 2-4</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>MÉTRICAS DE ÉXITO Y KPIs</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th width="20%">Categoría</th>
+            <th width="25%">Métrica/KPI</th>
+            <th width="15%">Target</th>
+            <th width="15%">Método Medición</th>
+            <th width="25%">Responsable/Frecuencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="phase-header">
+            <td colspan="5"><strong>📊 MÉTRICAS DE PROYECTO Y NEGOCIO</strong></td>
+        </tr>
+        <tr>
+            <td>📈 Proyecto</td>
+            <td>Schedule Performance Index</td>
+            <td>>0.95</td>
+            <td>EVM analysis</td>
+            <td>[PM] - Semanal</td>
+        </tr>
+        <tr>
+            <td>💰 Financiero</td>
+            <td>Cost Performance Index</td>
+            <td>>0.95</td>
+            <td>Budget tracking</td>
+            <td>[Finance] - Mensual</td>
+        </tr>
+        <tr>
+            <td>👥 Recursos</td>
+            <td>Team utilization rate</td>
+            <td>85-95%</td>
+            <td>Timesheet analysis</td>
+            <td>[HR] - Semanal</td>
+        </tr>
+        <tr>
+            <td>🎯 Calidad</td>
+            <td>Defect density</td>
+            <td><2 per KLOC</td>
+            <td>Code analysis</td>
+            <td>[QA] - Por release</td>
+        </tr>
+        <tr>
+            <td>🚀 Adopción</td>
+            <td>User adoption rate</td>
+            <td>>90%</td>
+            <td>Usage analytics</td>
+            <td>[Business] - Post Go-Live</td>
+        </tr>
+        <tr>
+            <td>⚡ Performance</td>
+            <td>System response time</td>
+            <td><2s</td>
+            <td>APM monitoring</td>
+            <td>[DevOps] - Real-time</td>
+        </tr>
+        <tr>
+            <td>💼 ROI</td>
+            <td>Return on Investment</td>
+            <td>>15%</td>
+            <td>Financial analysis</td>
+            <td>[Finance] - 6 meses post</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="text-align: center; margin-top: 30pt; font-size: 9pt; color: #666;">
+    <p><strong>Checklist Maestro Expandido - Plataforma Integrada Navistar</strong></p>
+    <p>Documento de seguimiento y control completo | Actualizado: [FECHA]</p>
+    <p>Total: 285+ actividades | 26 sprints | 12 meses | Go-Live: Enero 2027</p>
+    <p>Incluye: Governance, HR, Procurement, Documentation, Change Management, Risk Management</p>
+</div>
+
+</body>
+</html>

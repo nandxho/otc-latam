@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Unificación MIOSS-SIV - Datos para Excel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 24pt;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 18pt;
+            margin-top: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 11pt;
+        }
+        th {
+            background-color: #1a5490;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #1a5490;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .number {
+            text-align: right;
+        }
+        .center {
+            text-align: center;
+        }
+        .phase-header {
+            background-color: #2e74b5;
+            color: white;
+            font-weight: bold;
+        }
+        .total-row {
+            background-color: #e8f4e8;
+            font-weight: bold;
+        }
+        .section-break {
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Plan de Unificación MIOSS-SIV - Tablas de Datos</h1>
+
+<div class="section-break">
+<h2>1. CRONOGRAMA GENERAL DEL PROYECTO</h2>
+<table>
+    <tr>
+        <th>Fase</th>
+        <th>Nombre</th>
+        <th>Duración (meses)</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Hitos Principales</th>
+    </tr>
+    <tr>
+        <td class="center">1</td>
+        <td>Estabilización y Modernización Crítica</td>
+        <td class="center">6-9</td>
+        <td>Mes 1</td>
+        <td>Mes 9</td>
+        <td>VB.NET→C# migrado, Angular actualizado, Logging unificado</td>
+    </tr>
+    <tr>
+        <td class="center">2</td>
+        <td>Consolidación de Backend</td>
+        <td class="center">9-12</td>
+        <td>Mes 7</td>
+        <td>Mes 18</td>
+        <td>Microservicios implementados, APIs REST, Event-driven architecture</td>
+    </tr>
+    <tr>
+        <td class="center">3</td>
+        <td>Unificación de Frontend</td>
+        <td class="center">6-9</td>
+        <td>Mes 16</td>
+        <td>Mes 24</td>
+        <td>Shell app Angular 18, Micro-frontends, Design system</td>
+    </tr>
+    <tr>
+        <td class="center">4</td>
+        <td>Integración Completa</td>
+        <td class="center">3-6</td>
+        <td>Mes 22</td>
+        <td>Mes 27</td>
+        <td>BD consolidada, SSO, CI/CD completo</td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="2">TOTAL</td>
+        <td class="center">24-36</td>
+        <td>Mes 1</td>
+        <td>Mes 27-36</td>
+        <td>Sistema completamente unificado en producción</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>2. PRESUPUESTO DETALLADO POR FASE</h2>
+<table>
+    <tr>
+        <th>Fase</th>
+        <th>Recursos Humanos</th>
+        <th>Infraestructura</th>
+        <th>Licencias</th>
+        <th>Capacitación</th>
+        <th>Contingencia (15%)</th>
+        <th>Total USD</th>
+    </tr>
+    <tr>
+        <td>Fase 1</td>
+        <td class="number">$280,000</td>
+        <td class="number">$30,000</td>
+        <td class="number">$25,000</td>
+        <td class="number">$15,000</td>
+        <td class="number">$52,500</td>
+        <td class="number">$402,500</td>
+    </tr>
+    <tr>
+        <td>Fase 2</td>
+        <td class="number">$420,000</td>
+        <td class="number">$50,000</td>
+        <td class="number">$35,000</td>
+        <td class="number">$20,000</td>
+        <td class="number">$78,750</td>
+        <td class="number">$603,750</td>
+    </tr>
+    <tr>
+        <td>Fase 3</td>
+        <td class="number">$320,000</td>
+        <td class="number">$25,000</td>
+        <td class="number">$30,000</td>
+        <td class="number">$25,000</td>
+        <td class="number">$60,000</td>
+        <td class="number">$460,000</td>
+    </tr>
+    <tr>
+        <td>Fase 4</td>
+        <td class="number">$200,000</td>
+        <td class="number">$20,000</td>
+        <td class="number">$15,000</td>
+        <td class="number">$15,000</td>
+        <td class="number">$37,500</td>
+        <td class="number">$287,500</td>
+    </tr>
+    <tr class="total-row">
+        <td>TOTAL</td>
+        <td class="number">$1,220,000</td>
+        <td class="number">$125,000</td>
+        <td class="number">$105,000</td>
+        <td class="number">$75,000</td>
+        <td class="number">$228,750</td>
+        <td class="number">$1,753,750</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>3. RECURSOS HUMANOS POR FASE</h2>
+<table>
+    <tr>
+        <th>Rol</th>
+        <th>Fase 1</th>
+        <th>Fase 2</th>
+        <th>Fase 3</th>
+        <th>Fase 4</th>
+        <th>Total Personas</th>
+    </tr>
+    <tr>
+        <td>Desarrollador .NET Senior</td>
+        <td class="center">2</td>
+        <td class="center">3</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">3-4</td>
+    </tr>
+    <tr>
+        <td>Desarrollador Angular Senior</td>
+        <td class="center">2</td>
+        <td class="center">0</td>
+        <td class="center">3</td>
+        <td class="center">1</td>
+        <td class="center">3-4</td>
+    </tr>
+    <tr>
+        <td>Arquitecto de Software</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+    </tr>
+    <tr>
+        <td>DBA Senior</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">1-2</td>
+    </tr>
+    <tr>
+        <td>DevOps Engineer</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+    </tr>
+    <tr>
+        <td>QA Engineer/Lead</td>
+        <td class="center">1</td>
+        <td class="center">2</td>
+        <td class="center">2</td>
+        <td class="center">2</td>
+        <td class="center">2-3</td>
+    </tr>
+    <tr>
+        <td>UX/UI Designer</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+    </tr>
+    <tr>
+        <td>Security Engineer</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">0</td>
+        <td class="center">1</td>
+        <td class="center">1</td>
+    </tr>
+    <tr class="total-row">
+        <td>Total por Fase</td>
+        <td class="center">7</td>
+        <td class="center">8</td>
+        <td class="center">7</td>
+        <td class="center">7</td>
+        <td class="center">8-10</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>4. MÉTRICAS DE ÉXITO Y KPIs</h2>
+<table>
+    <tr>
+        <th>Métrica</th>
+        <th>Baseline Actual</th>
+        <th>Meta Fase 1</th>
+        <th>Meta Fase 2</th>
+        <th>Meta Fase 3</th>
+        <th>Meta Final</th>
+    </tr>
+    <tr>
+        <td>Uptime/Disponibilidad</td>
+        <td class="center">98.5%</td>
+        <td class="center">99.0%</td>
+        <td class="center">99.5%</td>
+        <td class="center">99.5%</td>
+        <td class="center">99.95%</td>
+    </tr>
+    <tr>
+        <td>Response Time (ms)</td>
+        <td class="center">500ms</td>
+        <td class="center">350ms</td>
+        <td class="center">200ms</td>
+        <td class="center">150ms</td>
+        <td class="center">100ms</td>
+    </tr>
+    <tr>
+        <td>Bugs Críticos/Mes</td>
+        <td class="center">15</td>
+        <td class="center">10</td>
+        <td class="center">5</td>
+        <td class="center">3</td>
+        <td class="center">2</td>
+    </tr>
+    <tr>
+        <td>Costo Mantenimiento Anual</td>
+        <td class="center">$1,200,000</td>
+        <td class="center">$1,000,000</td>
+        <td class="center">$800,000</td>
+        <td class="center">$700,000</td>
+        <td class="center">$600,000</td>
+    </tr>
+    <tr>
+        <td>Time to Market (días)</td>
+        <td class="center">90</td>
+        <td class="center">75</td>
+        <td class="center">60</td>
+        <td class="center">45</td>
+        <td class="center">30</td>
+    </tr>
+    <tr>
+        <td>User Satisfaction (NPS)</td>
+        <td class="center">45</td>
+        <td class="center">50</td>
+        <td class="center">60</td>
+        <td class="center">70</td>
+        <td class="center">80</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>5. MATRIZ DE RIESGOS COMPLETA</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Riesgo</th>
+        <th>Fase</th>
+        <th>Probabilidad</th>
+        <th>Impacto</th>
+        <th>Score</th>
+        <th>Mitigación</th>
+        <th>Costo Mitigación</th>
+    </tr>
+    <tr>
+        <td>R001</td>
+        <td>Resistencia al cambio usuarios</td>
+        <td>Todas</td>
+        <td>Alta (4)</td>
+        <td>Medio (3)</td>
+        <td class="center">12</td>
+        <td>Change management program</td>
+        <td class="number">$50,000</td>
+    </tr>
+    <tr>
+        <td>R002</td>
+        <td>Bugs migración VB.NET→C#</td>
+        <td>Fase 1</td>
+        <td>Media (3)</td>
+        <td>Alto (4)</td>
+        <td class="center">12</td>
+        <td>Testing exhaustivo + rollback</td>
+        <td class="number">$30,000</td>
+    </tr>
+    <tr>
+        <td>R003</td>
+        <td>Performance degradation</td>
+        <td>Fase 2</td>
+        <td>Media (3)</td>
+        <td>Alto (4)</td>
+        <td class="center">12</td>
+        <td>Load testing + optimización</td>
+        <td class="number">$25,000</td>
+    </tr>
+    <tr>
+        <td>R004</td>
+        <td>Deuda técnica oculta</td>
+        <td>Fase 1-2</td>
+        <td>Alta (4)</td>
+        <td>Medio (3)</td>
+        <td class="center">12</td>
+        <td>Technical spikes + POCs</td>
+        <td class="number">$40,000</td>
+    </tr>
+    <tr>
+        <td>R005</td>
+        <td>Scope creep</td>
+        <td>Todas</td>
+        <td>Alta (4)</td>
+        <td>Medio (3)</td>
+        <td class="center">12</td>
+        <td>Change control estricto</td>
+        <td class="number">$20,000</td>
+    </tr>
+    <tr>
+        <td>R006</td>
+        <td>Data migration issues</td>
+        <td>Fase 4</td>
+        <td>Media (3)</td>
+        <td>Alto (4)</td>
+        <td class="center">12</td>
+        <td>Testing + backup completo</td>
+        <td class="number">$35,000</td>
+    </tr>
+    <tr>
+        <td>R007</td>
+        <td>Resource availability</td>
+        <td>Todas</td>
+        <td>Media (3)</td>
+        <td>Medio (3)</td>
+        <td class="center">9</td>
+        <td>External augmentation</td>
+        <td class="number">$60,000</td>
+    </tr>
+    <tr>
+        <td>R008</td>
+        <td>Security vulnerabilities</td>
+        <td>Fase 4</td>
+        <td>Baja (2)</td>
+        <td>Alto (4)</td>
+        <td class="center">8</td>
+        <td>Security audits + pen testing</td>
+        <td class="number">$30,000</td>
+    </tr>
+    <tr>
+        <td>R009</td>
+        <td>Browser compatibility</td>
+        <td>Fase 3</td>
+        <td>Baja (2)</td>
+        <td>Medio (3)</td>
+        <td class="center">6</td>
+        <td>Progressive enhancement</td>
+        <td class="number">$15,000</td>
+    </tr>
+    <tr>
+        <td>R010</td>
+        <td>Technology obsolescence</td>
+        <td>Todas</td>
+        <td>Baja (2)</td>
+        <td>Medio (3)</td>
+        <td class="center">6</td>
+        <td>Architecture flexibility</td>
+        <td class="number">$20,000</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>6. ROI Y ANÁLISIS FINANCIERO</h2>
+<table>
+    <tr>
+        <th>Concepto</th>
+        <th>Año 0</th>
+        <th>Año 1</th>
+        <th>Año 2</th>
+        <th>Año 3</th>
+        <th>Año 4</th>
+        <th>Año 5</th>
+    </tr>
+    <tr>
+        <td><strong>COSTOS</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Inversión Proyecto</td>
+        <td class="number">($800,000)</td>
+        <td class="number">($700,000)</td>
+        <td class="number">($253,750)</td>
+        <td class="number">$0</td>
+        <td class="number">$0</td>
+        <td class="number">$0</td>
+    </tr>
+    <tr>
+        <td>Mantenimiento Sistema Nuevo</td>
+        <td class="number">$0</td>
+        <td class="number">($200,000)</td>
+        <td class="number">($400,000)</td>
+        <td class="number">($600,000)</td>
+        <td class="number">($600,000)</td>
+        <td class="number">($600,000)</td>
+    </tr>
+    <tr>
+        <td><strong>BENEFICIOS</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Ahorro Mantenimiento Legacy</td>
+        <td class="number">$0</td>
+        <td class="number">$300,000</td>
+        <td class="number">$600,000</td>
+        <td class="number">$1,200,000</td>
+        <td class="number">$1,200,000</td>
+        <td class="number">$1,200,000</td>
+    </tr>
+    <tr>
+        <td>Productividad Mejorada</td>
+        <td class="number">$0</td>
+        <td class="number">$100,000</td>
+        <td class="number">$200,000</td>
+        <td class="number">$300,000</td>
+        <td class="number">$300,000</td>
+        <td class="number">$300,000</td>
+    </tr>
+    <tr>
+        <td>Reducción Errores</td>
+        <td class="number">$0</td>
+        <td class="number">$50,000</td>
+        <td class="number">$100,000</td>
+        <td class="number">$200,000</td>
+        <td class="number">$200,000</td>
+        <td class="number">$200,000</td>
+    </tr>
+    <tr>
+        <td>Nuevas Oportunidades</td>
+        <td class="number">$0</td>
+        <td class="number">$0</td>
+        <td class="number">$200,000</td>
+        <td class="number">$500,000</td>
+        <td class="number">$500,000</td>
+        <td class="number">$500,000</td>
+    </tr>
+    <tr class="total-row">
+        <td><strong>FLUJO NETO</strong></td>
+        <td class="number">($800,000)</td>
+        <td class="number">($450,000)</td>
+        <td class="number">$446,250</td>
+        <td class="number">$1,600,000</td>
+        <td class="number">$1,600,000</td>
+        <td class="number">$1,600,000</td>
+    </tr>
+    <tr class="total-row">
+        <td><strong>FLUJO ACUMULADO</strong></td>
+        <td class="number">($800,000)</td>
+        <td class="number">($1,250,000)</td>
+        <td class="number">($803,750)</td>
+        <td class="number">$796,250</td>
+        <td class="number">$2,396,250</td>
+        <td class="number">$3,996,250</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>7. PLAN DE CAPACITACIÓN</h2>
+<table>
+    <tr>
+        <th>Audiencia</th>
+        <th>Tema</th>
+        <th>Duración (horas)</th>
+        <th>Modalidad</th>
+        <th>Fase</th>
+        <th>Participantes</th>
+    </tr>
+    <tr>
+        <td>Desarrolladores .NET</td>
+        <td>Migración VB.NET a C#</td>
+        <td class="center">24</td>
+        <td>Presencial + Labs</td>
+        <td>Fase 1</td>
+        <td class="center">8</td>
+    </tr>
+    <tr>
+        <td>Desarrolladores .NET</td>
+        <td>Microservicios y DDD</td>
+        <td class="center">40</td>
+        <td>Online + Workshop</td>
+        <td>Fase 2</td>
+        <td class="center">10</td>
+    </tr>
+    <tr>
+        <td>Desarrolladores Frontend</td>
+        <td>Angular 18 Avanzado</td>
+        <td class="center">32</td>
+        <td>Presencial + Labs</td>
+        <td>Fase 1</td>
+        <td class="center">8</td>
+    </tr>
+    <tr>
+        <td>Desarrolladores Frontend</td>
+        <td>Micro-frontends</td>
+        <td class="center">24</td>
+        <td>Online + Workshop</td>
+        <td>Fase 3</td>
+        <td class="center">8</td>
+    </tr>
+    <tr>
+        <td>DevOps</td>
+        <td>CI/CD y IaC</td>
+        <td class="center">32</td>
+        <td>Presencial + Labs</td>
+        <td>Fase 4</td>
+        <td class="center">4</td>
+    </tr>
+    <tr>
+        <td>Usuarios Finales</td>
+        <td>Nueva Plataforma</td>
+        <td class="center">16</td>
+        <td>Virtual + Videos</td>
+        <td>Cada Fase</td>
+        <td class="center">200</td>
+    </tr>
+    <tr>
+        <td>IT Support</td>
+        <td>Soporte Técnico</td>
+        <td class="center">24</td>
+        <td>Presencial</td>
+        <td>Fase 4</td>
+        <td class="center">15</td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="2">TOTAL HORAS CAPACITACIÓN</td>
+        <td class="center">192</td>
+        <td>Mixta</td>
+        <td>Todas</td>
+        <td class="center">253</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>8. ENTREGABLES POR FASE</h2>
+<table>
+    <tr>
+        <th>Fase</th>
+        <th>Entregable</th>
+        <th>Descripción</th>
+        <th>Criterio de Aceptación</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="phase-header">Fase 1</td>
+        <td>Módulos C# Migrados</td>
+        <td>5 módulos críticos VB.NET convertidos a C#</td>
+        <td>100% tests passing, 0 regression bugs</td>
+    </tr>
+    <tr>
+        <td>Angular Apps Actualizadas</td>
+        <td>3 apps migradas a Angular 18</td>
+        <td>Performance +50%, todos los features funcionando</td>
+    </tr>
+    <tr>
+        <td>Capa de Datos Unificada</td>
+        <td>Repository pattern implementado</td>
+        <td>Todos los contextos EF mapeados</td>
+    </tr>
+    <tr>
+        <td>Sistema de Logging</td>
+        <td>Serilog configurado en todos los sistemas</td>
+        <td>100% cobertura, dashboards operativos</td>
+    </tr>
+    <tr>
+        <td>Documentación Técnica</td>
+        <td>Arquitectura y código documentados</td>
+        <td>100% APIs documentadas</td>
+    </tr>
+    <tr>
+        <td rowspan="5" class="phase-header">Fase 2</td>
+        <td>Microservicios Core</td>
+        <td>5 servicios principales implementados</td>
+        <td>Todos los endpoints probados</td>
+    </tr>
+    <tr>
+        <td>API Gateway</td>
+        <td>Gateway configurado y funcionando</td>
+        <td>Routing 100% operativo</td>
+    </tr>
+    <tr>
+        <td>REST APIs</td>
+        <td>50+ endpoints migrados de Web Forms</td>
+        <td>OpenAPI docs completa</td>
+    </tr>
+    <tr>
+        <td>Event Bus</td>
+        <td>Sistema de mensajería implementado</td>
+        <td>99.9% message delivery</td>
+    </tr>
+    <tr>
+        <td>CQRS Implementation</td>
+        <td>Command/Query separation</td>
+        <td>Performance +40%</td>
+    </tr>
+    <tr>
+        <td rowspan="5" class="phase-header">Fase 3</td>
+        <td>Shell Application</td>
+        <td>Contenedor Angular 18 para micro-frontends</td>
+        <td>Navegación funcionando 100%</td>
+    </tr>
+    <tr>
+        <td>Micro-frontends</td>
+        <td>10+ módulos convertidos</td>
+        <td>Lazy loading implementado</td>
+    </tr>
+    <tr>
+        <td>Design System</td>
+        <td>Component library completa</td>
+        <td>50+ componentes documentados</td>
+    </tr>
+    <tr>
+        <td>PWA Features</td>
+        <td>Offline capability implementada</td>
+        <td>Service worker funcionando</td>
+    </tr>
+    <tr>
+        <td>State Management</td>
+        <td>NgRx implementado</td>
+        <td>100% estado centralizado</td>
+    </tr>
+    <tr>
+        <td rowspan="5" class="phase-header">Fase 4</td>
+        <td>Base de Datos Unificada</td>
+        <td>Esquemas MIOSS y SIV consolidados</td>
+        <td>Zero data loss, performance OK</td>
+    </tr>
+    <tr>
+        <td>SSO Implementation</td>
+        <td>Single Sign-On funcionando</td>
+        <td>100% usuarios usando SSO</td>
+    </tr>
+    <tr>
+        <td>CI/CD Pipelines</td>
+        <td>Deployment automatizado completo</td>
+        <td>Zero-downtime deployments</td>
+    </tr>
+    <tr>
+        <td>IaC</td>
+        <td>Infrastructure as Code con Terraform</td>
+        <td>100% infra versionada</td>
+    </tr>
+    <tr>
+        <td>Security Hardening</td>
+        <td>Sistema asegurado y auditado</td>
+        <td>0 vulnerabilidades críticas</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>9. TECNOLOGÍAS Y VERSIONES</h2>
+<table>
+    <tr>
+        <th>Categoría</th>
+        <th>Actual MIOSS</th>
+        <th>Actual SIV</th>
+        <th>Target Unificado</th>
+        <th>Justificación</th>
+    </tr>
+    <tr>
+        <td>Backend Language</td>
+        <td>C#/.NET Framework</td>
+        <td>VB.NET/.NET Framework</td>
+        <td>C#/.NET 8</td>
+        <td>LTS, cloud-ready, performance</td>
+    </tr>
+    <tr>
+        <td>Frontend Framework</td>
+        <td>Angular 18</td>
+        <td>Angular 6-8</td>
+        <td>Angular 18</td>
+        <td>Latest stable, best practices</td>
+    </tr>
+    <tr>
+        <td>Database</td>
+        <td>SQL Server 2016</td>
+        <td>SQL Server 2014</td>
+        <td>SQL Server 2022</td>
+        <td>Performance, security, features</td>
+    </tr>
+    <tr>
+        <td>ORM</td>
+        <td>Entity Framework 6</td>
+        <td>Entity Framework 6</td>
+        <td>EF Core 8</td>
+        <td>Performance, LINQ improvements</td>
+    </tr>
+    <tr>
+        <td>API Style</td>
+        <td>REST/SOAP mix</td>
+        <td>Web Forms/ASMX</td>
+        <td>REST + GraphQL</td>
+        <td>Modern, flexible, efficient</td>
+    </tr>
+    <tr>
+        <td>Authentication</td>
+        <td>Custom</td>
+        <td>Forms Auth</td>
+        <td>OAuth 2.0/OIDC</td>
+        <td>Industry standard, secure</td>
+    </tr>
+    <tr>
+        <td>Container</td>
+        <td>IIS</td>
+        <td>IIS</td>
+        <td>Docker/K8s</td>
+        <td>Scalability, portability</td>
+    </tr>
+    <tr>
+        <td>CI/CD</td>
+        <td>Azure DevOps</td>
+        <td>Manual/Scripts</td>
+        <td>Azure DevOps + GH Actions</td>
+        <td>Automation, reliability</td>
+    </tr>
+</table>
+</div>
+
+<div class="section-break">
+<h2>10. PLAN DE COMUNICACIÓN</h2>
+<table>
+    <tr>
+        <th>Stakeholder</th>
+        <th>Frecuencia</th>
+        <th>Canal</th>
+        <th>Contenido</th>
+        <th>Responsable</th>
+    </tr>
+    <tr>
+        <td>Executive Sponsors</td>
+        <td>Mensual</td>
+        <td>Presentación ejecutiva</td>
+        <td>Progress, KPIs, Budget, Risks</td>
+        <td>Project Manager</td>
+    </tr>
+    <tr>
+        <td>Business Users</td>
+        <td>Quincenal</td>
+        <td>Demo sessions</td>
+        <td>Features, cambios, training</td>
+        <td>Product Owner</td>
+    </tr>
+    <tr>
+        <td>IT Teams</td>
+        <td>Semanal</td>
+        <td>Technical meetings</td>
+        <td>Architecture, integration, issues</td>
+        <td>Tech Lead</td>
+    </tr>
+    <tr>
+        <td>Vendors/Partners</td>
+        <td>Mensual</td>
+        <td>Status calls</td>
+        <td>Dependencies, timelines</td>
+        <td>Vendor Manager</td>
+    </tr>
+    <tr>
+        <td>All Employees</td>
+        <td>Trimestral</td>
+        <td>Newsletter/Intranet</td>
+        <td>General updates, wins</td>
+        <td>Communications</td>
+    </tr>
+</table>
+</div>
+
+</body>
+</html>

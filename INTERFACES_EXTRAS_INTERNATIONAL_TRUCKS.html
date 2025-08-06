@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaces Extras - International Trucks OTC Streamwork</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 24pt;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+            page-break-after: avoid;
+            border-bottom: 3pt solid #1a5490;
+            padding-bottom: 10pt;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 18pt;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #3d85c6;
+            font-size: 14pt;
+            margin-top: 12pt;
+            margin-bottom: 8pt;
+            page-break-after: avoid;
+        }
+        h4 {
+            color: #4a90e2;
+            font-size: 12pt;
+            margin-top: 10pt;
+            margin-bottom: 6pt;
+            font-weight: bold;
+        }
+        p {
+            margin: 8pt 0;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 8pt 0;
+            padding-left: 20pt;
+        }
+        li {
+            margin: 4pt 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 12pt 0;
+            font-size: 10pt;
+        }
+        th {
+            background-color: #2e74b5;
+            color: white;
+            padding: 8pt;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 6pt;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .executive-summary {
+            background-color: #f0f4f8;
+            padding: 15pt;
+            border-left: 4pt solid #1a5490;
+            margin: 12pt 0;
+        }
+        .truck-specific {
+            background-color: #e8f8e8;
+            padding: 15pt;
+            border-left: 4pt solid #28a745;
+            margin: 12pt 0;
+        }
+        .phase-box {
+            border: 1px solid #2e74b5;
+            padding: 12pt;
+            margin: 12pt 0;
+            background-color: #f8fbff;
+        }
+        .critical-interface {
+            background-color: #ffe8e8;
+            padding: 10pt;
+            border-left: 3pt solid #dc3545;
+            margin: 10pt 0;
+        }
+        .integration-box {
+            background-color: #fff9e6;
+            padding: 10pt;
+            border-left: 3pt solid #ffa500;
+            margin: 10pt 0;
+        }
+        .otc-flow {
+            background-color: #f0f8ff;
+            padding: 10pt;
+            border-left: 3pt solid #007bff;
+            margin: 10pt 0;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        strong {
+            color: #1a5490;
+        }
+        .timeline {
+            font-weight: bold;
+            color: #2e74b5;
+        }
+        .budget {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .priority-1 {
+            background-color: #ffe6e6;
+            font-weight: bold;
+            color: #d73027;
+        }
+        .priority-2 {
+            background-color: #fff2e6;
+            font-weight: bold;
+            color: #fd8d3c;
+        }
+        .priority-3 {
+            background-color: #e6f7ff;
+            font-weight: bold;
+            color: #4575b4;
+        }
+        .interface-diagram {
+            font-family: 'Courier New', monospace;
+            background-color: #f8f9fa;
+            padding: 15pt;
+            border: 1px solid #dee2e6;
+            margin: 12pt 0;
+            white-space: pre;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🚛 Interfaces Extras - International Trucks OTC Streamwork</h1>
+
+<div class="executive-summary">
+<h2>Alcance Extendido para Manufactura de Camiones</h2>
+
+<h3>Contexto del Negocio</h3>
+<p><strong>International</strong> es fabricante y comercializador de camiones comerciales que opera a través de una red de distribuidores. La plataforma MIOSS-SIV maneja el <strong>streamwork Order-to-Cash (OTC)</strong> completo desde cotización hasta cobranza.</p>
+
+<h3>Propósito del Documento</h3>
+<p>Este documento complementa el <strong>Plan de Plataforma Integrada Navistar 2026</strong> identificando interfaces adicionales específicas para el negocio de manufactura de camiones que podrían integrarse para maximizar el valor del streamwork OTC.</p>
+
+<p class="timeline">Implementación: Opcional, post go-live del plan base</p>
+<p class="budget">Inversión Adicional Estimada: $350K - $650K USD</p>
+</div>
+
+<div class="truck-specific">
+<h2>🎯 Streamwork Order-to-Cash - International Trucks</h2>
+
+<h3>Proceso OTC Específico para Camiones</h3>
+<div class="otc-flow">
+<h4>1. Quote-to-Order (Q2O)</h4>
+<ul>
+    <li><strong>Configuración de Producto</strong>: Motor, transmisión, cabina, aplicación</li>
+    <li><strong>Pricing Dinámico</strong>: Precios base + opciones + incentivos + descuentos por volumen</li>
+    <li><strong>Available-to-Promise</strong>: Disponibilidad de componentes y slots de producción</li>
+    <li><strong>Credit Pre-approval</strong>: Validación crediticia del distribuidor/cliente final</li>
+</ul>
+
+<h4>2. Order-to-Manufacture (O2M)</h4>
+<ul>
+    <li><strong>Order Management</strong>: Validaciones, aprobaciones, cambios de ingeniería</li>
+    <li><strong>Production Planning</strong>: Secuenciación de línea, materiales, capacidad</li>
+    <li><strong>Supplier Coordination</strong>: JIT delivery, quality gates, escalations</li>
+    <li><strong>Manufacturing Execution</strong>: Build progress, quality, rework</li>
+</ul>
+
+<h4>3. Manufacture-to-Delivery (M2D)</h4>
+<ul>
+    <li><strong>Quality Assurance</strong>: PDI (Pre-delivery inspection), compliance</li>
+    <li><strong>Logistics Coordination</strong>: Transporte, entrega, instalación</li>
+    <li><strong>Documentation</strong>: Títulos, certificados, manuales</li>
+    <li><strong>Dealer Handoff</strong>: Inventario, financiamiento, registro</li>
+</ul>
+
+<h4>4. Delivery-to-Cash (D2C)</h4>
+<ul>
+    <li><strong>Invoicing</strong>: Facturación automática, EDI, documentos legales</li>
+    <li><strong>Financial Settlement</strong>: Floor plan, términos, cobranza</li>
+    <li><strong>Warranty Activation</strong>: Registro de garantía, programas de servicio</li>
+    <li><strong>Customer Onboarding</strong>: Capacitación, soporte, ecosistema digital</li>
+</ul>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>📋 INTERFACES ADICIONALES POR CATEGORÍA</h2>
+
+<h3>🔧 CONFIGURACIÓN Y PRICING</h3>
+
+<div class="phase-box">
+<h4>1. Advanced Product Configurator</h4>
+<p><strong>Propósito</strong>: Configuración inteligente de camiones con validación en tiempo real</p>
+
+<table>
+    <tr>
+        <th>Componente</th>
+        <th>Descripción</th>
+        <th>Integración Requerida</th>
+    </tr>
+    <tr>
+        <td>Engine Configurator</td>
+        <td>Cummins, Detroit Diesel, International specs</td>
+        <td>SAP Variant Configuration (VC)</td>
+    </tr>
+    <tr>
+        <td>Transmission Matrix</td>
+        <td>Manual, Auto, AMT compatibility</td>
+        <td>Engineering BOM system</td>
+    </tr>
+    <tr>
+        <td>Axle Configuration</td>
+        <td>Single, tandem, tridem, ratios</td>
+        <td>Weight & balance calculator</td>
+    </tr>
+    <tr>
+        <td>Body Builder Interface</td>
+        <td>Chassis prep, PTO options</td>
+        <td>Third-party body builder systems</td>
+    </tr>
+    <tr>
+        <td>Regulatory Compliance</td>
+        <td>EPA, DOT, state regulations</td>
+        <td>Regulatory database</td>
+    </tr>
+</table>
+
+<div class="integration-box">
+<p><strong>Beneficios</strong>:</p>
+<ul>
+    <li>Eliminación de configuraciones inválidas (95% reducción errores)</li>
+    <li>Tiempo de cotización reducido 60%</li>
+    <li>Integración automática con pricing</li>
+</ul>
+<p class="budget">Costo Estimado: $80K - $120K</p>
+<p class="timeline">Timeline: 4-6 sprints</p>
+</div>
+</div>
+
+<div class="phase-box">
+<h4>2. Dynamic Pricing Engine</h4>
+<p><strong>Propósito</strong>: Motor de precios inteligente con machine learning</p>
+
+<table>
+    <tr>
+        <th>Componente</th>
+        <th>Descripción</th>
+        <th>Datos Requeridos</th>
+    </tr>
+    <tr>
+        <td>Base Vehicle Pricing</td>
+        <td>Precios por modelo, configuración</td>
+        <td>SAP SD pricing master</td>
+    </tr>
+    <tr>
+        <td>Options Pricing</td>
+        <td>Precios de accesorios y opciones</td>
+        <td>SAP material master</td>
+    </tr>
+    <tr>
+        <td>Volume Discounts</td>
+        <td>Descuentos escalonados por volumen</td>
+        <td>Historical sales data</td>
+    </tr>
+    <tr>
+        <td>Competitive Intelligence</td>
+        <td>Precios de competencia en tiempo real</td>
+        <td>External pricing services</td>
+    </tr>
+    <tr>
+        <td>ML Price Optimization</td>
+        <td>Optimización de precios con IA</td>
+        <td>Azure ML, historical win/loss</td>
+    </tr>
+</table>
+
+<div class="integration-box">
+<p><strong>Beneficios</strong>:</p>
+<ul>
+    <li>Margen optimizado (+3-5% improvement)</li>
+    <li>Win rate aumentado 15-20%</li>
+    <li>Pricing consistency 99.9%</li>
+</ul>
+<p class="budget">Costo Estimado: $100K - $150K</p>
+<p class="timeline">Timeline: 6-8 sprints</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h3>🏭 MANUFACTURING & SUPPLY CHAIN</h3>
+
+<div class="phase-box">
+<h4>3. Manufacturing Execution System (MES) Integration</h4>
+<p><strong>Propósito</strong>: Visibilidad completa del proceso de manufactura</p>
+
+<div class="interface-diagram">
+MIOSS-SIV Platform
+        ↕
+    MES Integration Layer
+        ↕
+┌─────────────────────────────────────┐
+│         Production Line             │
+├─────────────────────────────────────┤
+│ Chassis → Engine → Trans → Final    │
+│   ↓        ↓        ↓       ↓      │
+│ Station1 Station2 Station3 Station4 │
+│   ↓        ↓        ↓       ↓      │
+│ Quality  Quality  Quality  Quality  │
+└─────────────────────────────────────┘
+</div>
+
+<table>
+    <tr>
+        <th>Funcionalidad</th>
+        <th>Descripción</th>
+        <th>Interface Técnica</th>
+    </tr>
+    <tr>
+        <td>Build Sequencing</td>
+        <td>Orden de producción optimizado</td>
+        <td>REST API / Message Queue</td>
+    </tr>
+    <tr>
+        <td>Real-time Progress</td>
+        <td>Status por estación de trabajo</td>
+        <td>WebSocket / SignalR</td>
+    </tr>
+    <tr>
+        <td>Quality Gates</td>
+        <td>Checkpoints de calidad automáticos</td>
+        <td>Event-driven integration</td>
+    </tr>
+    <tr>
+        <td>Rework Management</td>
+        <td>Gestión de retrabajo y defectos</td>
+        <td>Workflow engine</td>
+    </tr>
+    <tr>
+        <td>Labor Tracking</td>
+        <td>Productividad y eficiencia</td>
+        <td>Time capture systems</td>
+    </tr>
+</table>
+
+<div class="integration-box">
+<p><strong>Beneficios</strong>:</p>
+<ul>
+    <li>Visibilidad 100% del build progress</li>
+    <li>Reducción 40% en queries de status</li>
+    <li>Predicción accurada de delivery dates</li>
+</ul>
+<p class="budget">Costo Estimado: $120K - $180K</p>
+<p class="timeline">Timeline: 8-10 sprints</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h3>🚚 LOGISTICS & DELIVERY</h3>
+
+<div class="phase-box">
+<h4>4. Transportation Management System (TMS)</h4>
+<p><strong>Propósito</strong>: Optimización de logística y entrega</p>
+
+<table>
+    <tr>
+        <th>Módulo</th>
+        <th>Funcionalidad</th>
+        <th>ROI Esperado</th>
+    </tr>
+    <tr>
+        <td>Route Optimization</td>
+        <td>Optimización de rutas de entrega</td>
+        <td>15% reducción costos transporte</td>
+    </tr>
+    <tr>
+        <td>Carrier Management</td>
+        <td>Selección automática de transportistas</td>
+        <td>10% mejora en on-time delivery</td>
+    </tr>
+    <tr>
+        <td>Load Planning</td>
+        <td>Optimización de carga de trailers</td>
+        <td>20% mejora en utilización</td>
+    </tr>
+    <tr>
+        <td>Track & Trace</td>
+        <td>Seguimiento en tiempo real</td>
+        <td>90% reducción en calls de status</td>
+    </tr>
+    <tr>
+        <td>Damage Prevention</td>
+        <td>Protocolos de manejo seguro</td>
+        <td>50% reducción en daños de tránsito</td>
+    </tr>
+</table>
+
+<div class="integration-box">
+<p><strong>Integración Técnica</strong>:</p>
+<ul>
+    <li><strong>APIs</strong>: FedEx, UPS, specialized haulers</li>
+    <li><strong>IoT</strong>: GPS tracking, temperature sensors</li>
+    <li><strong>EDI</strong>: 214 (shipment status), 210 (freight invoice)</li>
+    <li><strong>Mobile</strong>: Driver apps, delivery confirmation</li>
+</ul>
+<p class="budget">Costo Estimado: $80K - $120K</p>
+<p class="timeline">Timeline: 6-8 sprints</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h3>👥 DEALER & CUSTOMER EXPERIENCE</h3>
+
+<div class="phase-box">
+<h4>5. Advanced Dealer Portal</h4>
+<p><strong>Propósito</strong>: Portal completo para gestión de distribuidores</p>
+
+<div class="otc-flow">
+<h4>Funcionalidades Clave</h4>
+<ul>
+    <li><strong>Inventory Management</strong>: Stock allocation, dealer trades</li>
+    <li><strong>Incentive Tracking</strong>: Programas de incentivos en tiempo real</li>
+    <li><strong>Performance Analytics</strong>: KPIs, scorecards, benchmarking</li>
+    <li><strong>Training Portal</strong>: Certificaciones, materiales de venta</li>
+    <li><strong>Marketing Support</strong>: Co-op advertising, lead management</li>
+    <li><strong>Service Integration</strong>: Warranty claims, parts ordering</li>
+</ul>
+</div>
+
+<table>
+    <tr>
+        <th>Módulo</th>
+        <th>Descripción</th>
+        <th>Sistema Backend</th>
+    </tr>
+    <tr>
+        <td>Dealer Hierarchy</td>
+        <td>Gestión de territorio y jerarquías</td>
+        <td>SAP CRM</td>
+    </tr>
+    <tr>
+        <td>Credit Management</td>
+        <td>Límites de crédito y términos</td>
+        <td>SAP FI-AR</td>
+    </tr>
+    <tr>
+        <td>Inventory Allocation</td>
+        <td>Asignación inteligente de inventory</td>
+        <td>SAP SD-ATP</td>
+    </tr>
+    <tr>
+        <td>Performance Metrics</td>
+        <td>Sales performance, market share</td>
+        <td>SAP Analytics Cloud</td>
+    </tr>
+    <tr>
+        <td>Communication Hub</td>
+        <td>Announcements, bulletins, alerts</td>
+        <td>Azure Service Bus</td>
+    </tr>
+</table>
+
+<div class="integration-box">
+<p><strong>Beneficios</strong>:</p>
+<ul>
+    <li>Dealer satisfaction +25%</li>
+    <li>Self-service adoption 80%</li>
+    <li>Support calls reduction 60%</li>
+</ul>
+<p class="budget">Costo Estimado: $100K - $160K</p>
+<p class="timeline">Timeline: 8-12 sprints</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h3>💰 FINANCIAL & COMPLIANCE</h3>
+
+<div class="phase-box">
+<h4>6. Advanced Financial Integration</h4>
+<p><strong>Propósito</strong>: Automatización financiera completa del OTC</p>
+
+<table>
+    <tr>
+        <th>Proceso</th>
+        <th>Automatización</th>
+        <th>Compliance</th>
+    </tr>
+    <tr>
+        <td>Credit Approval</td>
+        <td>Real-time credit checking, auto-approval</td>
+        <td>SOX compliance</td>
+    </tr>
+    <tr>
+        <td>Floor Plan Financing</td>
+        <td>Integration con financing partners</td>
+        <td>Banking regulations</td>
+    </tr>
+    <tr>
+        <td>Invoice Generation</td>
+        <td>Auto-invoicing, EDI transmission</td>
+        <td>Tax compliance</td>
+    </tr>
+    <tr>
+        <td>Collections</td>
+        <td>Automated dunning, aging reports</td>
+        <td>Fair debt collection</td>
+    </tr>
+    <tr>
+        <td>Rebate Processing</td>
+        <td>Automatic rebate calculation</td>
+        <td>Revenue recognition</td>
+    </tr>
+</table>
+
+<div class="critical-interface">
+<h4>Regulatory Compliance Interfaces</h4>
+<ul>
+    <li><strong>EPA Certification</strong>: Emissions compliance per truck</li>
+    <li><strong>DOT Reporting</strong>: Safety and compliance reporting</li>
+    <li><strong>Warranty Registration</strong>: Automatic warranty activation</li>
+    <li><strong>Recall Management</strong>: Automated recall notifications</li>
+    <li><strong>FMVSS Compliance</strong>: Federal Motor Vehicle Safety Standards</li>
+</ul>
+</div>
+
+<div class="integration-box">
+<p><strong>Beneficios</strong>:</p>
+<ul>
+    <li>Days Sales Outstanding (DSO) -20%</li>
+    <li>Invoice accuracy 99.9%</li>
+    <li>Compliance violations -95%</li>
+</ul>
+<p class="budget">Costo Estimado: $90K - $140K</p>
+<p class="timeline">Timeline: 6-8 sprints</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>🎯 PRIORIZACIÓN Y ROADMAP</h2>
+
+<h3>Matriz de Priorización</h3>
+
+<table>
+    <tr>
+        <th>Interface</th>
+        <th>Impacto OTC</th>
+        <th>Complejidad</th>
+        <th>ROI</th>
+        <th>Prioridad</th>
+        <th>Timeline</th>
+    </tr>
+    <tr class="priority-1">
+        <td>Advanced Product Configurator</td>
+        <td>Alto</td>
+        <td>Media</td>
+        <td>Alto</td>
+        <td>1</td>
+        <td>Q2 2027</td>
+    </tr>
+    <tr class="priority-1">
+        <td>Dynamic Pricing Engine</td>
+        <td>Alto</td>
+        <td>Alta</td>
+        <td>Muy Alto</td>
+        <td>1</td>
+        <td>Q2 2027</td>
+    </tr>
+    <tr class="priority-2">
+        <td>MES Integration</td>
+        <td>Alto</td>
+        <td>Alta</td>
+        <td>Alto</td>
+        <td>2</td>
+        <td>Q3 2027</td>
+    </tr>
+    <tr class="priority-2">
+        <td>Advanced Dealer Portal</td>
+        <td>Alto</td>
+        <td>Media</td>
+        <td>Alto</td>
+        <td>2</td>
+        <td>Q3 2027</td>
+    </tr>
+    <tr class="priority-2">
+        <td>TMS Integration</td>
+        <td>Medio</td>
+        <td>Media</td>
+        <td>Alto</td>
+        <td>2</td>
+        <td>Q4 2027</td>
+    </tr>
+    <tr class="priority-3">
+        <td>Financial Integration</td>
+        <td>Medio</td>
+        <td>Alta</td>
+        <td>Medio</td>
+        <td>3</td>
+        <td>Q1 2028</td>
+    </tr>
+</table>
+
+<h3>Roadmap de Implementación</h3>
+
+<div class="phase-box">
+<h4>FASE A: Core OTC Enhancement (Q2 2027)</h4>
+<p class="timeline">6 meses post go-live</p>
+<ul>
+    <li>Advanced Product Configurator</li>
+    <li>Dynamic Pricing Engine</li>
+</ul>
+<p class="budget">Inversión: $180K - $270K</p>
+<p><strong>Beneficio</strong>: Quote accuracy 95%, pricing optimization +4%</p>
+</div>
+
+<div class="phase-box">
+<h4>FASE B: Manufacturing Integration (Q3 2027)</h4>
+<p class="timeline">9 meses post go-live</p>
+<ul>
+    <li>MES Integration</li>
+    <li>Advanced Dealer Portal</li>
+</ul>
+<p class="budget">Inversión: $220K - $340K</p>
+<p><strong>Beneficio</strong>: Build visibility 100%, dealer satisfaction +25%</p>
+</div>
+
+<div class="phase-box">
+<h4>FASE C: Logistics & Financial (Q4 2027 - Q1 2028)</h4>
+<p class="timeline">12-15 meses post go-live</p>
+<ul>
+    <li>TMS Integration</li>
+    <li>Advanced Financial Integration</li>
+</ul>
+<p class="budget">Inversión: $170K - $260K</p>
+<p><strong>Beneficio</strong>: Logistics costs -15%, DSO -20%</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>💼 ANÁLISIS COSTO-BENEFICIO</h2>
+
+<h3>Inversión Total por Fases</h3>
+
+<table>
+    <tr>
+        <th>Fase</th>
+        <th>Timeline</th>
+        <th>Inversión</th>
+        <th>Beneficio Anual</th>
+        <th>ROI</th>
+    </tr>
+    <tr>
+        <td>Fase A - Core OTC</td>
+        <td>Q2 2027</td>
+        <td>$180K - $270K</td>
+        <td>$400K</td>
+        <td>148% - 222%</td>
+    </tr>
+    <tr>
+        <td>Fase B - Manufacturing</td>
+        <td>Q3 2027</td>
+        <td>$220K - $340K</td>
+        <td>$350K</td>
+        <td>103% - 159%</td>
+    </tr>
+    <tr>
+        <td>Fase C - Logistics</td>
+        <td>Q4 2027</td>
+        <td>$170K - $260K</td>
+        <td>$300K</td>
+        <td>115% - 176%</td>
+    </tr>
+    <tr style="background-color: #e8f4e8; font-weight: bold;">
+        <td><strong>TOTAL</strong></td>
+        <td><strong>18 meses</strong></td>
+        <td><strong>$570K - $870K</strong></td>
+        <td><strong>$1.05M</strong></td>
+        <td><strong>121% - 184%</strong></td>
+    </tr>
+</table>
+
+<h3>Beneficios Cuantitativos Esperados</h3>
+
+<div class="truck-specific">
+<h4>Mejoras Operacionales</h4>
+<ul>
+    <li><strong>Quote-to-Order Cycle Time</strong>: Reducción 60% (5 días → 2 días)</li>
+    <li><strong>Pricing Accuracy</strong>: Mejora 95% → 99.9%</li>
+    <li><strong>Order Errors</strong>: Reducción 70% (configuraciones inválidas)</li>
+    <li><strong>Build Visibility</strong>: 100% real-time tracking</li>
+    <li><strong>Dealer Self-Service</strong>: 80% adoption rate</li>
+    <li><strong>Logistics Costs</strong>: Reducción 15%</li>
+    <li><strong>DSO (Days Sales Outstanding)</strong>: Reducción 20%</li>
+</ul>
+
+<h4>Beneficios Financieros Anuales</h4>
+<ul>
+    <li><strong>Pricing Optimization</strong>: +$500K (4% margin improvement)</li>
+    <li><strong>Operational Efficiency</strong>: +$300K (reduced manual work)</li>
+    <li><strong>Logistics Savings</strong>: +$150K (route optimization)</li>
+    <li><strong>Reduced Errors</strong>: +$100K (less rework/returns)</li>
+</ul>
+<p class="budget">Total Beneficio Anual: $1.05M USD</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>🏗️ ARQUITECTURA TÉCNICA</h2>
+
+<h3>Arquitectura de Integración Extendida</h3>
+
+<div class="interface-diagram">
+┌─────────────────────────────────────────────────────────────┐
+│                    Azure Cloud Platform                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────────┐    ┌─────────────────────────────────┐ │
+│  │   MIOSS-SIV     │───►│      API Management             │ │
+│  │   Platform      │    │   (Interface Orchestration)    │ │
+│  └─────────────────┘    └──────────────┬──────────────────┘ │
+│                                        │                    │
+│  ┌─────────────────────────────────────┴──────────────────┐ │
+│  │              Integration Layer                          │ │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐  │ │
+│  │  │ SAP S/4HANA │ │   MES       │ │    TMS          │  │ │
+│  │  │ Connector   │ │ Integration │ │  Integration    │  │ │
+│  │  └─────────────┘ └─────────────┘ └─────────────────┘  │ │
+│  │                                                        │ │
+│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐  │ │
+│  │  │ Configurator│ │   Pricing   │ │    Dealer       │  │ │
+│  │  │   Engine    │ │   Engine    │ │    Portal       │  │ │
+│  │  └─────────────┘ └─────────────┘ └─────────────────┘  │ │
+│  └────────────────────────────────────────────────────────┘ │
+│                                                             │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │                External Systems                         │ │
+│  │  • Financial Partners    • Regulatory Systems          │ │
+│  │  • Carrier Networks     • Body Builder Portals        │ │
+│  │  • Supplier Portals     • IoT/Telematics              │ │
+│  └────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────┘
+</div>
+
+<h3>Patrones de Integración</h3>
+
+<table>
+    <tr>
+        <th>Tipo de Interface</th>
+        <th>Patrón</th>
+        <th>Tecnología</th>
+        <th>Frecuencia</th>
+    </tr>
+    <tr>
+        <td>Product Configuration</td>
+        <td>Synchronous API</td>
+        <td>REST/JSON</td>
+        <td>Real-time</td>
+    </tr>
+    <tr>
+        <td>Pricing Engine</td>
+        <td>Cached API</td>
+        <td>REST + Redis</td>
+        <td>Near real-time</td>
+    </tr>
+    <tr>
+        <td>MES Integration</td>
+        <td>Event Streaming</td>
+        <td>Service Bus + SignalR</td>
+        <td>Real-time</td>
+    </tr>
+    <tr>
+        <td>Financial Systems</td>
+        <td>Batch + Event</td>
+        <td>EDI + Message Queue</td>
+        <td>Daily + Triggers</td>
+    </tr>
+    <tr>
+        <td>Logistics/TMS</td>
+        <td>Webhook + Polling</td>
+        <td>REST + Background Jobs</td>
+        <td>Every 15 min</td>
+    </tr>
+    <tr>
+        <td>Regulatory/Compliance</td>
+        <td>Scheduled Batch</td>
+        <td>SFTP + File Processing</td>
+        <td>Daily/Weekly</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>⚠️ CONSIDERACIONES Y RIESGOS</h2>
+
+<div class="critical-interface">
+<h3>Riesgos Técnicos</h3>
+<ul>
+    <li><strong>Complejidad de Integración</strong>: Múltiples sistemas legacy con documentación limitada</li>
+    <li><strong>Data Quality</strong>: Inconsistencias en master data entre sistemas</li>
+    <li><strong>Performance Impact</strong>: Latencia adicional por múltiples integraciones</li>
+    <li><strong>Security</strong>: Superficie de ataque ampliada con más interfaces</li>
+    <li><strong>Dependency Risk</strong>: Fallas en sistemas externos afectan OTC flow</li>
+</ul>
+
+<h3>Mitigaciones Propuestas</h3>
+<ul>
+    <li><strong>Implementación Gradual</strong>: Rollout por fases para minimizar riesgo</li>
+    <li><strong>Circuit Breakers</strong>: Patrones de resiliencia para interfaces críticas</li>
+    <li><strong>Data Validation</strong>: Validación estricta en boundaries de integración</li>
+    <li><strong>Monitoring Proactivo</strong>: Alertas y dashboards para todas las interfaces</li>
+    <li><strong>Fallback Procedures</strong>: Procesos manuales para contingencias</li>
+</ul>
+</div>
+
+<div class="integration-box">
+<h3>Factores de Éxito</h3>
+<ul>
+    <li><strong>Executive Sponsorship</strong>: Apoyo de liderazgo para inversión extendida</li>
+    <li><strong>Cross-functional Team</strong>: Participación de manufacturing, logistics, finance</li>
+    <li><strong>Change Management</strong>: Capacitación y adopción de nuevos procesos</li>
+    <li><strong>Vendor Partnerships</strong>: Colaboración estrecha con proveedores de sistemas</li>
+    <li><strong>Performance Monitoring</strong>: KPIs claros y seguimiento continuo</li>
+</ul>
+</div>
+
+<div class="page-break"></div>
+
+<h2>📋 CONCLUSIONES Y RECOMENDACIONES</h2>
+
+<div class="executive-summary">
+<h3>Valor Estratégico</h3>
+<p>Las <strong>interfaces extras</strong> identificadas transformarían la plataforma MIOSS-SIV de un sistema transaccional a una <strong>plataforma estratégica OTC completa</strong> que diferencia a International en el mercado.</p>
+
+<h3>Enfoque Recomendado</h3>
+<ol>
+    <li><strong>Completar Plan Base</strong>: Implementar plataforma integrada según cronograma original</li>
+    <li><strong>Validar ROI</strong>: Confirmar beneficios del plan base antes de expansión</li>
+    <li><strong>Implementación Gradual</strong>: Rollout de interfaces extras por fases</li>
+    <li><strong>Métricas de Éxito</strong>: KPIs claros para cada interface implementada</li>
+</ol>
+
+<h3>Criterios de Decisión</h3>
+<div class="otc-flow">
+<h4>Implementar SI:</h4>
+<ul>
+    <li>Plan base entrega ROI esperado</li>
+    <li>Organización lista para mayor complejidad</li>
+    <li>Presupuesto disponible ($570K - $870K)</li>
+    <li>Sponsors comprometidos con visión extendida</li>
+</ul>
+
+<h4>Diferir SI:</h4>
+<ul>
+    <li>Plan base presenta desafíos significativos</li>
+    <li>Recursos limitados para expansión</li>
+    <li>Cambios organizacionales significativos en curso</li>
+    <li>ROI del plan base no se materializa</li>
+</ul>
+</div>
+
+<h3>Próximos Pasos Sugeridos</h3>
+<ol>
+    <li><strong>Socialización</strong>: Presentar opciones a stakeholders clave</li>
+    <li><strong>Pilot Assessment</strong>: Evaluar 1-2 interfaces como piloto</li>
+    <li><strong>Vendor Evaluation</strong>: RFI/RFP para componentes críticos</li>
+    <li><strong>Business Case</strong>: Desarrollar business case detallado por fase</li>
+    <li><strong>Go/No-Go Decision</strong>: Decisión post go-live del plan base</li>
+</ol>
+</div>
+
+<div class="truck-specific">
+<h3>Mensaje Final</h3>
+<p><strong>Las interfaces extras representan una oportunidad significativa para transformar el streamwork OTC de International de un proceso operacional a una ventaja competitiva estratégica.</strong></p>
+
+<p>Con una inversión adicional de <strong>$570K - $870K</strong> distribuida en 18 meses, International podría lograr:</p>
+<ul>
+    <li>✅ <strong>$1.05M en beneficios anuales</strong> recurrentes</li>
+    <li>✅ <strong>121-184% ROI</strong> en las interfaces extras</li>
+    <li>✅ <strong>Diferenciación competitiva</strong> en el mercado</li>
+    <li>✅ <strong>Plataforma preparada para el futuro</strong> (IoT, AI, etc.)</li>
+</ul>
+
+<p class="budget">La decisión debe tomarse basada en el éxito del plan base y la capacidad organizacional para manejar la complejidad adicional.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Conceptos - Plataforma Integrada Navistar</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #333;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 24pt;
+            margin-top: 24pt;
+            margin-bottom: 12pt;
+            page-break-after: avoid;
+            text-align: center;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 18pt;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #3d85c6;
+            font-size: 14pt;
+            margin-top: 12pt;
+            margin-bottom: 8pt;
+            page-break-after: avoid;
+        }
+        h4 {
+            color: #4a90e2;
+            font-size: 12pt;
+            margin-top: 10pt;
+            margin-bottom: 6pt;
+            font-weight: bold;
+        }
+        p {
+            margin: 8pt 0;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 8pt 0;
+            padding-left: 20pt;
+        }
+        li {
+            margin: 4pt 0;
+        }
+        .concept-box {
+            background-color: #f8fbff;
+            border-left: 4pt solid #2e74b5;
+            padding: 12pt;
+            margin: 12pt 0;
+            page-break-inside: avoid;
+        }
+        .definition {
+            background-color: #e8f4e8;
+            padding: 10pt;
+            border-radius: 5pt;
+            margin: 10pt 0;
+            font-style: italic;
+        }
+        .example {
+            background-color: #fff9e6;
+            padding: 10pt;
+            border-left: 3pt solid #ffa500;
+            margin: 10pt 0;
+        }
+        .technical-note {
+            background-color: #f0f0f0;
+            padding: 8pt;
+            border-radius: 3pt;
+            font-size: 10pt;
+            margin: 8pt 0;
+        }
+        .benefit-box {
+            background-color: #e8f8e8;
+            padding: 10pt;
+            border-left: 3pt solid #28a745;
+            margin: 10pt 0;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        strong {
+            color: #1a5490;
+        }
+        .warning {
+            background-color: #ffe8e8;
+            padding: 10pt;
+            border-left: 3pt solid #ff6b6b;
+            margin: 10pt 0;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2pt 4pt;
+            border-radius: 2pt;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+        }
+        .sap-integration {
+            background-color: #f0f8ff;
+            padding: 10pt;
+            border-left: 3pt solid #007bff;
+            margin: 10pt 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Guía de Conceptos Técnicos</h1>
+<h2 style="text-align: center;">Plataforma Integrada Navistar 2026-2027</h2>
+
+<div class="definition">
+<p><strong>Propósito:</strong> Este documento explica todos los conceptos técnicos, metodologías y tecnologías mencionadas en el Plan de la Plataforma Integrada, proporcionando el contexto necesario para comprender la propuesta y tomar decisiones informadas.</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCEPTOS FUNDAMENTALES</h2>
+
+<div class="concept-box">
+<h3>Plataforma Integrada</h3>
+<div class="definition">
+<p><strong>Definición:</strong> Una solución tecnológica unificada que combina múltiples sistemas separados (MIOSS y SIV) en una sola aplicación cohesiva, mientras moderniza simultáneamente las interfaces de integración con sistemas corporativos (BaaN → SAP).</p>
+</div>
+
+<p><strong>Características principales:</strong></p>
+<ul>
+    <li><strong>Unificación de Funcionalidades</strong>: Todas las capacidades de ventas en una sola interface</li>
+    <li><strong>Arquitectura Modular</strong>: Separación clara de dominios de negocio</li>
+    <li><strong>Integración Nativa</strong>: Comunicación directa con SAP sin sistemas intermedios</li>
+    <li><strong>Experiencia Consistente</strong>: Misma interface para todos los usuarios</li>
+</ul>
+
+<div class="example">
+<p><strong>Analogía:</strong> Es como convertir una casa con múltiples edificios separados (MIOSS, SIV, interfaces BaaN) en una sola casa moderna con habitaciones bien organizadas y servicios centralizados (electricidad = SAP, plomería = datos).</p>
+</div>
+
+<div class="benefit-box">
+<p><strong>Beneficios para Navistar:</strong></p>
+<ul>
+    <li>Un solo sistema para mantener en lugar de múltiples</li>
+    <li>Capacitación unificada para usuarios</li>
+    <li>Datos consistentes entre mercados de exportación y nacional</li>
+    <li>Modernización completa de la integración empresarial</li>
+</ul>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>ARQUITECTURA Y TECNOLOGÍAS</h2>
+
+<h3>.NET 8 (Plataforma de Desarrollo Backend)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es .NET 8?</h4>
+<div class="definition">
+<p><strong>.NET 8:</strong> Plataforma de desarrollo de Microsoft, versión LTS (Long Term Support) que estará soportada hasta noviembre 2026. Es la evolución moderna de .NET Framework, optimizada para aplicaciones cloud y de alto rendimiento.</p>
+</div>
+
+<p><strong>¿Por qué .NET 8 para este proyecto?</strong></p>
+<ul>
+    <li><strong>Performance Superior</strong>: 25-40% más rápido que versiones anteriores</li>
+    <li><strong>Cloud-Native</strong>: Diseñado específicamente para Azure y contenedores</li>
+    <li><strong>Cross-Platform</strong>: Funciona en Windows, Linux, macOS</li>
+    <li><strong>Soporte a Largo Plazo</strong>: Microsoft garantiza soporte hasta 2026</li>
+    <li><strong>Integración SAP</strong>: Conectores nativos y librerías especializadas</li>
+</ul>
+
+<div class="technical-note">
+<p><strong>Migración desde sistemas actuales:</strong> El código existente de MIOSS (C#) y SIV (VB.NET) se puede migrar a .NET 8 manteniendo la lógica de negocio pero aprovechando las mejoras de performance y características modernas.</p>
+</div>
+
+<div class="example">
+<p><strong>Ejemplo práctico:</strong> Una consulta de precios que actualmente toma 2 segundos en el sistema legacy, tomará menos de 500ms en .NET 8 debido a optimizaciones del compilador y runtime.</p>
+</div>
+</div>
+
+<h3>Angular 18 (Plataforma de Desarrollo Frontend)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Angular 18?</h4>
+<div class="definition">
+<p><strong>Angular 18:</strong> Framework de desarrollo web de Google para crear aplicaciones de una sola página (SPA). Es la versión más reciente con características modernas como signals, standalone components y server-side rendering.</p>
+</div>
+
+<p><strong>Ventajas de Angular 18:</strong></p>
+<ul>
+    <li><strong>Signals</strong>: Sistema de reactividad más eficiente que reduce re-renderizados innecesarios</li>
+    <li><strong>Standalone Components</strong>: Componentes independientes que no requieren módulos</li>
+    <li><strong>Server-Side Rendering (SSR)</strong>: Carga inicial más rápida</li>
+    <li><strong>Control Flow</strong>: Sintaxis más limpia para @if, @for, @switch</li>
+    <li><strong>Bundle Optimization</strong>: Aplicaciones hasta 40% más pequeñas</li>
+</ul>
+
+<div class="example">
+<p><strong>Impacto en usuarios:</strong></p>
+<ul>
+    <li>La aplicación carga en menos de 2 segundos vs 8-10 segundos actuales</li>
+    <li>Navegación instantánea entre módulos sin recargas</li>
+    <li>Funciona sin conexión (PWA - Progressive Web App)</li>
+    <li>Responsive design - funciona igual en desktop, tablet y móvil</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Migración desde Angular 6/8:</strong> Se aprovechan componentes existentes pero se modernizan para usar las nuevas características, resultando en mejor performance y mantenimiento más fácil.</p>
+</div>
+</div>
+
+<h3>Progressive Web App (PWA)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es una PWA?</h4>
+<div class="definition">
+<p><strong>Progressive Web App:</strong> Aplicación web que usa tecnologías modernas para proporcionar una experiencia similar a una aplicación móvil nativa, pero accesible desde cualquier navegador web.</p>
+</div>
+
+<p><strong>Características PWA en la plataforma:</strong></p>
+<ul>
+    <li><strong>Instalable</strong>: Se puede "instalar" desde el navegador como si fuera una app de escritorio</li>
+    <li><strong>Offline-first</strong>: Funciona sin conexión internet para operaciones básicas</li>
+    <li><strong>Push Notifications</strong>: Notificaciones como apps móviles nativas</li>
+    <li><strong>Auto-update</strong>: Se actualiza automáticamente sin intervención del usuario</li>
+</ul>
+
+<div class="example">
+<p><strong>Escenario real:</strong> Un vendedor en campo puede seguir creando cotizaciones sin conexión internet. Cuando se reconecte, los datos se sincronizan automáticamente con SAP.</p>
+</div>
+
+<div class="benefit-box">
+<p><strong>Beneficios para usuarios móviles:</strong></p>
+<ul>
+    <li>No necesitan instalar nada desde app stores</li>
+    <li>Funciona en cualquier dispositivo móvil</li>
+    <li>Experiencia consistente entre desktop y móvil</li>
+    <li>Menor consumo de datos que aplicaciones nativas</li>
+</ul>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>INTEGRACIÓN SAP</h2>
+
+<h3>Remediación BaaN → SAP</h3>
+
+<div class="concept-box">
+<h4>¿Qué significa "Remediación de Interfaces"?</h4>
+<div class="definition">
+<p><strong>Remediación:</strong> Proceso de reemplazar y modernizar las conexiones e intercambios de datos entre sistemas. En este caso, eliminar la dependencia del sistema BaaN legacy y conectar directamente con SAP.</p>
+</div>
+
+<p><strong>Estado actual (BaaN):</strong></p>
+<ul>
+    <li>MIOSS y SIV se conectan a BaaN (sistema de los años 90)</li>
+    <li>BaaN actúa como intermediario entre ventas y datos corporativos</li>
+    <li>Interfaces batch (por lotes) que se ejecutan cada 24 horas</li>
+    <li>Datos frecuentemente desactualizados</li>
+    <li>Dificultad para troubleshooting cuando algo falla</li>
+</ul>
+
+<p><strong>Estado objetivo (SAP):</strong></p>
+<ul>
+    <li>Plataforma Integrada se conecta directamente a SAP</li>
+    <li>Interfaces en tiempo real para datos críticos</li>
+    <li>Datos siempre actualizados</li>
+    <li>Mejor trazabilidad y monitoreo</li>
+    <li>Preparado para futuras expansiones</li>
+</ul>
+
+<div class="sap-integration">
+<p><strong>Interfaces a remediar:</strong></p>
+<ol>
+    <li><strong>Maestro de Clientes</strong>: Información de clientes y distribuidores</li>
+    <li><strong>Lista de Precios</strong>: Precios y descuentos por producto</li>
+    <li><strong>Órdenes de Venta</strong>: Pedidos creados en la plataforma → SAP</li>
+    <li><strong>Inventario</strong>: Disponibilidad de productos en tiempo real</li>
+    <li><strong>Facturación</strong>: Generación de facturas en SAP</li>
+    <li><strong>Cuentas por Cobrar</strong>: Estado de pagos de clientes</li>
+    <li><strong>Reportería Financiera</strong>: Dashboards con datos de SAP</li>
+</ol>
+</div>
+</div>
+
+<h3>Azure Service Bus (Message Bus)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Azure Service Bus?</h4>
+<div class="definition">
+<p><strong>Azure Service Bus:</strong> Servicio de mensajería cloud de Microsoft que permite comunicación confiable entre aplicaciones, incluso cuando una de ellas está temporalmente no disponible.</p>
+</div>
+
+<p><strong>¿Por qué necesitamos un Message Bus?</strong></p>
+<ul>
+    <li><strong>Reliability</strong>: Si SAP está temporalmente no disponible, los mensajes se quedan en cola</li>
+    <li><strong>Scalability</strong>: Puede manejar miles de mensajes por segundo</li>
+    <li><strong>Decoupling</strong>: La plataforma y SAP no dependen directamente uno del otro</li>
+    <li><strong>Monitoring</strong>: Visibilidad completa de todos los mensajes</li>
+</ul>
+
+<div class="example">
+<p><strong>Flujo típico:</strong></p>
+<ol>
+    <li>Usuario crea una orden de venta en la plataforma</li>
+    <li>Sistema envía mensaje a Service Bus: "Nueva orden creada"</li>
+    <li>Service Bus entrega mensaje a SAP cuando está disponible</li>
+    <li>SAP procesa la orden y envía confirmación de vuelta</li>
+    <li>Usuario recibe notificación de que la orden fue procesada</li>
+</ol>
+</div>
+
+<div class="technical-note">
+<p><strong>Configuración:</strong> Service Bus se configura con diferentes colas para diferentes tipos de mensajes (orders, customers, pricing) con políticas de retry y dead letter queues para manejo de errores.</p>
+</div>
+</div>
+
+<h3>API Gateway</h3>
+
+<div class="concept-box">
+<h4>¿Qué es un API Gateway?</h4>
+<div class="definition">
+<p><strong>API Gateway:</strong> Punto de entrada único que actúa como "portero" para todas las comunicaciones entre la plataforma y sistemas externos como SAP. Maneja autenticación, autorización, rate limiting y logging.</p>
+</div>
+
+<p><strong>Funciones del API Gateway:</strong></p>
+<ul>
+    <li><strong>Authentication</strong>: Verifica que solo usuarios autorizados accedan a SAP</li>
+    <li><strong>Rate Limiting</strong>: Controla cuántas llamadas se pueden hacer por minuto</li>
+    <li><strong>Logging</strong>: Registra todas las comunicaciones para auditoría</li>
+    <li><strong>Transformation</strong>: Convierte datos entre formatos de la plataforma y SAP</li>
+    <li><strong>Caching</strong>: Almacena temporalmente respuestas frecuentes</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo de uso:</strong> Cuando un usuario busca precios de productos, el API Gateway:</p>
+<ol>
+    <li>Verifica que el usuario tiene permisos</li>
+    <li>Revisa si los precios están en caché (respuesta instantánea)</li>
+    <li>Si no están en caché, consulta SAP</li>
+    <li>Transforma la respuesta de SAP al formato esperado</li>
+    <li>Guarda en caché para futuras consultas</li>
+    <li>Retorna datos al usuario</li>
+</ol>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CLOUD Y AZURE</h2>
+
+<h3>Azure App Service</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Azure App Service?</h4>
+<div class="definition">
+<p><strong>Azure App Service:</strong> Servicio de Microsoft para hospedar aplicaciones web sin preocuparse por la infraestructura. Microsoft maneja el servidor, sistema operativo, actualizaciones y seguridad.</p>
+</div>
+
+<p><strong>Beneficios para Navistar:</strong></p>
+<ul>
+    <li><strong>Zero Maintenance</strong>: Microsoft maneja todo el mantenimiento de servidores</li>
+    <li><strong>Auto-scaling</strong>: Automáticamente agrega más instancias cuando hay más usuarios</li>
+    <li><strong>High Availability</strong>: 99.95% uptime garantizado por Microsoft</li>
+    <li><strong>Backup Automático</strong>: Respaldos automáticos sin intervención manual</li>
+    <li><strong>SSL Certificates</strong>: HTTPS automático y renovación de certificados</li>
+</ul>
+
+<div class="example">
+<p><strong>Auto-scaling en acción:</strong></p>
+<ul>
+    <li><strong>Horario normal</strong>: 2 instancias corriendo (50 usuarios simultáneos)</li>
+    <li><strong>Hora pico</strong>: Automáticamente escala a 6 instancias (150 usuarios)</li>
+    <li><strong>Fin de semana</strong>: Reduce a 1 instancia (ahorro de costos)</li>
+    <li><strong>Black Friday</strong>: Puede escalar a 20+ instancias si es necesario</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Costo-beneficio:</strong> En lugar de comprar y mantener servidores físicos ($50K inicial + $20K/año mantenimiento), se paga solo por lo que se usa (~$500/mes inicialmente, escalando según necesidad).</p>
+</div>
+</div>
+
+<h3>Azure SQL Database</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Azure SQL Database?</h4>
+<div class="definition">
+<p><strong>Azure SQL Database:</strong> Base de datos SQL Server completamente administrada por Microsoft en la nube. Incluye características avanzadas como backups automáticos, high availability y performance tuning automático.</p>
+</div>
+
+<p><strong>Características avanzadas:</strong></p>
+<ul>
+    <li><strong>Automatic Backups</strong>: Respaldos cada 10 minutos sin configuración</li>
+    <li><strong>Point-in-time Recovery</strong>: Restaurar a cualquier momento específico</li>
+    <li><strong>Geo-replication</strong>: Copia de la base de datos en otra región geográfica</li>
+    <li><strong>Automatic Tuning</strong>: AI de Microsoft optimiza queries automáticamente</li>
+    <li><strong>Threat Detection</strong>: Detección automática de intentos de hackeo</li>
+</ul>
+
+<div class="example">
+<p><strong>Scenario de recuperación:</strong> Si por error se eliminan datos importantes a las 2:30 PM, se puede restaurar la base de datos exactamente como estaba a las 2:29 PM, recuperando todo sin pérdida de información.</p>
+</div>
+
+<div class="benefit-box">
+<p><strong>Para el equipo IT:</strong></p>
+<ul>
+    <li>No más mantenimiento de servidores de base de datos</li>
+    <li>No más preocupación por respaldos</li>
+    <li>Performance monitoring automático</li>
+    <li>Escalamiento automático según demanda</li>
+</ul>
+</div>
+</div>
+
+<h3>Azure Redis Cache</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Redis Cache?</h4>
+<div class="definition">
+<p><strong>Redis Cache:</strong> Sistema de almacenamiento en memoria ultra-rápido que guarda temporalmente datos frecuentemente consultados para evitar ir a la base de datos principal cada vez.</p>
+</div>
+
+<p><strong>¿Cómo mejora el performance?</strong></p>
+<ul>
+    <li><strong>Velocidad</strong>: Acceso a datos en microsegundos vs milisegundos de base de datos</li>
+    <li><strong>Reduced Load</strong>: Menos consultas a la base de datos principal</li>
+    <li><strong>User Experience</strong>: Respuestas instantáneas para datos comunes</li>
+    <li><strong>Cost Efficiency</strong>: Menos recursos necesarios en base de datos</li>
+</ul>
+
+<div class="example">
+<p><strong>Caso práctico:</strong> Lista de precios de productos</p>
+<ul>
+    <li><strong>Primera consulta</strong>: Va a SAP, toma 800ms, se guarda en cache</li>
+    <li><strong>Siguientes consultas</strong>: Se sirven desde cache en 5ms</li>
+    <li><strong>Actualización</strong>: Cada 4 horas se actualiza automáticamente</li>
+    <li><strong>Resultado</strong>: Users ven precios instantáneamente</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Configuración inteligente:</strong> El cache se configura para mantener en memoria los datos más consultados (80/20 rule) y automáticamente libera espacio para nuevos datos cuando es necesario.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>METODOLOGÍAS DE DESARROLLO</h2>
+
+<h3>Sprints de 2 Semanas</h3>
+
+<div class="concept-box">
+<h4>¿Qué es un Sprint?</h4>
+<div class="definition">
+<p><strong>Sprint:</strong> Período fijo de tiempo (2 semanas en este proyecto) durante el cual el equipo de desarrollo completa un conjunto específico de tareas y entrega software funcionando.</p>
+</div>
+
+<p><strong>Estructura de cada Sprint:</strong></p>
+<ul>
+    <li><strong>Día 1</strong>: Sprint Planning - decidir qué se va a hacer</li>
+    <li><strong>Días 2-9</strong>: Desarrollo y testing</li>
+    <li><strong>Día 10</strong>: Sprint Review y Retrospectiva</li>
+    <li><strong>Entregable</strong>: Software funcionando al final de cada sprint</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplo Sprint 4:</strong></p>
+<ul>
+    <li><strong>Objetivo</strong>: Implementar interface de Maestro de Clientes con SAP</li>
+    <li><strong>Tareas</strong>: Desarrollo (6 días), Testing (2 días), Documentación (2 días)</li>
+    <li><strong>Resultado</strong>: Clientes de SAP se sincronizan en tiempo real con la plataforma</li>
+    <li><strong>Demo</strong>: Usuarios ven la funcionalidad trabajando</li>
+</ul>
+</div>
+
+<div class="benefit-box">
+<p><strong>Beneficios de sprints cortos:</strong></p>
+<ul>
+    <li>Feedback rápido de usuarios</li>
+    <li>Detección temprana de problemas</li>
+    <li>Flexibilidad para cambiar prioridades</li>
+    <li>Motivación del equipo con logros frecuentes</li>
+</ul>
+</div>
+</div>
+
+<h3>CI/CD (Continuous Integration/Continuous Deployment)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es CI/CD?</h4>
+<div class="definition">
+<p><strong>CI/CD:</strong> Prácticas de desarrollo donde los cambios de código se integran automáticamente, se prueban automáticamente y se despliegan automáticamente a producción.</p>
+</div>
+
+<p><strong>Continuous Integration (CI):</strong></p>
+<ul>
+    <li>Cada vez que un developer hace commit, se ejecutan pruebas automáticamente</li>
+    <li>Si las pruebas fallan, todo el equipo es notificado inmediatamente</li>
+    <li>Garantiza que el código siempre está en estado funcional</li>
+</ul>
+
+<p><strong>Continuous Deployment (CD):</strong></p>
+<ul>
+    <li>Si todas las pruebas pasan, el código se despliega automáticamente</li>
+    <li>Ambiente de desarrollo se actualiza automáticamente cada día</li>
+    <li>Ambiente de pruebas se actualiza cada sprint</li>
+    <li>Producción se actualiza según calendario aprobado</li>
+</ul>
+
+<div class="example">
+<p><strong>Pipeline típico:</strong></p>
+<ol>
+    <li>Developer hace commit a las 10:00 AM</li>
+    <li>Sistema ejecuta 500+ pruebas automáticamente (10:01 AM)</li>
+    <li>Si pasan, despliega a ambiente dev (10:05 AM)</li>
+    <li>Notifica al equipo que nueva versión está disponible</li>
+    <li>QA puede probar inmediatamente</li>
+</ol>
+</div>
+
+<div class="technical-note">
+<p><strong>Herramientas:</strong> Azure DevOps maneja todo el pipeline, GitHub almacena el código, y Azure App Service ejecuta los despliegues automáticamente.</p>
+</div>
+</div>
+
+<h3>Infrastructure as Code (IaC)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Infrastructure as Code?</h4>
+<div class="definition">
+<p><strong>IaC:</strong> Práctica de definir y manejar la infraestructura (servidores, bases de datos, redes) usando código en lugar de configuración manual.</p>
+</div>
+
+<p><strong>¿Por qué es importante?</strong></p>
+<ul>
+    <li><strong>Reproducible</strong>: Misma configuración en dev, test y producción</li>
+    <li><strong>Version Control</strong>: Cambios de infraestructura se trackean como código</li>
+    <li><strong>Automated</strong>: No errores manuales de configuración</li>
+    <li><strong>Documentation</strong>: La infraestructura se auto-documenta</li>
+</ul>
+
+<div class="example">
+<p><strong>Beneficio práctico:</strong> Si el ambiente de producción se corrompe, en 30 minutos se puede recrear exactamente igual usando el código de infraestructura, vs varias horas o días de configuración manual.</p>
+</div>
+
+<div class="technical-note">
+<p><strong>Herramienta:</strong> Terraform define toda la infraestructura Azure como código, incluyendo App Services, bases de datos, redes, y configuraciones de seguridad.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCEPTOS DE INTEGRACIÓN DE DATOS</h2>
+
+<h3>Entity Framework Core 8</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Entity Framework Core?</h4>
+<div class="definition">
+<p><strong>Entity Framework Core:</strong> Herramienta de Microsoft que permite trabajar con bases de datos usando objetos .NET en lugar de escribir SQL directamente. Automáticamente traduce operaciones en objetos a consultas SQL optimizadas.</p>
+</div>
+
+<p><strong>Ventajas para el desarrollo:</strong></p>
+<ul>
+    <li><strong>Productividad</strong>: Developers escriben menos código repetitivo</li>
+    <li><strong>Type Safety</strong>: Errores de datos se detectan en compilación, no en runtime</li>
+    <li><strong>Performance</strong>: Queries automáticamente optimizadas</li>
+    <li><strong>Migration</strong>: Cambios de base de datos se pueden versionar y aplicar automáticamente</li>
+</ul>
+
+<div class="example">
+<p><strong>Comparación:</strong></p>
+<p><strong>SQL Tradicional:</strong></p>
+<code>
+SELECT c.CustomerName, o.OrderDate, o.TotalAmount<br>
+FROM Customers c<br>
+JOIN Orders o ON c.CustomerId = o.CustomerId<br>
+WHERE c.Region = 'LATAM' AND o.OrderDate > '2024-01-01'
+</code>
+
+<p><strong>Entity Framework:</strong></p>
+<code>
+var orders = customers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.Where(c =&gt; c.Region == "LATAM")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.SelectMany(c =&gt; c.Orders)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.Where(o =&gt; o.OrderDate &gt; DateTime.Parse("2024-01-01"));
+</code>
+</div>
+
+<div class="benefit-box">
+<p><strong>Beneficios para mantenimiento:</strong></p>
+<ul>
+    <li>Cambios en estructura de BD se propagan automáticamente</li>
+    <li>Menos bugs relacionados con queries SQL</li>
+    <li>Easier troubleshooting con LINQ debugging</li>
+    <li>Consistencia en acceso a datos across todo el sistema</li>
+</ul>
+</div>
+</div>
+
+<h3>RESTful APIs</h3>
+
+<div class="concept-box">
+<h4>¿Qué son las RESTful APIs?</h4>
+<div class="definition">
+<p><strong>REST API:</strong> Estilo de arquitectura para servicios web que usa HTTP methods (GET, POST, PUT, DELETE) de manera estándar para realizar operaciones sobre recursos.</p>
+</div>
+
+<p><strong>Principios REST:</strong></p>
+<ul>
+    <li><strong>Stateless</strong>: Cada request contiene toda la información necesaria</li>
+    <li><strong>Resource-based</strong>: URLs representan recursos (customers, orders, products)</li>
+    <li><strong>HTTP Methods</strong>: GET para leer, POST para crear, PUT para actualizar, DELETE para eliminar</li>
+    <li><strong>JSON Format</strong>: Datos intercambiados en formato JSON estándar</li>
+</ul>
+
+<div class="example">
+<p><strong>Ejemplos de endpoints:</strong></p>
+<ul>
+    <li><code>GET /api/customers</code> - Obtener lista de clientes</li>
+    <li><code>GET /api/customers/123</code> - Obtener cliente específico</li>
+    <li><code>POST /api/orders</code> - Crear nueva orden</li>
+    <li><code>PUT /api/orders/456</code> - Actualizar orden existente</li>
+    <li><code>DELETE /api/products/789</code> - Eliminar producto</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Documentación automática:</strong> Usando OpenAPI/Swagger, todas las APIs se documentan automáticamente con ejemplos, parámetros y responses, facilitando integración y troubleshooting.</p>
+</div>
+</div>
+
+<h3>Real-time vs Batch Processing</h3>
+
+<div class="concept-box">
+<h4>¿Cuál es la diferencia?</h4>
+<div class="definition">
+<p><strong>Real-time Processing:</strong> Datos se procesan inmediatamente cuando ocurre un evento. <strong>Batch Processing:</strong> Datos se acumulan y procesan en grupos a intervalos específicos.</p>
+</div>
+
+<p><strong>Interfaces Real-time en el proyecto:</strong></p>
+<ul>
+    <li><strong>Maestro de Clientes</strong>: Cambios en SAP aparecen inmediatamente en la plataforma</li>
+    <li><strong>Órdenes de Venta</strong>: Órdenes creadas se envían inmediatamente a SAP</li>
+    <li><strong>Inventario Crítico</strong>: Stock bajo se actualiza inmediatamente</li>
+</ul>
+
+<p><strong>Interfaces Batch en el proyecto:</strong></p>
+<ul>
+    <li><strong>Lista de Precios</strong>: Se actualiza diariamente a las 6:00 AM</li>
+    <li><strong>Facturación</strong>: Se procesa al final del día</li>
+    <li><strong>Reportería</strong>: Se genera mensualmente</li>
+</ul>
+
+<div class="example">
+<p><strong>Decisión de diseño:</strong></p>
+<ul>
+    <li><strong>Real-time</strong>: Para datos que afectan decisiones inmediatas (disponibilidad, precios especiales)</li>
+    <li><strong>Batch</strong>: Para volúmenes grandes o procesos que no requieren inmediatez</li>
+</ul>
+</div>
+
+<div class="benefit-box">
+<p><strong>Balance óptimo:</strong> Real-time para experiencia de usuario crítica, batch para eficiencia en procesos masivos, resultando en mejor performance general del sistema.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCEPTOS DE CALIDAD Y TESTING</h2>
+
+<h3>User Acceptance Testing (UAT)</h3>
+
+<div class="concept-box">
+<h4>¿Qué es UAT?</h4>
+<div class="definition">
+<p><strong>User Acceptance Testing:</strong> Fase de testing donde usuarios reales prueban el sistema en escenarios reales de trabajo para validar que cumple con sus necesidades de negocio.</p>
+</div>
+
+<p><strong>Proceso de UAT en el proyecto:</strong></p>
+<ul>
+    <li><strong>Sprint 17-18</strong>: Usuarios clave prueban cada módulo</li>
+    <li><strong>Scenarios reales</strong>: Casos de uso del día a día</li>
+    <li><strong>Sign-off formal</strong>: Usuarios aprueban que la funcionalidad es correcta</li>
+    <li><strong>Issue resolution</strong>: Corrección de problemas encontrados</li>
+</ul>
+
+<div class="example">
+<p><strong>Escenario UAT típico:</strong></p>
+<ol>
+    <li>Usuario (vendedor real) recibe capacitación de 2 horas</li>
+    <li>Se le dan tareas específicas: "Crear cotización para cliente XYZ"</li>
+    <li>Usuario ejecuta el proceso usando datos reales</li>
+    <li>Se documentan problemas, sugerencias y éxitos</li>
+    <li>Issues se corrigen antes de go-live</li>
+</ol>
+</div>
+
+<div class="technical-note">
+<p><strong>Criterio de éxito:</strong> 90% de usuarios deben poder completar sus tareas principales sin ayuda, y 95% deben considerar que el nuevo sistema es igual o mejor que el actual.</p>
+</div>
+</div>
+
+<h3>Load Testing</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Load Testing?</h4>
+<div class="definition">
+<p><strong>Load Testing:</strong> Proceso de simular múltiples usuarios usando el sistema simultáneamente para verificar que puede manejar la carga esperada sin degradación de performance.</p>
+</div>
+
+<p><strong>Parámetros para Navistar:</strong></p>
+<ul>
+    <li><strong>100 usuarios concurrentes</strong>: Todos los usuarios conectados al mismo tiempo</li>
+    <li><strong>150 usuarios pico</strong>: Carga máxima en horas ocupadas</li>
+    <li><strong>Response time &lt;200ms</strong>: Tiempo máximo aceptable para respuestas</li>
+    <li><strong>Zero downtime</strong>: Sistema debe mantener disponibilidad</li>
+</ul>
+
+<div class="example">
+<p><strong>Scenario de prueba:</strong></p>
+<ul>
+    <li>50 usuarios creando cotizaciones simultáneamente</li>
+    <li>30 usuarios consultando inventario</li>
+    <li>20 usuarios generando reportes</li>
+    <li>Sistema debe responder en menos de 200ms para cada operación</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Herramientas:</strong> Azure Load Testing simula carga real y proporciona métricas detalladas de response times, throughput y resource utilization.</p>
+</div>
+</div>
+
+<h3>Security Testing</h3>
+
+<div class="concept-box">
+<h4>¿Qué incluye Security Testing?</h4>
+<div class="definition">
+<p><strong>Security Testing:</strong> Conjunto de pruebas diseñadas para identificar vulnerabilidades de seguridad y asegurar que el sistema protege adecuadamente datos y funcionalidades.</p>
+</div>
+
+<p><strong>Áreas de testing de seguridad:</strong></p>
+<ul>
+    <li><strong>Authentication Testing</strong>: Verificar que solo usuarios autorizados pueden acceder</li>
+    <li><strong>Authorization Testing</strong>: Verificar que usuarios solo acceden a lo que les corresponde</li>
+    <li><strong>Data Encryption</strong>: Verificar que datos sensibles están encriptados</li>
+    <li><strong>SQL Injection</strong>: Intentos de hackear la base de datos</li>
+    <li><strong>Cross-site Scripting</strong>: Intentos de inyectar código malicioso</li>
+</ul>
+
+<div class="example">
+<p><strong>Pruebas específicas:</strong></p>
+<ul>
+    <li>Intentar acceder con passwords débiles o comunes</li>
+    <li>Intentar acceder a datos de otros usuarios</li>
+    <li>Verificar que passwords no se almacenan en texto plano</li>
+    <li>Verificar que sesiones expiran automáticamente</li>
+</ul>
+</div>
+
+<div class="benefit-box">
+<p><strong>Certificaciones obtenidas:</strong> El sistema cumplirá con estándares OWASP Top 10, ISO 27001 requirements y regulaciones locales de protección de datos.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCEPTOS DE MONITOREO Y OBSERVABILIDAD</h2>
+
+<h3>Application Insights</h3>
+
+<div class="concept-box">
+<h4>¿Qué es Application Insights?</h4>
+<div class="definition">
+<p><strong>Application Insights:</strong> Servicio de Microsoft que automáticamente recolecta telemetría detallada de aplicaciones, incluyendo performance, errores, user behavior y dependencias externas.</p>
+</div>
+
+<p><strong>Métricas automáticas que recolecta:</strong></p>
+<ul>
+    <li><strong>Response Times</strong>: Tiempo que toma cada request</li>
+    <li><strong>Error Rates</strong>: Porcentaje de requests que fallan</li>
+    <li><strong>Dependency Calls</strong>: Tiempo de respuesta de SAP, base de datos, etc.</li>
+    <li><strong>User Sessions</strong>: Cuántos usuarios están conectados</li>
+    <li><strong>Custom Events</strong>: Eventos específicos del negocio</li>
+</ul>
+
+<div class="example">
+<p><strong>Dashboard en tiempo real muestra:</strong></p>
+<ul>
+    <li>"Orden creada" - 45 veces en la última hora</li>
+    <li>"Error conectando SAP" - 2 veces (99.5% success rate)</li>
+    <li>"Response time promedio" - 150ms (dentro del objetivo)</li>
+    <li>"Usuarios activos" - 67 de 100 total</li>
+</ul>
+</div>
+
+<div class="technical-note">
+<p><strong>Alertas automáticas:</strong> Sistema envía emails/SMS cuando response time > 500ms, error rate > 2%, o SAP no responde por más de 5 minutos.</p>
+</div>
+</div>
+
+<h3>Health Checks</h3>
+
+<div class="concept-box">
+<h4>¿Qué son Health Checks?</h4>
+<div class="definition">
+<p><strong>Health Checks:</strong> Verificaciones automáticas que el sistema ejecuta cada minuto para confirmar que todos los componentes están funcionando correctamente.</p>
+</div>
+
+<p><strong>Componentes monitoreados:</strong></p>
+<ul>
+    <li><strong>Database Connection</strong>: ¿Se puede conectar a Azure SQL?</li>
+    <li><strong>SAP Connectivity</strong>: ¿Responde SAP a un ping?</li>
+    <li><strong>Redis Cache</strong>: ¿Está disponible el cache?</li>
+    <li><strong>File Storage</strong>: ¿Se pueden leer/escribir archivos?</li>
+    <li><strong>External APIs</strong>: ¿Responden servicios externos?</li>
+</ul>
+
+<div class="example">
+<p><strong>Health check endpoint responde:</strong></p>
+<code>
+{<br>
+&nbsp;&nbsp;"status": "Healthy",<br>
+&nbsp;&nbsp;"totalDuration": "00:00:00.1230000",<br>
+&nbsp;&nbsp;"entries": {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"database": { "status": "Healthy" },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"sap": { "status": "Healthy" },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"redis": { "status": "Degraded", "description": "High latency" }<br>
+&nbsp;&nbsp;}<br>
+}
+</code>
+</div>
+
+<div class="benefit-box">
+<p><strong>Beneficio operacional:</strong> IT team puede identificar y resolver problemas antes de que los usuarios los noten, mejorando significativamente la experiencia y uptime.</p>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>GLOSARIO TÉCNICO COMPLETO</h2>
+
+<div class="technical-note">
+<p><strong>API (Application Programming Interface):</strong> Conjunto de definiciones y protocolos para construir e integrar aplicaciones de software.</p>
+
+<p><strong>Azure:</strong> Plataforma de servicios en la nube de Microsoft.</p>
+
+<p><strong>Batch Processing:</strong> Procesamiento de datos en grupos a intervalos específicos.</p>
+
+<p><strong>CI/CD:</strong> Continuous Integration/Continuous Deployment - automatización de testing y deployment.</p>
+
+<p><strong>Cloud-Native:</strong> Arquitectura diseñada específicamente para aprovechar servicios cloud.</p>
+
+<p><strong>Entity Framework:</strong> ORM (Object-Relational Mapping) de Microsoft para .NET.</p>
+
+<p><strong>IaC (Infrastructure as Code):</strong> Definir infraestructura usando código en lugar de configuración manual.</p>
+
+<p><strong>JSON:</strong> JavaScript Object Notation - formato estándar para intercambio de datos.</p>
+
+<p><strong>Load Balancing:</strong> Distribución de carga entre múltiples instancias de la aplicación.</p>
+
+<p><strong>Message Bus:</strong> Sistema que permite comunicación asíncrona entre aplicaciones.</p>
+
+<p><strong>OAuth 2.0:</strong> Estándar de autorización para acceso seguro a APIs.</p>
+
+<p><strong>PWA (Progressive Web App):</strong> Aplicación web con características de app móvil nativa.</p>
+
+<p><strong>REST:</strong> Architectural style para servicios web usando HTTP methods estándar.</p>
+
+<p><strong>SPA (Single Page Application):</strong> Aplicación web que carga una sola página HTML y actualiza contenido dinámicamente.</p>
+
+<p><strong>Sprint:</strong> Período fijo de desarrollo (2 semanas) con entregables específicos.</p>
+
+<p><strong>UAT (User Acceptance Testing):</strong> Testing realizado por usuarios finales para validar funcionalidad.</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>CONCLUSIÓN</h2>
+
+<p>Este documento proporciona la base conceptual necesaria para comprender completamente la propuesta de la Plataforma Integrada Navistar. Cada concepto explicado aquí es fundamental para el éxito del proyecto y debe ser entendido por todos los stakeholders técnicos y de negocio.</p>
+
+<div class="benefit-box">
+<p><strong>Recomendación para el equipo:</strong> Se sugiere que todos los miembros del equipo del proyecto revisen este documento y reciban capacitación específica en las tecnologías y conceptos antes del inicio de cada fase para asegurar implementación exitosa.</p>
+</div>
+
+<div class="warning">
+<p><strong>Importante:</strong> La complejidad técnica del proyecto requiere un entendimiento sólido de estos conceptos. Sin embargo, la arquitectura propuesta ha sido diseñada para ser lo más simple posible mientras cumple con todos los objetivos de negocio.</p>
+</div>
+
+</body>
+</html>

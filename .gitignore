@@ -1,0 +1,57 @@
+# OTC LATAM - Excluir directorios de aplicaciones MX-LATAM
+MX-LATAM-*/
+
+# Node modules y dependencias
+node_modules/
+*/node_modules/
+
+# Build artifacts
+dist/
+build/
+bin/
+obj/
+*.min.js
+*.min.css
+
+# IDE y editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
+# Logs y archivos temporales
+*.log
+*.tmp
+*.temp
+Thumbs.db
+.DS_Store
+
+# Configuraciones sensibles (mantener templates)
+appsettings.Production.json
+Web.config.prod
+*.prod.config
+
+# Archivos de compilación .NET
+*.pdb
+*.dll
+*.exe
+*.mdb
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Coverage reports
+coverage/
+
+# Azure DevOps
+.azure/
+
+# Archivos de respaldo
+*.bak
+*.backup
+UpgradeLog*.htm
+UpgradeLog*.XML
+
+# Visual Studio Code workspace
+*.code-workspace

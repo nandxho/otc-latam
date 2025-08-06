@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Semanal - Plataforma Integrada Navistar</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #333;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a5490;
+            font-size: 24pt;
+            margin-bottom: 10pt;
+            border-bottom: 3pt solid #1a5490;
+            padding-bottom: 10pt;
+        }
+        h2 {
+            color: #2e74b5;
+            font-size: 16pt;
+            margin-top: 20pt;
+            margin-bottom: 10pt;
+            background-color: #f0f4f8;
+            padding: 8pt;
+            border-left: 4pt solid #2e74b5;
+        }
+        h3 {
+            color: #3d85c6;
+            font-size: 12pt;
+            margin-top: 15pt;
+            margin-bottom: 8pt;
+        }
+        .header-info {
+            background-color: #f8f9fa;
+            padding: 15pt;
+            border-radius: 8pt;
+            margin-bottom: 20pt;
+        }
+        .metric-box {
+            display: inline-block;
+            background-color: #f0f4f8;
+            padding: 10pt;
+            margin: 5pt;
+            border-radius: 5pt;
+            text-align: center;
+            min-width: 150px;
+        }
+        .metric-value {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #2e74b5;
+        }
+        .metric-label {
+            font-size: 10pt;
+            color: #666;
+        }
+        .status-green {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .status-yellow {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .status-red {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10pt 0;
+        }
+        th {
+            background-color: #2e74b5;
+            color: white;
+            padding: 8pt;
+            text-align: left;
+            font-weight: bold;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 6pt;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .risk-high {
+            background-color: #ffe6e6;
+        }
+        .risk-medium {
+            background-color: #fff2e6;
+        }
+        .risk-low {
+            background-color: #e6f7e6;
+        }
+        .executive-summary {
+            background-color: #e8f0fe;
+            padding: 15pt;
+            border-radius: 8pt;
+            margin: 15pt 0;
+        }
+        .next-steps {
+            background-color: #e8f8e8;
+            padding: 15pt;
+            border-radius: 8pt;
+            margin: 15pt 0;
+        }
+        .blocker-box {
+            background-color: #ffe8e8;
+            padding: 10pt;
+            border-left: 3pt solid #dc3545;
+            margin: 10pt 0;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            background-color: #28a745;
+            height: 100%;
+            transition: width 0.3s ease;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            font-size: 10pt;
+        }
+        .footer {
+            margin-top: 30pt;
+            padding-top: 15pt;
+            border-top: 1pt solid #ddd;
+            text-align: center;
+            font-size: 9pt;
+            color: #666;
+        }
+        @media print {
+            .page-break {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>📊 Informe Semanal de Seguimiento - Plataforma Integrada Navistar</h1>
+
+<div class="header-info">
+    <table style="border: none;">
+        <tr>
+            <td style="border: none;"><strong>Proyecto:</strong> Unificación MIOSS-SIV + Remediación SAP</td>
+            <td style="border: none;"><strong>Fecha:</strong> [FECHA_ACTUAL]</td>
+        </tr>
+        <tr>
+            <td style="border: none;"><strong>Semana:</strong> [NUMERO_SEMANA] de 52</td>
+            <td style="border: none;"><strong>Sprint:</strong> [NUMERO_SPRINT] de 26</td>
+        </tr>
+        <tr>
+            <td style="border: none;"><strong>Project Manager:</strong> [NOMBRE_PM]</td>
+            <td style="border: none;"><strong>Status General:</strong> <span class="status-green">EN TIEMPO</span></td>
+        </tr>
+    </table>
+</div>
+
+<h2>1. Resumen Ejecutivo</h2>
+
+<div class="executive-summary">
+    <h3>Estado General del Proyecto</h3>
+    <p>[ESCRIBIR_RESUMEN_EJECUTIVO_2_3_LINEAS]</p>
+    
+    <h3>Métricas Clave</h3>
+    <div style="text-align: center;">
+        <div class="metric-box">
+            <div class="metric-value">[XX]%</div>
+            <div class="metric-label">Avance Total</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-value">$[XXX]K</div>
+            <div class="metric-label">Presupuesto Ejecutado</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-value">[X]/7</div>
+            <div class="metric-label">Interfaces SAP</div>
+        </div>
+        <div class="metric-box">
+            <div class="metric-value">[XX]</div>
+            <div class="metric-label">Días al Go-Live</div>
+        </div>
+    </div>
+</div>
+
+<h2>2. Avance del Sprint Actual</h2>
+
+<h3>Sprint [X]: [NOMBRE_DEL_SPRINT]</h3>
+<p><strong>Fecha:</strong> [FECHA_INICIO] - [FECHA_FIN]</p>
+<p><strong>Objetivo:</strong> [OBJETIVO_DEL_SPRINT]</p>
+
+<h4>Progreso del Sprint</h4>
+<div class="progress-bar">
+    <div class="progress-fill" style="width: [XX]%;">[XX]%</div>
+</div>
+
+<h4>Entregables del Sprint</h4>
+<table>
+    <tr>
+        <th>Entregable</th>
+        <th>Responsable</th>
+        <th>Status</th>
+        <th>% Completado</th>
+        <th>Fecha Término</th>
+    </tr>
+    <tr>
+        <td>[Entregable 1]</td>
+        <td>[Nombre]</td>
+        <td class="status-green">Completado</td>
+        <td>100%</td>
+        <td>[Fecha]</td>
+    </tr>
+    <tr>
+        <td>[Entregable 2]</td>
+        <td>[Nombre]</td>
+        <td class="status-yellow">En Progreso</td>
+        <td>75%</td>
+        <td>[Fecha]</td>
+    </tr>
+    <tr>
+        <td>[Entregable 3]</td>
+        <td>[Nombre]</td>
+        <td class="status-red">Bloqueado</td>
+        <td>25%</td>
+        <td>[Fecha]</td>
+    </tr>
+</table>
+
+<h2>3. Estado de Interfaces SAP</h2>
+
+<table>
+    <tr>
+        <th>Interface</th>
+        <th>Módulo SAP</th>
+        <th>Status</th>
+        <th>% Completado</th>
+        <th>Riesgo</th>
+    </tr>
+    <tr>
+        <td>Sales & Distribution</td>
+        <td>SAP SD</td>
+        <td class="status-green">En Progreso</td>
+        <td>45%</td>
+        <td class="risk-low">Bajo</td>
+    </tr>
+    <tr>
+        <td>Materials Management</td>
+        <td>SAP MM</td>
+        <td class="status-yellow">Pendiente</td>
+        <td>0%</td>
+        <td class="risk-medium">Medio</td>
+    </tr>
+    <tr>
+        <td>Finance</td>
+        <td>SAP FI</td>
+        <td class="status-yellow">Pendiente</td>
+        <td>0%</td>
+        <td class="risk-medium">Medio</td>
+    </tr>
+    <tr>
+        <td>Production Planning</td>
+        <td>SAP PP</td>
+        <td class="status-yellow">Pendiente</td>
+        <td>0%</td>
+        <td class="risk-low">Bajo</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>4. Issues y Bloqueadores</h2>
+
+<div class="blocker-box">
+    <h3>🚨 Bloqueadores Críticos</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Impacto</th>
+            <th>Responsable</th>
+            <th>Fecha Esperada</th>
+        </tr>
+        <tr class="risk-high">
+            <td>B001</td>
+            <td>[Descripción del bloqueador]</td>
+            <td>Alto</td>
+            <td>[Nombre]</td>
+            <td>[Fecha]</td>
+        </tr>
+    </table>
+</div>
+
+<h3>⚠️ Issues en Seguimiento</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Descripción</th>
+        <th>Severidad</th>
+        <th>Acciones</th>
+        <th>Status</th>
+    </tr>
+    <tr class="risk-medium">
+        <td>I001</td>
+        <td>[Descripción del issue]</td>
+        <td>Media</td>
+        <td>[Acción tomada]</td>
+        <td>En progreso</td>
+    </tr>
+    <tr class="risk-low">
+        <td>I002</td>
+        <td>[Descripción del issue]</td>
+        <td>Baja</td>
+        <td>[Acción tomada]</td>
+        <td>Monitoreando</td>
+    </tr>
+</table>
+
+<h2>5. Estado Presupuestario</h2>
+
+<table>
+    <tr>
+        <th>Concepto</th>
+        <th>Presupuesto Total</th>
+        <th>Ejecutado</th>
+        <th>Comprometido</th>
+        <th>Disponible</th>
+        <th>% Ejecutado</th>
+    </tr>
+    <tr>
+        <td><strong>Total Proyecto</strong></td>
+        <td>$1,470,000</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>[XX]%</td>
+    </tr>
+    <tr>
+        <td>Desarrollo</td>
+        <td>$800,000</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>[XX]%</td>
+    </tr>
+    <tr>
+        <td>Infraestructura</td>
+        <td>$200,000</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>[XX]%</td>
+    </tr>
+    <tr>
+        <td>Interfaces SAP</td>
+        <td>$350,000</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>[XX]%</td>
+    </tr>
+    <tr>
+        <td>Contingencia</td>
+        <td>$120,000</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>$[XXX,XXX]</td>
+        <td>[XX]%</td>
+    </tr>
+</table>
+
+<h3>Variaciones Presupuestarias</h3>
+<p>[EXPLICAR_CUALQUIER_VARIACION_SIGNIFICATIVA]</p>
+
+<h2>6. Métricas de Rendimiento</h2>
+
+<h3>Calidad</h3>
+<table>
+    <tr>
+        <th>Métrica</th>
+        <th>Target</th>
+        <th>Actual</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>Defectos en Producción</td>
+        <td>0</td>
+        <td>[X]</td>
+        <td class="status-green">✓</td>
+    </tr>
+    <tr>
+        <td>Cobertura de Pruebas</td>
+        <td>>80%</td>
+        <td>[XX]%</td>
+        <td class="status-yellow">⚠</td>
+    </tr>
+    <tr>
+        <td>Deuda Técnica</td>
+        <td><5%</td>
+        <td>[X]%</td>
+        <td class="status-green">✓</td>
+    </tr>
+</table>
+
+<h3>Performance</h3>
+<table>
+    <tr>
+        <th>Métrica</th>
+        <th>Target</th>
+        <th>Actual</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>Velocidad del Equipo</td>
+        <td>[XX] puntos/sprint</td>
+        <td>[XX] puntos</td>
+        <td class="status-green">✓</td>
+    </tr>
+    <tr>
+        <td>Tiempo de Respuesta API</td>
+        <td><200ms</td>
+        <td>[XXX]ms</td>
+        <td class="status-green">✓</td>
+    </tr>
+    <tr>
+        <td>Uptime Sistema</td>
+        <td>99.9%</td>
+        <td>[XX.X]%</td>
+        <td class="status-green">✓</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<h2>7. Próximos Pasos</h2>
+
+<div class="next-steps">
+    <h3>Para la Próxima Semana (Sprint [X+1])</h3>
+    <ol>
+        <li><strong>[Actividad 1]</strong> - Responsable: [Nombre] - Fecha: [DD/MM]</li>
+        <li><strong>[Actividad 2]</strong> - Responsable: [Nombre] - Fecha: [DD/MM]</li>
+        <li><strong>[Actividad 3]</strong> - Responsable: [Nombre] - Fecha: [DD/MM]</li>
+        <li><strong>[Actividad 4]</strong> - Responsable: [Nombre] - Fecha: [DD/MM]</li>
+    </ol>
+
+    <h3>Decisiones Requeridas</h3>
+    <ul>
+        <li>✋ <strong>[Decisión 1]</strong> - Requerido para: [Fecha] - Impacto: [Descripción]</li>
+        <li>✋ <strong>[Decisión 2]</strong> - Requerido para: [Fecha] - Impacto: [Descripción]</li>
+    </ul>
+
+    <h3>Hitos Próximos</h3>
+    <table>
+        <tr>
+            <th>Hito</th>
+            <th>Fecha Planeada</th>
+            <th>Status</th>
+            <th>Comentarios</th>
+        </tr>
+        <tr>
+            <td>Fin Fase 1 - Foundation</td>
+            <td>15/04/2026</td>
+            <td class="status-green">En tiempo</td>
+            <td>Sprint 8 completado</td>
+        </tr>
+        <tr>
+            <td>Inicio Testing Integrado</td>
+            <td>01/06/2026</td>
+            <td class="status-yellow">En riesgo</td>
+            <td>Dependiente de interfaces</td>
+        </tr>
+    </table>
+</div>
+
+<h2>8. Recomendaciones Ejecutivas</h2>
+
+<div class="executive-summary">
+    <h3>Acciones Recomendadas</h3>
+    <ol>
+        <li><strong>[Recomendación 1]</strong> - [Justificación y beneficio esperado]</li>
+        <li><strong>[Recomendación 2]</strong> - [Justificación y beneficio esperado]</li>
+        <li><strong>[Recomendación 3]</strong> - [Justificación y beneficio esperado]</li>
+    </ol>
+
+    <h3>Riesgos a Monitorear</h3>
+    <ul>
+        <li>🔴 <strong>[Riesgo Alto]</strong> - Probabilidad: [X]% - Impacto: $[XXX]K - Mitigación: [Plan]</li>
+        <li>🟡 <strong>[Riesgo Medio]</strong> - Probabilidad: [X]% - Impacto: $[XXX]K - Mitigación: [Plan]</li>
+    </ul>
+</div>
+
+<h2>9. Satisfacción del Equipo</h2>
+
+<table>
+    <tr>
+        <th>Área</th>
+        <th>Satisfacción (1-5)</th>
+        <th>Comentarios</th>
+    </tr>
+    <tr>
+        <td>Claridad de Objetivos</td>
+        <td>⭐⭐⭐⭐☆</td>
+        <td>[Comentario]</td>
+    </tr>
+    <tr>
+        <td>Comunicación</td>
+        <td>⭐⭐⭐⭐⭐</td>
+        <td>[Comentario]</td>
+    </tr>
+    <tr>
+        <td>Herramientas y Recursos</td>
+        <td>⭐⭐⭐☆☆</td>
+        <td>[Comentario]</td>
+    </tr>
+    <tr>
+        <td>Carga de Trabajo</td>
+        <td>⭐⭐⭐⭐☆</td>
+        <td>[Comentario]</td>
+    </tr>
+</table>
+
+<h2>10. Anexos</h2>
+
+<h3>A. Dashboards</h3>
+<p>📊 Ver dashboard en tiempo real: [LINK_DASHBOARD]</p>
+<p>📈 Burndown chart del sprint: [LINK_BURNDOWN]</p>
+<p>📉 Análisis de velocidad: [LINK_VELOCITY]</p>
+
+<h3>B. Documentación</h3>
+<p>📄 Plan detallado del proyecto: /Users/nandxho/proyectos/inter/apps/PLAN_PLATAFORMA_INTEGRADA_NAVISTAR_2026.html</p>
+<p>📅 Cronograma completo: /Users/nandxho/proyectos/inter/apps/CRONOGRAMA_PLATAFORMA_INTEGRADA_NAVISTAR.html</p>
+<p>📚 Guía de conceptos técnicos: /Users/nandxho/proyectos/inter/apps/GUIA_CONCEPTOS_PLATAFORMA_INTEGRADA.html</p>
+
+<div class="footer">
+    <p>Plataforma Integrada Navistar 2026 | Informe Semanal | Semana [X] de 52</p>
+    <p>Generado el [FECHA] | Próxima actualización: [FECHA_VIERNES_SIGUIENTE]</p>
+</div>
+
+</body>
+</html>
