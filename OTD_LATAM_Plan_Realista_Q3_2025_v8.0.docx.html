@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTD LATAM - Plan Realista desde Q3 2025 v8.0</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.4;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .ms-word {
+            background: white;
+            padding: 0.5in;
+            margin: 0 auto;
+            max-width: 8.5in;
+            min-height: 11in;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 25px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 32pt;
+            margin-bottom: 5px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .header .subtitle {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 10pt;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .current-status {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .current-status h3 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+        
+        .team-identified {
+            background: #f0f7ff;
+            border: 2px solid #0066cc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .team-identified h3 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+        
+        .team-table th {
+            background: #003366;
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .team-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .team-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .timeline-optimized {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .timeline-optimized h3 {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .timeline-table th {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-size: 11pt;
+        }
+        
+        .timeline-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 10pt;
+        }
+        
+        .timeline-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .mvp-enhanced {
+            background: #e8f4f8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 2px solid #17a2b8;
+        }
+        
+        .mvp-enhanced h3 {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+        
+        .resource-lean {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .resource-lean h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .go-live-2027 {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border: 3px solid #155724;
+            border-radius: 10px;
+            color: white;
+            margin: 20px 0;
+        }
+        
+        .go-live-2027 .date {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .go-live-2027 .description {
+            font-size: 12pt;
+        }
+        
+        .budget-optimized {
+            background: #f0f7ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 2px solid #0066cc;
+        }
+        
+        .budget-optimized h3 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, #f0f7ff, #e8f4f8);
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #0066cc;
+        }
+        
+        .benefit-card .metric {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .benefit-card .label {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        .critical-decisions {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .critical-decisions h3 {
+            color: #721c24;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: #f8f8f8;
+            padding: 15px;
+            margin: 20px -20px -20px -20px;
+            border-top: 2px solid #0066cc;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .footer-section h3 {
+            color: #003366;
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+        
+        .footer-section p {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .ms-word {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ms-word">
+        <div class="logo">INTERNATIONAL TRUCKS</div>
+        
+        <div class="header">
+            <h1>OTD LATAM</h1>
+            <div class="subtitle">Plan Optimizado desde Q3 2025 - Equipo Identificado</div>
+        </div>
+        
+        <div class="current-status">
+            <h3>📍 SITUACIÓN ACTUAL - Agosto 2025 (Q3 2025)</h3>
+            <ul>
+                <li><strong>Equipo actual:</strong> 5 desarrolladores activos identificados por análisis de commits</li>
+                <li><strong>Estado del proyecto:</strong> Sin iniciar formalmente</li>
+                <li><strong>Presupuesto:</strong> En proceso de aprobación</li>
+                <li><strong>NorthStar:</strong> Go-live confirmado Enero 2027</li>
+                <li><strong>Tiempo disponible:</strong> 17 meses hasta go-live</li>
+            </ul>
+        </div>
+        
+        <div class="team-identified">
+            <h3>👥 EQUIPO ACTUAL IDENTIFICADO (Análisis de Commits 2024-2025)</h3>
+            <table class="team-table">
+                <thead>
+                    <tr>
+                        <th>Desarrollador</th>
+                        <th>Commits</th>
+                        <th>Sistema/Conocimiento</th>
+                        <th>Rol Propuesto OTD</th>
+                        <th>Criticidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Karla Zapata</strong></td>
+                        <td>270</td>
+                        <td>MIOSS Lead (40% conocimiento)</td>
+                        <td>Technical Lead</td>
+                        <td style="color: #dc3545;">CRÍTICA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adrian Camacho</strong></td>
+                        <td>88</td>
+                        <td>MIOSS Senior (20% conocimiento)</td>
+                        <td>Senior Developer</td>
+                        <td style="color: #fd7e14;">ALTA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Francisco Camacho</strong></td>
+                        <td>98</td>
+                        <td>MIOSS Senior (25% conocimiento)</td>
+                        <td>Senior Developer</td>
+                        <td style="color: #fd7e14;">ALTA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Eduardo Avila</strong></td>
+                        <td>13</td>
+                        <td>SIV Condiciones (80% módulo)</td>
+                        <td>Specialist Developer</td>
+                        <td style="color: #ffc107;">MEDIA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Armando Jimenez</strong></td>
+                        <td>2</td>
+                        <td>Lista Precios (actividad mínima)</td>
+                        <td>Consultant</td>
+                        <td style="color: #28a745;">BAJA</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 10pt; margin-top: 10px; color: #721c24;">
+                <strong>⚠️ RIESGO CRÍTICO:</strong> 85% del conocimiento de MIOSS está concentrado en 3 personas.
+            </p>
+        </div>
+        
+        <div class="timeline-optimized">
+            <h3>✅ CRONOGRAMA OPTIMIZADO - ENFOQUE ACELERADO</h3>
+            
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Período</th>
+                        <th>Fase</th>
+                        <th>Entregables</th>
+                        <th>Equipo</th>
+                        <th>Go-Live</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Q3-Q4 2025</strong><br>(6 meses)</td>
+                        <td>Análisis y MVP Design</td>
+                        <td>• Documentación procesos<br>• Definición MVP<br>• Arquitectura básica</td>
+                        <td>7 personas</td>
+                        <td>-</td>
+                    </tr>
+                    <tr style="background: #d4edda;">
+                        <td><strong>Q1-Q2 2026</strong><br>(6 meses)</td>
+                        <td>FASE 1: Core MVP + NorthStar</td>
+                        <td>• Captura pedidos completa<br>• Integración NorthStar<br>• Workflow aprobaciones<br>• Roles y restricciones</td>
+                        <td>10 personas</td>
+                        <td><strong>Julio 2026</strong><br>Piloto 50 usuarios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q1-Q2 2027</strong><br>(5 meses)</td>
+                        <td>FASE 2: Expansión Total</td>
+                        <td>• Migración datos completa<br>• Funcionalidades avanzadas<br>• 100% usuarios migrados</td>
+                        <td>11 personas</td>
+                        <td><strong>Enero 2027</strong><br>Sistema completo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="mvp-enhanced">
+            <h3>🎯 MVP MEJORADO - FUNCIONALIDAD COMPLETA DESDE JULIO 2026</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <strong>MVP Julio 2026 (FASE 1) - COMPLETO:</strong>
+                    <ul style="margin-top: 10px; font-size: 10pt;">
+                        <li>✅ Captura pedidos domésticos y exportación</li>
+                        <li>✅ Integración completa con NorthStar</li>
+                        <li>✅ Workflow aprobaciones avanzado</li>
+                        <li>✅ Implementación roles y restricciones</li>
+                        <li>✅ Consulta pedidos avanzada</li>
+                        <li>✅ Integración exportación completa</li>
+                        <li>✅ Reportes operativos</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>Enero 2027 - MIGRACIÓN TOTAL:</strong>
+                    <ul style="margin-top: 10px; font-size: 10pt;">
+                        <li>✅ 100% datos migrados</li>
+                        <li>✅ Procesos core unificados</li>
+                        <li>✅ Total funcionalidades implementadas</li>
+                        <li>✅ 500 usuarios activos</li>
+                        <li>✅ Sistemas legacy desactivados</li>
+                        <li>✅ Operación 100% en OTD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resource-lean">
+            <h3>👥 PLAN DE RECURSOS OPTIMIZADO</h3>
+            
+            <strong>Inmediato (Q3 2025) - 7 personas:</strong>
+            <ul style="margin: 10px 0; font-size: 10pt;">
+                <li>Mantener equipo actual: Karla, Adrian, Francisco, Eduardo, Armando (5)</li>
+                <li>Contratar: 1 analista de negocio</li>
+                <li>Contratar: 1 arquitecto de soluciones</li>
+            </ul>
+            
+            <strong>Q4 2025 - 10 personas:</strong>
+            <ul style="margin: 10px 0; font-size: 10pt;">
+                <li>Agregar: 2 desarrolladores</li>
+                <li>Agregar: 1 QA engineer</li>
+            </ul>
+            
+            <strong>Q1 2026 - 11 personas:</strong>
+            <ul style="margin: 10px 0; font-size: 10pt;">
+                <li>Agregar: 1 Scrum Master/DevOps</li>
+            </ul>
+            
+            <p style="background: #fff3cd; padding: 10px; margin-top: 15px; border-left: 4px solid #ffc107; font-size: 10pt;">
+                <strong>💡 VENTAJA:</strong> Equipo lean de solo 11 personas vs 20 del plan anterior. 
+                Aprovecha el conocimiento existente del equipo actual.
+            </p>
+        </div>
+        
+        <div class="budget-optimized">
+            <h3>💰 PRESUPUESTO OPTIMIZADO</h3>
+            
+            <table style="width: 100%; font-size: 10pt;">
+                <tr>
+                    <td><strong>Análisis y Diseño (6 meses):</strong></td>
+                    <td style="text-align: right;">$5.6M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Desarrollo MVP + NorthStar (6 meses):</strong></td>
+                    <td style="text-align: right;">$8M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Expansión Total (5 meses):</strong></td>
+                    <td style="text-align: right;">$5.5M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Infraestructura Azure (18 meses):</strong></td>
+                    <td style="text-align: right;">$5.4M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Capacitación y migración:</strong></td>
+                    <td style="text-align: right;">$2M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Contingencia (10%):</strong></td>
+                    <td style="text-align: right;">$2.7M MXP</td>
+                </tr>
+                <tr style="border-top: 2px solid #003366; font-weight: bold;">
+                    <td>TOTAL PROYECTO:</td>
+                    <td style="text-align: right;">$29.2M MXP</td>
+                </tr>
+            </table>
+            
+            <p style="color: #28a745; font-weight: bold; margin-top: 10px;">
+                💰 AHORRO: $26.3M MXP vs plan anterior (Reducción del 47%)
+            </p>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="metric">$26M</div>
+                <div class="label">Ahorro vs Plan Anterior</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">11</div>
+                <div class="label">Personas vs 20</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">85%</div>
+                <div class="label">Probabilidad Éxito</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">17</div>
+                <div class="label">Meses Completos</div>
+            </div>
+        </div>
+        
+        <div class="critical-decisions">
+            <h3>🚨 DECISIONES CRÍTICAS INMEDIATAS</h3>
+            
+            <strong>Agosto 2025 (INMEDIATO):</strong>
+            <ol style="margin: 10px 0; font-size: 10pt;">
+                <li><strong>Retener a Karla Zapata:</strong> Ofrecer compensación adicional, role de Technical Lead</li>
+                <li><strong>Aprobar presupuesto:</strong> $29.2M MXP (47% menos que plan anterior)</li>
+                <li><strong>Asignar Project Manager:</strong> Dedicado 100% al proyecto</li>
+                <li><strong>Establecer war room:</strong> Equipo colocalizado</li>
+            </ol>
+            
+            <strong>Septiembre 2025:</strong>
+            <ol style="margin: 10px 0; font-size: 10pt;">
+                <li>Iniciar documentación inmediata con Karla, Adrian y Francisco</li>
+                <li>Publicar vacantes para analista y arquitecto</li>
+                <li>Workshop intensivo de definición MVP (3 días)</li>
+            </ol>
+            
+            <p style="background: #f8d7da; padding: 10px; margin-top: 15px; border-left: 4px solid #dc3545;">
+                <strong>⚠️ FECHA LÍMITE:</strong> Si no se aprueban recursos para Septiembre 2025, 
+                el go-live de Enero 2027 será IMPOSIBLE.
+            </p>
+        </div>
+        
+        <div class="go-live-2027">
+            <div class="date">ENERO 2027</div>
+            <div class="description">
+                Go-Live Completo con NorthStar<br>
+                500 usuarios / Funcionalidad 100%<br>
+                <span style="font-size: 10pt;">Sistema OTD completamente operativo</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Equipo Core</h3>
+                    <p>Technical Lead: Karla Zapata<br>
+                    Senior Devs: Adrian & Francisco<br>
+                    Specialist: Eduardo Avila<br>
+                    Total: 11 personas</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Presupuesto</h3>
+                    <p>Total: $29.2M MXP<br>
+                    ($1.6M USD)<br>
+                    Ahorro: 47% vs original<br>
+                    ROI: 3.2 años</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Cronograma</h3>
+                    <p>MVP: Julio 2026<br>
+                    Go-Live: Enero 2027<br>
+                    Duración: 17 meses<br>
+                    Probabilidad: 85%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

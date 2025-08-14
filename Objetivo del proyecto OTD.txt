@@ -1,0 +1,48 @@
+Objetivo del proyecto:
+
+Tener homologados los procesos de comercialización del mercado domestico y de exportacion 
+Executive Summary: OTC LATAM consolida y moderniza nuestros sistemas Order-to-Cash en toda Latinoamérica, unificando MIOSS (ventas nacionales) y SIV (ventas de exportación) en una única plataforma. Esta iniciativa dará servicio a más de 500 usuarios, procesará más de 15.000 pedidos al año, al tiempo que mejorará la velocidad de procesamiento 
+
+FASE DE ANÁLISIS Y DISEÑO
+1.- Análisis y documentación de los procesos de negocios
+
+2.- Diseño de la arquitectura de la solución
+
+3.- Diseño del modelo de datos y estrategia de migración
+
+4.- Mapeo de puntos de integración
+5.- Generacion de las interfaces con NorthStar
+
+6.- Estrategia y planificación de pruebas
+ 
+Estrategia de unificacion 
+
+Diseño de pantalla unica de captura de pedidos para LATAM
+	Identificacion de campos de los pedidos
+	Identificacion de lista de funcionalidades de pantalla
+	Identificación de procesos y flujos de trabajos
+	Identificacion de reglas de negocio
+	Identificacoón de Roles de usuarios y funcionalidades permitidas
+Diseño de consulta de pedidos para LATAM
+	Identificacion de campos y filtros
+	Identificacion de Roles y control de acceso a datos
+	Identificacion de funcionalidades de pantalla
+	Identificacion de procesos y flujo de trabajo
+	Identificacion de reglas de negocio
+Identificacion de modulos auxiliares segun mercado
+	Identificacion de Modulos de exportacion
+	Identificacion de modules de mercado local
+Identificacion de lista de preportes operativos necesarios para LATAM
+
+Definicion del MVP
+
+Diseño de la base de datos integrada
+
+Desarrollo - Implementacion 
+
+
+
+
+Pruebas
+
+

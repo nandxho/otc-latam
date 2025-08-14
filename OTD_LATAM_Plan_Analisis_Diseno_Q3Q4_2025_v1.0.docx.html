@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTD LATAM - Plan de Análisis y Diseño Q3-Q4 2025</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.4;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 25px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 28pt;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 10pt;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .phase-overview {
+            background: #e8f4f8;
+            border: 3px solid #0066cc;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+        
+        .phase-overview h2 {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 18pt;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-card {
+            background: white;
+            border: 2px solid #0066cc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .timeline-card h3 {
+            color: #003366;
+            margin-bottom: 10px;
+            font-size: 14pt;
+            background: #f0f7ff;
+            padding: 8px;
+            margin: -15px -15px 15px -15px;
+            border-radius: 6px 6px 0 0;
+        }
+        
+        .activities-section {
+            margin-bottom: 25px;
+        }
+        
+        .activities-section h2 {
+            color: #003366;
+            font-size: 16pt;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .activity-box {
+            background: #f8f8f8;
+            border-left: 5px solid #0066cc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .activity-box h3 {
+            color: #003366;
+            margin-bottom: 10px;
+            font-size: 12pt;
+        }
+        
+        .activity-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .detail-column ul {
+            font-size: 10pt;
+            margin-left: 20px;
+        }
+        
+        .detail-column li {
+            margin: 5px 0;
+        }
+        
+        .team-structure {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .team-structure h2 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+        }
+        
+        .team-table th {
+            background: #856404;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .team-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .team-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .deliverables-section {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .deliverables-section h2 {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        
+        .deliverable-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .deliverable-card {
+            background: white;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #28a745;
+        }
+        
+        .deliverable-card h4 {
+            color: #155724;
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        
+        .schedule-table th {
+            background: #003366;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .schedule-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .risks-section {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .risks-section h2 {
+            color: #721c24;
+            margin-bottom: 15px;
+        }
+        
+        .budget-section {
+            background: #f0f7ff;
+            border: 2px solid #0066cc;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .budget-section h2 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11pt;
+        }
+        
+        .budget-table th {
+            background: #003366;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .budget-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .budget-table .total-row {
+            background: #e8f4f8;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .success-factors {
+            background: #e8f4f8;
+            border: 2px solid #17a2b8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .success-factors h2 {
+            color: #0c5460;
+            margin-bottom: 15px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .timeline-grid, .deliverable-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">INTERNATIONAL TRUCKS</div>
+    
+    <div class="header">
+        <h1>OTD LATAM</h1>
+        <div class="subtitle">Plan de Análisis y Diseño Q3-Q4 2025</div>
+    </div>
+    
+    <div class="phase-overview">
+        <h2>📋 FASE DE ANÁLISIS Y DISEÑO</h2>
+        <p><strong>Duración:</strong> 6 meses (Septiembre 2025 - Febrero 2026)</p>
+        <p><strong>Objetivo:</strong> Documentar procesos actuales, diseñar la solución unificada y establecer las bases técnicas para el desarrollo del sistema OTD LATAM.</p>
+        <p><strong>Equipo:</strong> 7 personas (5 actuales + 2 nuevos)</p>
+        <p><strong>Presupuesto:</strong> $5.6M MXP</p>
+    </div>
+    
+    <div class="timeline-grid">
+        <div class="timeline-card">
+            <h3>📅 Q3 2025 (Sep-Nov)</h3>
+            <ul style="font-size: 10pt;">
+                <li>Documentación de procesos actuales</li>
+                <li>Análisis de sistemas MIOSS y SIV</li>
+                <li>Levantamiento de requerimientos</li>
+                <li>Definición de arquitectura base</li>
+                <li>Contratación de nuevos recursos</li>
+            </ul>
+        </div>
+        
+        <div class="timeline-card">
+            <h3>📅 Q4 2025 (Dic-Feb)</h3>
+            <ul style="font-size: 10pt;">
+                <li>Diseño de pantallas unificadas</li>
+                <li>Diseño de base de datos integrada</li>
+                <li>Definición del MVP</li>
+                <li>Estrategia de migración</li>
+                <li>Plan de pruebas detallado</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="activities-section">
+        <h2>🎯 ACTIVIDADES PRINCIPALES</h2>
+        
+        <div class="activity-box">
+            <h3>1. Análisis y Documentación de Procesos de Negocio</h3>
+            <p><strong>Responsable:</strong> Analista de Negocio + Karla Zapata</p>
+            <p><strong>Duración:</strong> 2 meses (Sep-Oct 2025)</p>
+            
+            <div class="activity-details">
+                <div class="detail-column">
+                    <strong>Proceso MIOSS (Doméstico):</strong>
+                    <ul>
+                        <li>Flujo de captura de pedidos</li>
+                        <li>Proceso de aprobaciones</li>
+                        <li>Cálculo de precios y descuentos</li>
+                        <li>Generación de documentos</li>
+                        <li>Integración con sistemas contables</li>
+                        <li>Reportes operativos</li>
+                    </ul>
+                </div>
+                <div class="detail-column">
+                    <strong>Proceso SIV (Exportación):</strong>
+                    <ul>
+                        <li>Matriz de descuentos (AdminRangos)</li>
+                        <li>Condiciones especiales (AdminCondEspeciales)</li>
+                        <li>Flujo de aprobaciones export</li>
+                        <li>Documentación internacional</li>
+                        <li>Compliance regulatorio</li>
+                        <li>Lista de precios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-box">
+            <h3>2. Diseño de Arquitectura de la Solución</h3>
+            <p><strong>Responsable:</strong> Arquitecto de Soluciones + Francisco Camacho</p>
+            <p><strong>Duración:</strong> 1.5 meses (Oct-Nov 2025)</p>
+            
+            <div class="activity-details">
+                <div class="detail-column">
+                    <strong>Arquitectura Técnica:</strong>
+                    <ul>
+                        <li>Patrón de arquitectura (Monolito Modular)</li>
+                        <li>Stack tecnológico (Angular 18 + .NET 8)</li>
+                        <li>Diseño de APIs RESTful</li>
+                        <li>Estrategia de autenticación y autorización</li>
+                        <li>Patrones de integración</li>
+                        <li>Estrategia de deployment</li>
+                    </ul>
+                </div>
+                <div class="detail-column">
+                    <strong>Infraestructura Cloud:</strong>
+                    <ul>
+                        <li>Arquitectura Azure (Container Apps)</li>
+                        <li>Base de datos (Azure SQL Elastic Pool)</li>
+                        <li>Service Bus y API Management</li>
+                        <li>Monitoreo (Application Insights)</li>
+                        <li>CI/CD con Azure DevOps</li>
+                        <li>Estrategia de backup y DR</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-box">
+            <h3>3. Diseño de Pantalla Única de Captura de Pedidos</h3>
+            <p><strong>Responsable:</strong> Analista + Adrian Camacho</p>
+            <p><strong>Duración:</strong> 2 meses (Nov 2025-Ene 2026)</p>
+            
+            <div class="activity-details">
+                <div class="detail-column">
+                    <strong>Identificación de Campos:</strong>
+                    <ul>
+                        <li>Campos comunes MIOSS/SIV</li>
+                        <li>Campos específicos por mercado</li>
+                        <li>Campos calculados automáticamente</li>
+                        <li>Validaciones de negocio</li>
+                        <li>Campos condicionales</li>
+                    </ul>
+                </div>
+                <div class="detail-column">
+                    <strong>Funcionalidades de Pantalla:</strong>
+                    <ul>
+                        <li>Auto-completado inteligente</li>
+                        <li>Validación en tiempo real</li>
+                        <li>Cálculo automático de precios</li>
+                        <li>Preview de documentos</li>
+                        <li>Guardado automático</li>
+                        <li>Modo offline básico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-box">
+            <h3>4. Diseño de Consulta de Pedidos para LATAM</h3>
+            <p><strong>Responsable:</strong> Analista + Eduardo Avila</p>
+            <p><strong>Duración:</strong> 1.5 meses (Dic 2025-Ene 2026)</p>
+            
+            <div class="activity-details">
+                <div class="detail-column">
+                    <strong>Campos y Filtros:</strong>
+                    <ul>
+                        <li>Búsqueda por número de pedido</li>
+                        <li>Filtros por cliente, fecha, estado</li>
+                        <li>Filtros por tipo (doméstico/export)</li>
+                        <li>Búsqueda por vendedor/región</li>
+                        <li>Filtros avanzados combinados</li>
+                    </ul>
+                </div>
+                <div class="detail-column">
+                    <strong>Control de Acceso:</strong>
+                    <ul>
+                        <li>Roles por región geográfica</li>
+                        <li>Restricciones por tipo de cliente</li>
+                        <li>Niveles de información (básico/completo)</li>
+                        <li>Auditoria de consultas</li>
+                        <li>Exportación controlada de datos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-box">
+            <h3>5. Identificación de Módulos Auxiliares por Mercado</h3>
+            <p><strong>Responsable:</strong> Arquitecto + Karla Zapata</p>
+            <p><strong>Duración:</strong> 1 mes (Ene 2026)</p>
+            
+            <div class="activity-details">
+                <div class="detail-column">
+                    <strong>Módulos de Exportación:</strong>
+                    <ul>
+                        <li>Documentación aduanal</li>
+                        <li>Certificados de origen</li>
+                        <li>Incoterms y logística</li>
+                        <li>Compliance internacional</li>
+                        <li>Tracking internacional</li>
+                    </ul>
+                </div>
+                <div class="detail-column">
+                    <strong>Módulos de Mercado Local:</strong>
+                    <ul>
+                        <li>Facturación local (CFDI México)</li>
+                        <li>Crédito y cobranza</li>
+                        <li>Promociones y descuentos locales</li>
+                        <li>Garantías y servicio post-venta</li>
+                        <li>Integración dealers locales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="activity-box">
+            <h3>6. Generación de Interfaces con NorthStar</h3>
+            <p><strong>Responsable:</strong> Arquitecto + Francisco Camacho</p>
+            <p><strong>Duración:</strong> 1.5 meses (Ene-Feb 2026)</p>
+            
+            <div class="activity-details">
+                <div class="detail-column">
+                    <strong>APIs de Integración:</strong>
+                    <ul>
+                        <li>Sincronización de clientes</li>
+                        <li>Catálogo de productos</li>
+                        <li>Precios y configuraciones</li>
+                        <li>Estados de pedidos</li>
+                        <li>Documentos compartidos</li>
+                    </ul>
+                </div>
+                <div class="detail-column">
+                    <strong>Eventos en Tiempo Real:</strong>
+                    <ul>
+                        <li>Notificaciones de cambios</li>
+                        <li>Sincronización bidireccional</li>
+                        <li>Manejo de conflictos</li>
+                        <li>Retry automático</li>
+                        <li>Monitoring de integraciones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="team-structure">
+        <h2>👥 ESTRUCTURA DEL EQUIPO</h2>
+        <table class="team-table">
+            <thead>
+                <tr>
+                    <th>Rol</th>
+                    <th>Nombre</th>
+                    <th>Responsabilidades</th>
+                    <th>Dedicación</th>
+                    <th>Costo Mensual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Technical Lead</strong></td>
+                    <td>Karla Zapata</td>
+                    <td>Liderazgo técnico, arquitectura, procesos MIOSS</td>
+                    <td>100%</td>
+                    <td>$80,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Senior Developer</strong></td>
+                    <td>Adrian Camacho</td>
+                    <td>Diseño UI/UX, frontend, captura pedidos</td>
+                    <td>100%</td>
+                    <td>$80,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Senior Developer</strong></td>
+                    <td>Francisco Camacho</td>
+                    <td>Backend, APIs, integración NorthStar</td>
+                    <td>100%</td>
+                    <td>$80,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Specialist Developer</strong></td>
+                    <td>Eduardo Avila</td>
+                    <td>Procesos SIV, consultas, reportes</td>
+                    <td>80%</td>
+                    <td>$64,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Consultant</strong></td>
+                    <td>Armando Jimenez</td>
+                    <td>Lista de precios, validaciones</td>
+                    <td>20%</td>
+                    <td>$16,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Business Analyst</strong></td>
+                    <td>Por contratar</td>
+                    <td>Documentación procesos, requerimientos</td>
+                    <td>100%</td>
+                    <td>$70,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Solution Architect</strong></td>
+                    <td>Por contratar</td>
+                    <td>Arquitectura técnica, infraestructura</td>
+                    <td>100%</td>
+                    <td>$90,000</td>
+                </tr>
+                <tr class="total-row" style="background: #856404; color: white;">
+                    <td colspan="4"><strong>TOTAL EQUIPO</strong></td>
+                    <td><strong>$480,000/mes</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="deliverables-section">
+        <h2>📦 ENTREGABLES CLAVE</h2>
+        <div class="deliverable-grid">
+            <div class="deliverable-card">
+                <h4>Documentación de Procesos</h4>
+                <ul style="font-size: 10pt;">
+                    <li>Manual de procesos MIOSS</li>
+                    <li>Manual de procesos SIV</li>
+                    <li>Matriz de requerimientos</li>
+                    <li>Casos de uso detallados</li>
+                </ul>
+            </div>
+            
+            <div class="deliverable-card">
+                <h4>Diseño de Arquitectura</h4>
+                <ul style="font-size: 10pt;">
+                    <li>Document de arquitectura técnica</li>
+                    <li>Diagramas de componentes</li>
+                    <li>Modelo de datos unificado</li>
+                    <li>APIs y contratos</li>
+                </ul>
+            </div>
+            
+            <div class="deliverable-card">
+                <h4>Diseños de Interfaz</h4>
+                <ul style="font-size: 10pt;">
+                    <li>Mockups de pantalla de captura</li>
+                    <li>Flujos de navegación</li>
+                    <li>Wireframes de consultas</li>
+                    <li>Guía de estilos UI</li>
+                </ul>
+            </div>
+            
+            <div class="deliverable-card">
+                <h4>Especificaciones MVP</h4>
+                <ul style="font-size: 10pt;">
+                    <li>Backlog priorizado</li>
+                    <li>Criterios de aceptación</li>
+                    <li>Plan de releases</li>
+                    <li>Roadmap post-MVP</li>
+                </ul>
+            </div>
+            
+            <div class="deliverable-card">
+                <h4>Estrategia de Migración</h4>
+                <ul style="font-size: 10pt;">
+                    <li>Plan de migración de datos</li>
+                    <li>Estrategia de coexistencia</li>
+                    <li>Scripts de transformación</li>
+                    <li>Plan de rollback</li>
+                </ul>
+            </div>
+            
+            <div class="deliverable-card">
+                <h4>Plan de Integración NorthStar</h4>
+                <ul style="font-size: 10pt;">
+                    <li>Especificaciones de APIs</li>
+                    <li>Contratos de integración</li>
+                    <li>Plan de sincronización</li>
+                    <li>Estrategia de manejo de errores</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="schedule-table">
+        <h2>📅 CRONOGRAMA DETALLADO</h2>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Responsable</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Duración</th>
+                    <th>Dependencias</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contratación Analista de Negocio</td>
+                    <td>RRHH</td>
+                    <td>01-Sep-25</td>
+                    <td>15-Sep-25</td>
+                    <td>2 semanas</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Contratación Arquitecto</td>
+                    <td>RRHH</td>
+                    <td>01-Sep-25</td>
+                    <td>30-Sep-25</td>
+                    <td>4 semanas</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Documentación Procesos MIOSS</td>
+                    <td>Analista + Karla</td>
+                    <td>15-Sep-25</td>
+                    <td>30-Oct-25</td>
+                    <td>6 semanas</td>
+                    <td>Contratación Analista</td>
+                </tr>
+                <tr>
+                    <td>Documentación Procesos SIV</td>
+                    <td>Analista + Eduardo</td>
+                    <td>01-Oct-25</td>
+                    <td>15-Nov-25</td>
+                    <td>6 semanas</td>
+                    <td>Contratación Analista</td>
+                </tr>
+                <tr>
+                    <td>Diseño Arquitectura Base</td>
+                    <td>Arquitecto + Francisco</td>
+                    <td>01-Oct-25</td>
+                    <td>15-Nov-25</td>
+                    <td>6 semanas</td>
+                    <td>Contratación Arquitecto</td>
+                </tr>
+                <tr>
+                    <td>Diseño Pantalla Captura</td>
+                    <td>Analista + Adrian</td>
+                    <td>15-Nov-25</td>
+                    <td>15-Jan-26</td>
+                    <td>8 semanas</td>
+                    <td>Documentación Procesos</td>
+                </tr>
+                <tr>
+                    <td>Diseño Base de Datos</td>
+                    <td>Arquitecto + Karla</td>
+                    <td>15-Nov-25</td>
+                    <td>31-Dic-25</td>
+                    <td>6 semanas</td>
+                    <td>Documentación Procesos</td>
+                </tr>
+                <tr>
+                    <td>Especificación APIs NorthStar</td>
+                    <td>Arquitecto + Francisco</td>
+                    <td>01-Jan-26</td>
+                    <td>15-Feb-26</td>
+                    <td>6 semanas</td>
+                    <td>Diseño Arquitectura</td>
+                </tr>
+                <tr>
+                    <td>Definición MVP</td>
+                    <td>Todo el equipo</td>
+                    <td>01-Feb-26</td>
+                    <td>28-Feb-26</td>
+                    <td>4 semanas</td>
+                    <td>Todos los diseños</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="budget-section">
+        <h2>💰 PRESUPUESTO FASE ANÁLISIS Y DISEÑO</h2>
+        <table class="budget-table">
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th>Recurso</th>
+                    <th>Meses</th>
+                    <th>Costo Mensual</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Lead</td>
+                    <td>Karla Zapata</td>
+                    <td>6</td>
+                    <td>$80,000</td>
+                    <td>$480,000</td>
+                </tr>
+                <tr>
+                    <td>Senior Developer Frontend</td>
+                    <td>Adrian Camacho</td>
+                    <td>6</td>
+                    <td>$80,000</td>
+                    <td>$480,000</td>
+                </tr>
+                <tr>
+                    <td>Senior Developer Backend</td>
+                    <td>Francisco Camacho</td>
+                    <td>6</td>
+                    <td>$80,000</td>
+                    <td>$480,000</td>
+                </tr>
+                <tr>
+                    <td>Specialist Developer</td>
+                    <td>Eduardo Avila (80%)</td>
+                    <td>6</td>
+                    <td>$64,000</td>
+                    <td>$384,000</td>
+                </tr>
+                <tr>
+                    <td>Consultant</td>
+                    <td>Armando Jimenez (20%)</td>
+                    <td>6</td>
+                    <td>$16,000</td>
+                    <td>$96,000</td>
+                </tr>
+                <tr>
+                    <td>Business Analyst</td>
+                    <td>Por contratar</td>
+                    <td>6</td>
+                    <td>$70,000</td>
+                    <td>$420,000</td>
+                </tr>
+                <tr>
+                    <td>Solution Architect</td>
+                    <td>Por contratar</td>
+                    <td>6</td>
+                    <td>$90,000</td>
+                    <td>$540,000</td>
+                </tr>
+                <tr>
+                    <td>Herramientas y Software</td>
+                    <td>Licencias, herramientas</td>
+                    <td>6</td>
+                    <td>$25,000</td>
+                    <td>$150,000</td>
+                </tr>
+                <tr>
+                    <td>Infraestructura Desarrollo</td>
+                    <td>Ambientes, servidores</td>
+                    <td>6</td>
+                    <td>$30,000</td>
+                    <td>$180,000</td>
+                </tr>
+                <tr>
+                    <td>Capacitación y Consultoría</td>
+                    <td>External advisors</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$200,000</td>
+                </tr>
+                <tr>
+                    <td>Contingencia (15%)</td>
+                    <td>Buffer de riesgo</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$641,000</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="4"><strong>TOTAL PRESUPUESTO</strong></td>
+                    <td><strong>$5,651,000 MXP</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 15px; color: #003366; font-size: 12pt;">
+            <strong>Equivalente USD:</strong> $314,000 USD (@ 18 MXP/USD)<br>
+            <strong>Costo promedio mensual:</strong> $942,000 MXP
+        </p>
+    </div>
+    
+    <div class="risks-section">
+        <h2>⚠️ RIESGOS Y MITIGACIONES</h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h3 style="color: #721c24;">Riesgos Principales:</h3>
+                <ul style="font-size: 10pt;">
+                    <li><strong>Disponibilidad de Karla Zapata:</strong> Crítica para documentación MIOSS</li>
+                    <li><strong>Contratación tardía:</strong> Analista y Arquitecto necesarios desde Sep</li>
+                    <li><strong>Complejidad subestimada:</strong> Procesos más complejos de lo esperado</li>
+                    <li><strong>Cambios en NorthStar:</strong> APIs pueden cambiar durante diseño</li>
+                    <li><strong>Resistencia al cambio:</strong> Usuarios reluctantes a documentar procesos</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: #721c24;">Estrategias de Mitigación:</h3>
+                <ul style="font-size: 10pt;">
+                    <li><strong>Retención Karla:</strong> Bono especial + role claro de Technical Lead</li>
+                    <li><strong>Contratación acelerada:</strong> Headhunter especializado, proceso express</li>
+                    <li><strong>Buffer de tiempo:</strong> 15% extra en cronograma crítico</li>
+                    <li><strong>Comunicación NorthStar:</strong> Weekly sync, documentación compartida</li>
+                    <li><strong>Change management:</strong> Workshops colaborativos, ownership compartido</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="success-factors">
+        <h2>🎯 FACTORES CRÍTICOS DE ÉXITO</h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h3 style="color: #0c5460;">Factores Internos:</h3>
+                <ul style="font-size: 10pt;">
+                    <li>✅ <strong>Conocimiento del negocio:</strong> Equipo actual conoce los procesos</li>
+                    <li>✅ <strong>Compromiso ejecutivo:</strong> Sponsorship confirmado</li>
+                    <li>✅ <strong>Presupuesto aprobado:</strong> $5.6M disponibles</li>
+                    <li>✅ <strong>Urgencia del proyecto:</strong> Motivación alta del equipo</li>
+                    <li>⚠️ <strong>Capacidad del equipo:</strong> Sobrecarga potencial</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 style="color: #0c5460;">Factores Externos:</h3>
+                <ul style="font-size: 10pt;">
+                    <li>✅ <strong>Mercado laboral:</strong> Disponibilidad de analistas y arquitectos</li>
+                    <li>✅ <strong>Herramientas maduras:</strong> Angular 18, .NET 8, Azure</li>
+                    <li>✅ <strong>Integración NorthStar:</strong> APIs documentadas</li>
+                    <li>⚠️ <strong>Cambios regulatorios:</strong> Nuevos requirements de compliance</li>
+                    <li>⚠️ <strong>Disponibilidad usuarios:</strong> Para validación y feedback</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 15px; background: #d1ecf1; border-radius: 5px;">
+            <p style="color: #0c5460; font-weight: bold; text-align: center; margin: 0;">
+                🚀 PROBABILIDAD DE ÉXITO: 80% (con mitigación de riesgos adecuada)
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; text-align: center; color: #666; font-size: 10pt; border-top: 2px solid #ddd; padding-top: 20px;">
+        <p><strong>Fecha de inicio:</strong> 1 de Septiembre 2025</p>
+        <p><strong>Fecha de finalización:</strong> 28 de Febrero 2026</p>
+        <p><strong>Próxima fase:</strong> Desarrollo MVP (Marzo-Agosto 2026)</p>
+        <p style="margin-top: 15px; color: #dc3545; font-weight: bold;">
+            ⏰ APROBACIÓN REQUERIDA: Antes del 15 de Agosto 2025
+        </p>
+    </div>
+</body>
+</html>

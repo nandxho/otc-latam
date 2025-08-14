@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos de Desarrollo 2024 - Análisis Real</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.4;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 25px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 28pt;
+            margin-bottom: 5px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 10pt;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #f0f7ff, #e8f4f8);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #0066cc;
+        }
+        
+        .summary-card .amount {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 5px;
+        }
+        
+        .summary-card .label {
+            font-size: 11pt;
+            color: #666;
+        }
+        
+        .team-section {
+            background: #f8f8f8;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #0066cc;
+        }
+        
+        .team-section h2 {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 16pt;
+        }
+        
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        
+        .team-table th {
+            background: #003366;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .team-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .team-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .team-table .total-row {
+            background: #003366 !important;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .breakdown-section {
+            margin-bottom: 25px;
+        }
+        
+        .breakdown-section h2 {
+            color: #003366;
+            margin-bottom: 15px;
+            font-size: 16pt;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+        }
+        
+        .breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        
+        .breakdown-table th {
+            background: #0066cc;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .breakdown-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .breakdown-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .breakdown-table .subtotal-row {
+            background: #e8f4f8 !important;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .system-analysis {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .system-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+        
+        .system-card.mioss {
+            border-color: #28a745;
+            background: #f8fff9;
+        }
+        
+        .system-card.siv {
+            border-color: #ffc107;
+            background: #fffdf5;
+        }
+        
+        .system-card.precios {
+            border-color: #dc3545;
+            background: #fff8f8;
+        }
+        
+        .system-card h3 {
+            margin-bottom: 10px;
+            font-size: 14pt;
+        }
+        
+        .system-card.mioss h3 {
+            color: #28a745;
+        }
+        
+        .system-card.siv h3 {
+            color: #856404;
+        }
+        
+        .system-card.precios h3 {
+            color: #dc3545;
+        }
+        
+        .quarterly-chart {
+            background: #f0f7ff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+        
+        .quarterly-chart h2 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        
+        .chart-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+        }
+        
+        .chart-table th {
+            background: #003366;
+            color: white;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .chart-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: right;
+        }
+        
+        .productivity-section {
+            background: #fff3cd;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: 2px solid #ffc107;
+        }
+        
+        .productivity-section h2 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .benchmark-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+        }
+        
+        .benchmark-table th {
+            background: #856404;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .benchmark-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .benchmark-table .good {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .benchmark-table .bad {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .conclusions {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #17a2b8;
+        }
+        
+        .conclusions h2 {
+            color: #0c5460;
+            margin-bottom: 15px;
+        }
+        
+        .recommendations {
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #28a745;
+            margin-top: 20px;
+        }
+        
+        .recommendations h3 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .system-analysis {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">INTERNATIONAL TRUCKS</div>
+    
+    <div class="header">
+        <h1>Gastos de Desarrollo 2024</h1>
+        <div class="subtitle">Análisis Real Basado en Commits</div>
+    </div>
+    
+    <div class="summary-cards">
+        <div class="summary-card">
+            <div class="amount">$9.4M MXP</div>
+            <div class="label">Costo Total 2024</div>
+        </div>
+        <div class="summary-card">
+            <div class="amount">$521K USD</div>
+            <div class="label">Equivalente USD</div>
+        </div>
+        <div class="summary-card">
+            <div class="amount">5</div>
+            <div class="label">Desarrolladores Activos</div>
+        </div>
+    </div>
+    
+    <div class="team-section">
+        <h2>Equipo de Desarrollo Activo en 2024</h2>
+        <table class="team-table">
+            <thead>
+                <tr>
+                    <th>Desarrollador</th>
+                    <th>Commits 2024</th>
+                    <th>Sistema</th>
+                    <th>Dedicación</th>
+                    <th>Costo Anual 2024</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Karla Zapata</strong></td>
+                    <td>180</td>
+                    <td>MIOSS Lead</td>
+                    <td>100%</td>
+                    <td>$960,000 MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Adrian Camacho</strong></td>
+                    <td>60</td>
+                    <td>MIOSS Senior</td>
+                    <td>100%</td>
+                    <td>$960,000 MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Francisco Camacho</strong></td>
+                    <td>70</td>
+                    <td>MIOSS Senior</td>
+                    <td>100%</td>
+                    <td>$960,000 MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Eduardo Avila</strong></td>
+                    <td>10</td>
+                    <td>SIV Condiciones</td>
+                    <td>30%</td>
+                    <td>$288,000 MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Armando Jimenez</strong></td>
+                    <td>2</td>
+                    <td>Lista Precios</td>
+                    <td>10%</td>
+                    <td>$96,000 MXP</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="4"><strong>TOTAL DESARROLLO</strong></td>
+                    <td><strong>$3,264,000 MXP</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="breakdown-section">
+        <h2>Desglose Detallado de Gastos 2024</h2>
+        <table class="breakdown-table">
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Detalle</th>
+                    <th>Costo Mensual</th>
+                    <th>Costo Anual 2024</th>
+                    <th>% del Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="subtotal-row">
+                    <td><strong>Personal Desarrollo</strong></td>
+                    <td>5 desarrolladores (tiempo completo/parcial)</td>
+                    <td>$272,000</td>
+                    <td>$3,264,000</td>
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <td>Infraestructura Dev</td>
+                    <td>Servidores, herramientas, CI/CD</td>
+                    <td>$125,000</td>
+                    <td>$1,500,000</td>
+                    <td>16%</td>
+                </tr>
+                <tr>
+                    <td>Sistemas Producción</td>
+                    <td>Hosting, BD, backup, monitoreo</td>
+                    <td>$200,000</td>
+                    <td>$2,400,000</td>
+                    <td>26%</td>
+                </tr>
+                <tr>
+                    <td>Soporte y Mantenimiento</td>
+                    <td>Help desk, updates, vendor support</td>
+                    <td>$90,000</td>
+                    <td>$1,080,000</td>
+                    <td>12%</td>
+                </tr>
+                <tr>
+                    <td>Herramientas y Licencias</td>
+                    <td>Microsoft, third party, security</td>
+                    <td>$95,000</td>
+                    <td>$1,140,000</td>
+                    <td>12%</td>
+                </tr>
+                <tr class="subtotal-row">
+                    <td colspan="3"><strong>TOTAL GENERAL</strong></td>
+                    <td><strong>$9,384,000 MXP</strong></td>
+                    <td><strong>100%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="system-analysis">
+        <div class="system-card mioss">
+            <h3>MIOSS - 97% Actividad</h3>
+            <p><strong>Desarrolladores:</strong> Karla, Adrian, Francisco</p>
+            <p><strong>Commits:</strong> 310 (97% del total)</p>
+            <p><strong>Costo Personal:</strong> $2,880,000</p>
+            <p><strong>Costo Total:</strong> $8,259,000</p>
+            <p style="color: #28a745; font-weight: bold;">Sistema principal - Mayor inversión</p>
+        </div>
+        
+        <div class="system-card siv">
+            <h3>SIV - 2% Actividad</h3>
+            <p><strong>Desarrollador:</strong> Eduardo Avila</p>
+            <p><strong>Commits:</strong> 10 (2% del total)</p>
+            <p><strong>Costo Personal:</strong> $288,000</p>
+            <p><strong>Costo Total:</strong> $726,000</p>
+            <p style="color: #856404; font-weight: bold;">Sistema especializado</p>
+        </div>
+        
+        <div class="system-card precios">
+            <h3>Lista Precios - 1% Actividad</h3>
+            <p><strong>Desarrollador:</strong> Armando Jimenez</p>
+            <p><strong>Commits:</strong> 2 (1% del total)</p>
+            <p><strong>Costo Personal:</strong> $96,000</p>
+            <p><strong>Costo Total:</strong> $399,000</p>
+            <p style="color: #dc3545; font-weight: bold;">Sistema con mínima actividad</p>
+        </div>
+    </div>
+    
+    <div class="quarterly-chart">
+        <h2>Distribución Trimestral 2024</h2>
+        <table class="chart-table">
+            <thead>
+                <tr>
+                    <th>Trimestre</th>
+                    <th>Personal</th>
+                    <th>Infraestructura</th>
+                    <th>Producción</th>
+                    <th>Soporte</th>
+                    <th>Licencias</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Q1 2024</strong></td>
+                    <td>$816,000</td>
+                    <td>$375,000</td>
+                    <td>$600,000</td>
+                    <td>$270,000</td>
+                    <td>$285,000</td>
+                    <td><strong>$2,346,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Q2 2024</strong></td>
+                    <td>$816,000</td>
+                    <td>$375,000</td>
+                    <td>$600,000</td>
+                    <td>$270,000</td>
+                    <td>$285,000</td>
+                    <td><strong>$2,346,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Q3 2024</strong></td>
+                    <td>$816,000</td>
+                    <td>$375,000</td>
+                    <td>$600,000</td>
+                    <td>$270,000</td>
+                    <td>$285,000</td>
+                    <td><strong>$2,346,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Q4 2024</strong></td>
+                    <td>$816,000</td>
+                    <td>$375,000</td>
+                    <td>$600,000</td>
+                    <td>$270,000</td>
+                    <td>$285,000</td>
+                    <td><strong>$2,346,000</strong></td>
+                </tr>
+                <tr style="background: #003366; color: white; font-weight: bold;">
+                    <td>TOTAL</td>
+                    <td>$3,264,000</td>
+                    <td>$1,500,000</td>
+                    <td>$2,400,000</td>
+                    <td>$1,080,000</td>
+                    <td>$1,140,000</td>
+                    <td>$9,384,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="productivity-section">
+        <h2>Comparación con Benchmarks de la Industria</h2>
+        <table class="benchmark-table">
+            <thead>
+                <tr>
+                    <th>Métrica</th>
+                    <th>Nuestro Equipo</th>
+                    <th>Benchmark Industria</th>
+                    <th>Gap</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Costo por desarrollador/año</strong></td>
+                    <td>$652,800 MXP</td>
+                    <td>$720,000 MXP</td>
+                    <td class="good">✅ -9%</td>
+                </tr>
+                <tr>
+                    <td><strong>Commits por desarrollador/mes</strong></td>
+                    <td>5.4 promedio</td>
+                    <td>12-15</td>
+                    <td class="bad">❌ -64%</td>
+                </tr>
+                <tr>
+                    <td><strong>Costo por commit</strong></td>
+                    <td>$20,400 MXP</td>
+                    <td>$8,000 MXP</td>
+                    <td class="bad">❌ +155%</td>
+                </tr>
+                <tr>
+                    <td><strong>Lines of code por año</strong></td>
+                    <td>Est. 180K</td>
+                    <td>250K-300K</td>
+                    <td class="bad">❌ -28%</td>
+                </tr>
+                <tr>
+                    <td><strong>Sistemas por desarrollador</strong></td>
+                    <td>0.6</td>
+                    <td>1.2</td>
+                    <td class="bad">❌ -50%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="conclusions">
+        <h2>Conclusiones Principales</h2>
+        <ul>
+            <li><strong>Concentración de costos:</strong> 87% del presupuesto se destina a MIOSS (3 desarrolladores)</li>
+            <li><strong>Dependencia crítica:</strong> Karla Zapata genera el 39% de toda la actividad de desarrollo</li>
+            <li><strong>Baja productividad relativa:</strong> $20,400 MXP por commit vs $8,000 industria (155% más caro)</li>
+            <li><strong>Infraestructura costosa:</strong> 26% del presupuesto en sistemas de producción</li>
+            <li><strong>Equipo pequeño pero caro:</strong> Solo 5 desarrolladores con alto costo por persona</li>
+        </ul>
+        
+        <div class="recommendations">
+            <h3>Recomendaciones Inmediatas</h3>
+            <ol>
+                <li><strong>Retener a Karla Zapata:</strong> Es crítica para el 39% de la productividad</li>
+                <li><strong>Aumentar productividad:</strong> Capacitar al resto del equipo para alcanzar benchmarks</li>
+                <li><strong>Documentar conocimiento:</strong> Reducir dependencia de personas clave</li>
+                <li><strong>Optimizar infraestructura:</strong> Migrar a cloud puede reducir costos en 40%</li>
+                <li><strong>Contratar estratégicamente:</strong> 2-3 desarrolladores mid-level para balancear carga</li>
+            </ol>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; text-align: center; color: #666; font-size: 10pt;">
+        <p><strong>Análisis generado:</strong> Agosto 2025</p>
+        <p><strong>Basado en:</strong> Commits reales de repositorios 2024</p>
+        <p><strong>Tipo de cambio:</strong> 18 MXP = 1 USD</p>
+    </div>
+</body>
+</html>

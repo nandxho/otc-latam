@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTD LATAM - Project One-Pager v6.0 (Go-Live 2027)</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.4;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .ms-word {
+            background: white;
+            padding: 0.5in;
+            margin: 0 auto;
+            max-width: 8.5in;
+            min-height: 11in;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 25px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 32pt;
+            margin-bottom: 5px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .header .subtitle {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 10pt;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .project-objective {
+            background: #003366;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 12pt;
+        }
+        
+        .executive-summary {
+            background: #f8f8f8;
+            padding: 15px;
+            border-left: 4px solid #0066cc;
+            margin-bottom: 20px;
+            font-size: 11pt;
+        }
+        
+        .northstar-alignment {
+            background: #e8f4f8;
+            border: 2px solid #0066cc;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #003366;
+            font-size: 12pt;
+        }
+        
+        .cost-analysis-box {
+            background: #fffbf0;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .cost-analysis-box h3 {
+            color: #003366;
+            font-size: 12pt;
+            margin-bottom: 10px;
+        }
+        
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+            margin: 10px 0;
+        }
+        
+        .team-table th {
+            background: #003366;
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .team-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .timeline-2027 {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-2027 h2 {
+            color: #003366;
+            font-size: 14pt;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 10px;
+            font-size: 10pt;
+        }
+        
+        .timeline-period {
+            background: #003366;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        
+        .timeline-activities {
+            background: white;
+            padding: 8px;
+            border: 1px solid #0066cc;
+            border-radius: 5px;
+        }
+        
+        .go-live-2027 {
+            text-align: center;
+            margin-top: 15px;
+            padding: 15px;
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            border: 2px solid #ff6f00;
+            border-radius: 5px;
+            color: white;
+        }
+        
+        .go-live-2027 strong {
+            font-size: 16pt;
+        }
+        
+        .volume-stats {
+            background: #e8f4f8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        
+        .stat-box {
+            text-align: center;
+        }
+        
+        .stat-box .number {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .stat-box .label {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, #f0f7ff, #e8f4f8);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #0066cc;
+        }
+        
+        .benefit-card .metric {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .benefit-card .label {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        .footer {
+            background: #f8f8f8;
+            padding: 15px;
+            margin: 20px -20px -20px -20px;
+            border-top: 2px solid #0066cc;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .footer-section h3 {
+            color: #003366;
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+        
+        .footer-section p {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .benefit-card {
+                break-inside: avoid;
+            }
+            
+            .ms-word {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ms-word">
+        <div class="logo">INTERNATIONAL TRUCKS</div>
+        
+        <div class="header">
+            <h1>OTD LATAM</h1>
+            <div class="subtitle">Order-to-Delivery Platform Unification Initiative</div>
+        </div>
+        
+        <div class="project-objective">
+            <strong>OBJETIVO DEL PROYECTO:</strong><br>
+            Homologar los procesos de comercialización del mercado doméstico y de exportación
+        </div>
+        
+        <div class="northstar-alignment">
+            ⭐ ALINEADO CON PROJECT NORTHSTAR - GO-LIVE COORDINADO ENERO 2027 ⭐
+        </div>
+        
+        <div class="executive-summary">
+            <strong>Executive Summary:</strong> OTD LATAM consolida y moderniza nuestros sistemas Order-to-Delivery en toda Latinoamérica, 
+            unificando MIOSS (ventas nacionales) y SIV (ventas de exportación) en una única plataforma. Esta iniciativa dará servicio a 
+            más de <strong>500 usuarios</strong>, procesará más de <strong>15,000 pedidos al año</strong>, con una inversión de 
+            <strong>$57.5M MXP</strong> y un go-live en <strong>Enero 2027</strong>.
+        </div>
+        
+        <div class="volume-stats">
+            <div class="stat-box">
+                <div class="number">15,000</div>
+                <div class="label">Pedidos/Año</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">500+</div>
+                <div class="label">Usuarios</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">5</div>
+                <div class="label">Desarrolladores Actuales</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">24</div>
+                <div class="label">Meses Proyecto</div>
+            </div>
+        </div>
+        
+        <div class="cost-analysis-box">
+            <h3>Análisis de Costos Basado en Actividad Real (Commits 2024-2025)</h3>
+            <table class="team-table">
+                <thead>
+                    <tr>
+                        <th>Desarrollador Actual</th>
+                        <th>Commits</th>
+                        <th>Sistema</th>
+                        <th>Costo Mensual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Karla Zapata</td>
+                        <td>270</td>
+                        <td>MIOSS Lead</td>
+                        <td>$80,000 MXP</td>
+                    </tr>
+                    <tr>
+                        <td>Adrian Camacho</td>
+                        <td>88</td>
+                        <td>MIOSS Senior</td>
+                        <td>$80,000 MXP</td>
+                    </tr>
+                    <tr>
+                        <td>Francisco Camacho</td>
+                        <td>98</td>
+                        <td>MIOSS Senior</td>
+                        <td>$80,000 MXP</td>
+                    </tr>
+                    <tr>
+                        <td>Eduardo Avila</td>
+                        <td>13</td>
+                        <td>SIV Condiciones</td>
+                        <td>$24,000 MXP</td>
+                    </tr>
+                    <tr>
+                        <td>Armando Jimenez</td>
+                        <td>2</td>
+                        <td>Lista Precios</td>
+                        <td>$8,000 MXP</td>
+                    </tr>
+                    <tr style="background: #f0f0f0; font-weight: bold;">
+                        <td colspan="3">TOTAL EQUIPO ACTUAL</td>
+                        <td>$272,000 MXP/mes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 10pt; margin-top: 10px;">
+                <strong>Costo Actual Sistema:</strong> $8.9M MXP/año ($494K USD)<br>
+                <strong>Inversión Proyecto OTD:</strong> $57.5M MXP ($3.2M USD)<br>
+                <strong>Costo Futuro Sistema Unificado:</strong> $10.8M MXP/año ($600K USD)<br>
+                <strong>ROI:</strong> 5.7 años con beneficios de $12M MXP/año
+            </p>
+        </div>
+        
+        <div class="timeline-2027">
+            <h2>Cronograma 24 Meses - Go-Live Enero 2027</h2>
+            
+            <div class="timeline-grid">
+                <div class="timeline-period">2025<br>Q1-Q2</div>
+                <div class="timeline-activities">
+                    <strong>ANÁLISIS Y DISEÑO (6 meses)</strong><br>
+                    • Documentación de procesos • Arquitectura de solución<br>
+                    • Diseño de pantallas unificadas • Estrategia de migración
+                </div>
+                
+                <div class="timeline-period">2025<br>Q3</div>
+                <div class="timeline-activities">
+                    <strong>DEFINICIÓN MVP (3 meses)</strong><br>
+                    • Priorización de funcionalidades • Validación con stakeholders<br>
+                    • Roadmap de releases
+                </div>
+                
+                <div class="timeline-period">2025 Q4<br>2026 Q1</div>
+                <div class="timeline-activities">
+                    <strong>DESARROLLO FASE 1 (6 meses)</strong><br>
+                    • Core platform • APIs básicas • Integración NorthStar<br>
+                    • Pantalla unificada de captura
+                </div>
+                
+                <div class="timeline-period">2026<br>Q2-Q3</div>
+                <div class="timeline-activities">
+                    <strong>DESARROLLO FASE 2 (6 meses)</strong><br>
+                    • Módulos de exportación • Módulos mercado local<br>
+                    • Reportes operativos • Migración de datos
+                </div>
+                
+                <div class="timeline-period">2026<br>Q4</div>
+                <div class="timeline-activities">
+                    <strong>TESTING Y DEPLOYMENT (3 meses)</strong><br>
+                    • UAT con 500 usuarios • Pruebas de carga<br>
+                    • Capacitación • Parallel run
+                </div>
+            </div>
+            
+            <div class="go-live-2027">
+                <strong>🚀 GO-LIVE: ENERO 2027</strong><br>
+                <span style="font-size: 11pt;">Sincronizado con Project NorthStar</span><br>
+                <span style="font-size: 10pt;">24/7 Hypercare Support por 3 meses</span>
+            </div>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="metric">$12M MXP</div>
+                <div class="label">Beneficios/Año</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">40%</div>
+                <div class="label">Más Rápido</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">85%</div>
+                <div class="label">Menos Errores</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">88%</div>
+                <div class="label">ROI 5 años</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Inversión Total</h3>
+                    <p>Proyecto: $57.5M MXP<br>
+                    ($3.2M USD)<br>
+                    24 meses ejecución<br>
+                    Payback: 5.7 años</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Equipo Proyecto</h3>
+                    <p>14 desarrolladores<br>
+                    3 arquitectos<br>
+                    5 analistas<br>
+                    6 QA engineers<br>
+                    Reutilizando equipo actual</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Programa: NorthStar<br>
+                    Estado: Planificación<br>
+                    Go-Live: Enero 2027<br>
+                    Líder: Karla Zapata</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

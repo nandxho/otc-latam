@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTC LATAM - Project One-Pager v4.0</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.4;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .ms-word {
+            background: white;
+            padding: 0.5in;
+            margin: 0 auto;
+            max-width: 8.5in;
+            min-height: 11in;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 25px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 32pt;
+            margin-bottom: 5px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .header .subtitle {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 10pt;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .executive-summary {
+            background: #f8f8f8;
+            padding: 15px;
+            border-left: 4px solid #0066cc;
+            margin-bottom: 20px;
+            font-size: 11pt;
+        }
+        
+        .northstar-alignment {
+            background: #e8f4f8;
+            border: 2px solid #0066cc;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .section {
+            background: white;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .section h2 {
+            color: #003366;
+            font-size: 14pt;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .section li {
+            padding: 3px 0;
+            padding-left: 15px;
+            position: relative;
+            font-size: 10pt;
+        }
+        
+        .section li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+        }
+        
+        .timeline {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline h2 {
+            color: #003366;
+            font-size: 14pt;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-detailed {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 10px;
+            font-size: 10pt;
+        }
+        
+        .timeline-phase {
+            background: #003366;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        
+        .timeline-activities {
+            background: white;
+            padding: 8px;
+            border: 1px solid #0066cc;
+            border-radius: 5px;
+        }
+        
+        .timeline-activities ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        
+        .timeline-activities li {
+            margin: 3px 0;
+        }
+        
+        .go-live-box {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background: #fffbf0;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, #f0f7ff, #e8f4f8);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #0066cc;
+        }
+        
+        .benefit-card .metric {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .benefit-card .label {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        .tech-stack {
+            background: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-stack h2 {
+            color: white;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+        
+        .tech-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .tech-item {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 3px;
+            font-size: 10pt;
+        }
+        
+        .business-case {
+            background: #fffbf0;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .business-case h2 {
+            color: #003366;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+        
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+        }
+        
+        .metrics-table th {
+            background: #003366;
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .metrics-table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .volume-stats {
+            background: #e8f4f8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .stat-box {
+            text-align: center;
+        }
+        
+        .stat-box .number {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #003366;
+        }
+        
+        .stat-box .label {
+            font-size: 10pt;
+            color: #666;
+        }
+        
+        .testing-strategy {
+            background: #f0fff0;
+            border: 1px solid #28a745;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .testing-strategy h3 {
+            color: #28a745;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+        
+        .testing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            font-size: 9pt;
+        }
+        
+        .test-type {
+            background: white;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #28a745;
+        }
+        
+        .footer {
+            background: #f8f8f8;
+            padding: 15px;
+            margin: 20px -20px -20px -20px;
+            border-top: 2px solid #0066cc;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .footer-section h3 {
+            color: #003366;
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+        
+        .footer-section p {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        .calculation-note {
+            font-size: 8pt;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .section, .benefit-card {
+                break-inside: avoid;
+            }
+            
+            .ms-word {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ms-word">
+        <div class="logo">INTERNATIONAL TRUCKS</div>
+        
+        <div class="header">
+            <h1>OTC LATAM</h1>
+            <div class="subtitle">Order-to-Cash Platform Modernization Initiative</div>
+        </div>
+        
+        <div class="northstar-alignment">
+            ⭐ ALIGNED WITH PROJECT NORTHSTAR - COORDINATED GO-LIVE Q1 2026 ⭐
+        </div>
+        
+        <div class="executive-summary">
+            <strong>Executive Summary:</strong> OTC LATAM consolidates and modernizes our Order-to-Cash systems across Latin America, 
+            unifying MIOSS (domestic sales) and SIV (export sales) into a single cloud-native platform. This initiative will serve 
+            <strong>500+ users</strong>, process <strong>15,000+ orders annually</strong> (2024 baseline), and reduce operational costs by 
+            $984,000/year (30%) while improving processing speed from 9+ hours to under 4 hours per order (40% faster).
+        </div>
+        
+        <div class="volume-stats">
+            <div class="stat-box">
+                <div class="number">15,000</div>
+                <div class="label">Annual Orders (2024)</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">500+</div>
+                <div class="label">Active Users</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">12</div>
+                <div class="label">Months to Go-Live</div>
+            </div>
+        </div>
+        
+        <div class="content-grid">
+            <div class="section">
+                <h2>Current Challenge</h2>
+                <ul>
+                    <li>Two separate legacy systems (MIOSS & SIV)</li>
+                    <li>$3.28M annual maintenance cost</li>
+                    <li>9+ hours average order processing time</li>
+                    <li>20% error rate requiring manual correction</li>
+                    <li>500 users across multiple systems</li>
+                    <li>15,000 orders with manual processes</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Solution Approach</h2>
+                <ul>
+                    <li>Unified modular monolith architecture</li>
+                    <li>$2.3M projected annual cost (-30%)</li>
+                    <li>3-hour target processing time</li>
+                    <li>3% projected error rate (-85%)</li>
+                    <li>Single platform for 500+ users</li>
+                    <li>Automated processing for 15,000+ orders</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <h2>12-Month Implementation Timeline - Analysis, Design, Implementation & Testing</h2>
+            
+            <div class="timeline-detailed">
+                <div class="timeline-phase">Q1 2025<br>Jan-Mar</div>
+                <div class="timeline-activities">
+                    <strong>ANALYSIS & DESIGN PHASE</strong>
+                    <ul>
+                        <li>Business process analysis & documentation</li>
+                        <li>Current system assessment & gap analysis</li>
+                        <li>Requirements gathering workshops (all 500 users)</li>
+                        <li>Solution architecture design</li>
+                        <li>Data model design & migration strategy</li>
+                        <li>Integration points mapping</li>
+                        <li>Test strategy & planning</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-phase">Q2 2025<br>Apr-Jun</div>
+                <div class="timeline-activities">
+                    <strong>DEVELOPMENT PHASE I - CORE</strong>
+                    <ul>
+                        <li>Core platform development</li>
+                        <li>API framework implementation</li>
+                        <li>Database implementation</li>
+                        <li>Authentication & security layer</li>
+                        <li>Unit testing (80% coverage)</li>
+                        <li>Component integration testing</li>
+                        <li>Performance baseline testing</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-phase">Q3 2025<br>Jul-Sep</div>
+                <div class="timeline-activities">
+                    <strong>DEVELOPMENT PHASE II - INTEGRATION</strong>
+                    <ul>
+                        <li>Business modules development</li>
+                        <li>External systems integration</li>
+                        <li>Data migration tools development</li>
+                        <li>System integration testing (SIT)</li>
+                        <li>Performance testing (500 users load)</li>
+                        <li>Security testing & penetration testing</li>
+                        <li>Disaster recovery testing</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-phase">Q4 2025<br>Oct-Dec</div>
+                <div class="timeline-activities">
+                    <strong>TESTING & DEPLOYMENT PREPARATION</strong>
+                    <ul>
+                        <li>User Acceptance Testing (UAT) - 3 cycles</li>
+                        <li>End-to-end testing (15,000 orders simulation)</li>
+                        <li>Regression testing (full coverage)</li>
+                        <li>Performance & stress testing (150% load)</li>
+                        <li>Training delivery (500 users)</li>
+                        <li>Pilot deployment (50 power users)</li>
+                        <li>Production readiness validation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="go-live-box">
+                <strong style="color: #003366;">GO-LIVE: January 2026</strong><br>
+                <span style="font-size: 10pt;">Synchronized with Project NorthStar Launch</span><br>
+                <span style="font-size: 9pt; color: #666;">Phased rollout with 24/7 hypercare support</span>
+            </div>
+        </div>
+        
+        <div class="testing-strategy">
+            <h3>Comprehensive Testing Strategy</h3>
+            <div class="testing-grid">
+                <div class="test-type">
+                    <strong>Functional Testing</strong><br>
+                    • 1,500+ test cases<br>
+                    • All business scenarios<br>
+                    • Edge cases coverage
+                </div>
+                <div class="test-type">
+                    <strong>Performance Testing</strong><br>
+                    • 500 concurrent users<br>
+                    • 150 orders/day peak<br>
+                    • <2 sec response time
+                </div>
+                <div class="test-type">
+                    <strong>Integration Testing</strong><br>
+                    • 12+ external systems<br>
+                    • Real-time data sync<br>
+                    • Failover scenarios
+                </div>
+            </div>
+        </div>
+        
+        <div class="business-case">
+            <h2>Business Case - Validated for 15,000 Orders & 500 Users</h2>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Current State</th>
+                        <th>Future State</th>
+                        <th>Annual Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Operating Cost (500 users)</td>
+                        <td>$3,280,000</td>
+                        <td>$2,296,000</td>
+                        <td>-$984,000 (30%)</td>
+                    </tr>
+                    <tr>
+                        <td>Order Processing Time</td>
+                        <td>9.2 hours</td>
+                        <td>3.2 hours</td>
+                        <td>90,000 hours saved</td>
+                    </tr>
+                    <tr>
+                        <td>Error Rate (15,000 orders)</td>
+                        <td>3,000 errors/year</td>
+                        <td>450 errors/year</td>
+                        <td>2,550 fewer errors</td>
+                    </tr>
+                    <tr>
+                        <td>System Availability</td>
+                        <td>95%</td>
+                        <td>99.9%</td>
+                        <td>+4.9% uptime</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="calculation-note">
+                *Based on 2024 actuals: 15,000 orders processed, 500 active users, comprehensive testing included
+            </div>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="metric">$984K</div>
+                <div class="label">Annual Savings</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">90K hrs</div>
+                <div class="label">Hours Saved/Year</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">99.9%</div>
+                <div class="label">System Availability</div>
+            </div>
+            <div class="benefit-card">
+                <div class="metric">14 mo</div>
+                <div class="label">ROI Period</div>
+            </div>
+        </div>
+        
+        <div class="content-grid">
+            <div class="section">
+                <h2>Quality Assurance Approach</h2>
+                <ul>
+                    <li>Continuous Integration/Continuous Testing</li>
+                    <li>Automated regression suite (2,000+ tests)</li>
+                    <li>Code quality gates (80% coverage)</li>
+                    <li>Security scanning (OWASP Top 10)</li>
+                    <li>Performance profiling every sprint</li>
+                    <li>User feedback loops (bi-weekly)</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>Risk Mitigation Strategy</h2>
+                <ul>
+                    <li>Parallel run for 2 months</li>
+                    <li>Rollback plan within 4 hours</li>
+                    <li>Data reconciliation daily</li>
+                    <li>Phased user migration</li>
+                    <li>24/7 support for 3 months</li>
+                    <li>Performance monitoring dashboards</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="tech-stack">
+            <h2>Technology Stack (Enterprise Grade & Tested)</h2>
+            <div class="tech-items">
+                <div class="tech-item">Angular 18</div>
+                <div class="tech-item">.NET 8</div>
+                <div class="tech-item">Azure SQL (Elastic)</div>
+                <div class="tech-item">Azure AD B2C</div>
+                <div class="tech-item">Container Apps</div>
+                <div class="tech-item">Service Bus Premium</div>
+                <div class="tech-item">API Management</div>
+                <div class="tech-item">App Insights</div>
+                <div class="tech-item">Redis Cache</div>
+                <div class="tech-item">Azure DevOps</div>
+                <div class="tech-item">Selenium Grid</div>
+                <div class="tech-item">JMeter</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Investment (500 users)</h3>
+                    <p>Total Project: $4.5M<br>
+                    Testing Budget: $900K (20%)<br>
+                    Annual Return: $3.7M<br>
+                    3-Year ROI: 247%</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <p>15-20 developers<br>
+                    5 QA engineers<br>
+                    3 solution architects<br>
+                    5 business analysts<br>
+                    2 project managers</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Program: NorthStar Initiative<br>
+                    Status: Analysis Phase<br>
+                    Go-Live: January 2026<br>
+                    Quality Gate: 95% pass rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

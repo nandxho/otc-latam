@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTD LATAM - Plan Realista desde Q3 2025 v7.0</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+            background: white;
+            color: #333;
+            line-height: 1.4;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .ms-word {
+            background: white;
+            padding: 0.5in;
+            margin: 0 auto;
+            max-width: 8.5in;
+            min-height: 11in;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 25px;
+            margin: -20px -20px 20px -20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 32pt;
+            margin-bottom: 5px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .header .subtitle {
+            font-size: 14pt;
+            opacity: 0.95;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 10pt;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .current-status {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .current-status h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .reality-check {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .reality-check h3 {
+            color: #721c24;
+            margin-bottom: 10px;
+        }
+        
+        .realistic-timeline {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .realistic-timeline h3 {
+            color: #155724;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .timeline-table th {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-size: 11pt;
+        }
+        
+        .timeline-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 10pt;
+        }
+        
+        .timeline-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .phase-box {
+            background: white;
+            border: 2px solid #0066cc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .phase-header {
+            background: #003366;
+            color: white;
+            padding: 10px;
+            margin: -15px -15px 15px -15px;
+            border-radius: 5px 5px 0 0;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        
+        .phase-content {
+            font-size: 10pt;
+        }
+        
+        .phase-content ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        
+        .phase-content li {
+            margin: 5px 0;
+        }
+        
+        .mvp-approach {
+            background: #e8f4f8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .mvp-approach h3 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .resource-plan {
+            background: #f8f8f8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .resource-plan h3 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .go-live-realistic {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border: 3px solid #155724;
+            border-radius: 10px;
+            color: white;
+            margin: 20px 0;
+        }
+        
+        .go-live-realistic .date {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .go-live-realistic .description {
+            font-size: 12pt;
+        }
+        
+        .critical-path {
+            background: #fff;
+            border: 2px solid #dc3545;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .critical-path h3 {
+            color: #dc3545;
+            margin-bottom: 10px;
+        }
+        
+        .budget-realistic {
+            background: #f0f7ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .budget-realistic h3 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: #f8f8f8;
+            padding: 15px;
+            margin: 20px -20px -20px -20px;
+            border-top: 2px solid #0066cc;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .footer-section h3 {
+            color: #003366;
+            font-size: 11pt;
+            margin-bottom: 5px;
+        }
+        
+        .footer-section p {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .phase-box {
+                break-inside: avoid;
+            }
+            
+            .ms-word {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ms-word">
+        <div class="logo">INTERNATIONAL TRUCKS</div>
+        
+        <div class="header">
+            <h1>OTD LATAM</h1>
+            <div class="subtitle">Plan Realista desde Q3 2025</div>
+        </div>
+        
+        <div class="current-status">
+            <h3>📍 SITUACIÓN ACTUAL - Agosto 2025 (Q3 2025)</h3>
+            <ul>
+                <li><strong>Equipo actual:</strong> Solo 5 desarrolladores activos (3 en MIOSS, 1 en SIV, 1 en Precios)</li>
+                <li><strong>Estado del proyecto:</strong> Sin iniciar formalmente</li>
+                <li><strong>Presupuesto:</strong> Pendiente de aprobación</li>
+                <li><strong>NorthStar:</strong> Go-live confirmado Enero 2027</li>
+                <li><strong>Tiempo disponible:</strong> 17 meses hasta go-live</li>
+            </ul>
+        </div>
+        
+        <div class="reality-check">
+            <h3>⚠️ REALIDAD DEL PROYECTO</h3>
+            <ul>
+                <li><strong>No es posible</strong> completar análisis, diseño, desarrollo y testing en 17 meses</li>
+                <li><strong>Equipo insuficiente:</strong> 5 personas no pueden migrar 2 sistemas complejos</li>
+                <li><strong>Sin análisis previo:</strong> No hay documentación de procesos actuales</li>
+                <li><strong>Dependencia crítica:</strong> 97% del conocimiento en 3 personas (Karla, Adrian, Francisco)</li>
+                <li><strong>Complejidad subestimada:</strong> 15,000 órdenes/año, 500 usuarios, múltiples integraciones</li>
+            </ul>
+        </div>
+        
+        <div class="realistic-timeline">
+            <h3>✅ CRONOGRAMA REALISTA - ENFOQUE POR FASES</h3>
+            
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Período</th>
+                        <th>Fase</th>
+                        <th>Entregables</th>
+                        <th>Go-Live</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Q3-Q4 2025</strong><br>(6 meses)</td>
+                        <td>Análisis y MVP Design</td>
+                        <td>• Documentación de procesos<br>
+                            • Definición MVP<br>
+                            • Arquitectura básica</td>
+                        <td>-</td>
+                    </tr>
+                    <tr style="background: #d4edda;">
+                        <td><strong>Q1-Q2 2026</strong><br>(6 meses)</td>
+                        <td>FASE 1: Core MVP</td>
+                        <td>• Captura unificada pedidos<br>
+                            • Consulta básica<br>
+                            • Usuarios y roles</td>
+                        <td><strong>Julio 2026</strong><br>Piloto 50 usuarios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q3-Q4 2026</strong><br>(6 meses)</td>
+                        <td>FASE 2: Integración</td>
+                        <td>• Integración NorthStar<br>
+                            • Migración datos parcial<br>
+                            • Reportes básicos</td>
+                        <td><strong>Enero 2027</strong><br>Con NorthStar</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q1-Q2 2027</strong><br>(6 meses)</td>
+                        <td>FASE 3: Expansión</td>
+                        <td>• Módulos exportación<br>
+                            • Funcionalidades avanzadas<br>
+                            • Migración completa</td>
+                        <td><strong>Julio 2027</strong><br>100% usuarios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q3-Q4 2027</strong><br>(6 meses)</td>
+                        <td>FASE 4: Optimización</td>
+                        <td>• Analytics<br>
+                            • Automatización<br>
+                            • Mobile</td>
+                        <td><strong>Enero 2028</strong><br>Versión completa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="mvp-approach">
+            <h3>🎯 ESTRATEGIA MVP INCREMENTAL</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <strong>MVP Julio 2026 (FASE 1):</strong>
+                    <ul style="margin-top: 10px; font-size: 10pt;">
+                        <li>✅ Captura de pedidos domésticos</li>
+                        <li>✅ Workflow aprobaciones básico</li>
+                        <li>✅ Gestión usuarios/roles</li>
+                        <li>✅ Consulta de pedidos</li>
+                        <li>❌ Sin exportación</li>
+                        <li>❌ Sin integración completa</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong>Enero 2027 con NorthStar (FASE 2):</strong>
+                    <ul style="margin-top: 10px; font-size: 10pt;">
+                        <li>✅ Integración básica NorthStar</li>
+                        <li>✅ Reportes operativos</li>
+                        <li>✅ 250 usuarios migrados</li>
+                        <li>✅ Procesos core unificados</li>
+                        <li>⚠️ Exportación básica</li>
+                        <li>❌ Funcionalidades avanzadas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resource-plan">
+            <h3>👥 PLAN DE RECURSOS REALISTA</h3>
+            
+            <strong>Inmediato (Q3 2025):</strong>
+            <ul style="margin: 10px 0; font-size: 10pt;">
+                <li>Mantener equipo actual (5 personas)</li>
+                <li>Contratar 2 analistas de negocio</li>
+                <li>Contratar 1 arquitecto de soluciones</li>
+            </ul>
+            
+            <strong>Q4 2025:</strong>
+            <ul style="margin: 10px 0; font-size: 10pt;">
+                <li>Agregar 4 desarrolladores</li>
+                <li>Agregar 2 QA engineers</li>
+            </ul>
+            
+            <strong>Q1 2026:</strong>
+            <ul style="margin: 10px 0; font-size: 10pt;">
+                <li>Agregar 4 desarrolladores más</li>
+                <li>Agregar 2 DevOps</li>
+                <li>Total: 20 personas</li>
+            </ul>
+        </div>
+        
+        <div class="critical-path">
+            <h3>🚨 RUTA CRÍTICA Y RIESGOS</h3>
+            
+            <strong>Actividades Críticas (No pueden retrasarse):</strong>
+            <ol style="margin: 10px 0; font-size: 10pt;">
+                <li><strong>Sep-Oct 2025:</strong> Documentación de procesos actuales</li>
+                <li><strong>Nov 2025:</strong> Definición y aprobación del MVP</li>
+                <li><strong>Dic 2025:</strong> Contratación del equipo adicional</li>
+                <li><strong>Ene-Jun 2026:</strong> Desarrollo MVP sin interrupciones</li>
+                <li><strong>Oct-Dic 2026:</strong> Integración con NorthStar</li>
+            </ol>
+            
+            <strong>Riesgos Principales:</strong>
+            <ul style="margin: 10px 0; font-size: 10pt; color: #dc3545;">
+                <li>❗ Si Karla Zapata deja el proyecto, retraso de 6 meses</li>
+                <li>❗ Sin presupuesto aprobado en Sep 2025, imposible cumplir</li>
+                <li>❗ Cambios en NorthStar pueden impactar integración</li>
+                <li>❗ Resistencia de usuarios al cambio gradual</li>
+            </ul>
+        </div>
+        
+        <div class="budget-realistic">
+            <h3>💰 PRESUPUESTO AJUSTADO</h3>
+            
+            <table style="width: 100%; font-size: 10pt;">
+                <tr>
+                    <td><strong>Fase 1 (MVP):</strong></td>
+                    <td style="text-align: right;">$15M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Fase 2 (Integración):</strong></td>
+                    <td style="text-align: right;">$12M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Fase 3 (Expansión):</strong></td>
+                    <td style="text-align: right;">$10M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Fase 4 (Optimización):</strong></td>
+                    <td style="text-align: right;">$8M MXP</td>
+                </tr>
+                <tr>
+                    <td><strong>Infraestructura (2 años):</strong></td>
+                    <td style="text-align: right;">$10M MXP</td>
+                </tr>
+                <tr style="border-top: 2px solid #003366; font-weight: bold;">
+                    <td>TOTAL PROYECTO:</td>
+                    <td style="text-align: right;">$55M MXP</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="go-live-realistic">
+            <div class="date">ENERO 2027</div>
+            <div class="description">
+                Go-Live Parcial con NorthStar<br>
+                250 usuarios / Funcionalidad básica<br>
+                <span style="font-size: 10pt;">Completación total: Enero 2028</span>
+            </div>
+        </div>
+        
+        <div class="phase-box">
+            <div class="phase-header">RECOMENDACIONES INMEDIATAS</div>
+            <div class="phase-content">
+                <ol>
+                    <li><strong>Agosto 2025:</strong> Aprobar presupuesto y plan de fases</li>
+                    <li><strong>Septiembre 2025:</strong> Iniciar documentación con equipo actual</li>
+                    <li><strong>Octubre 2025:</strong> Contratar primeros refuerzos</li>
+                    <li><strong>Noviembre 2025:</strong> Definir MVP con stakeholders</li>
+                    <li><strong>Diciembre 2025:</strong> Completar equipo de desarrollo</li>
+                    <li><strong>Enero 2026:</strong> Iniciar desarrollo del MVP</li>
+                </ol>
+                
+                <p style="margin-top: 15px; padding: 10px; background: #fff3cd; border-left: 4px solid #ffc107;">
+                    <strong>⚠️ DECISIÓN CRÍTICA:</strong> Si se requiere el sistema completo para Enero 2027, 
+                    se debe considerar posponer a Enero 2028 o aceptar una implementación parcial con riesgos.
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Opción A: MVP 2027</h3>
+                    <p>Go-live parcial Enero 2027<br>
+                    250 usuarios<br>
+                    Funcionalidad básica<br>
+                    Riesgo: Medio-Alto</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Opción B: Completo 2028</h3>
+                    <p>Go-live completo Enero 2028<br>
+                    500 usuarios<br>
+                    Funcionalidad total<br>
+                    Riesgo: Bajo</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Decisión Requerida</h3>
+                    <p>Fecha límite: Sept 2025<br>
+                    Presupuesto: $55M MXP<br>
+                    Equipo: 20 personas<br>
+                    Crítico: No hay más tiempo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
